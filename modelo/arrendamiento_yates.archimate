@@ -1893,6 +1893,179 @@ Momento: Una sola vez, al arrancar.</documentation>
       <documentation>Evento de dominio emitido al ejecutarse el comando Resolver valoración.</documentation>
       <property key="Tipo" value="Evento de dominio"/>
     </element>
+  
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-bc-001" name="Contexto de Gestión del arriendo">
+      <documentation>Contexto delimitado principal. Coordina la disponibilidad, la reserva y los estados del arriendo. Es el eje del mapa y el proveedor de los hitos del proceso.</documentation>
+      <property key="Tipo DDD" value="Contexto delimitado"/>
+      <property key="Clasificación" value="Core"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" id="id-f5-bs-002" name="Servicio de reserva del arriendo">
+      <documentation>Servicio de aplicación publicado por el contexto de gestión del arriendo. Es la puerta por la que los demás contextos consumen su responsabilidad.</documentation>
+      <property key="Rol" value="Servicio publicado del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-bi-003" name="Interfaz de reserva del arriendo">
+      <documentation>Interfaz de aplicación del contexto de gestión del arriendo. Expone su servicio publicado y oculta el modelo interno.</documentation>
+      <property key="Rol" value="Interfaz del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-bc-004" name="Contexto de Evaluación de riesgo">
+      <documentation>Contexto delimitado que juzga si un arriendo puede continuar y bajo qué condiciones. Provee la elegibilidad al contexto de Gestión del arriendo.</documentation>
+      <property key="Tipo DDD" value="Contexto delimitado"/>
+      <property key="Clasificación" value="Supporting"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" id="id-f5-bs-005" name="Servicio de evaluación de riesgo">
+      <documentation>Servicio de aplicación publicado por el contexto de evaluación de riesgo. Es la puerta por la que los demás contextos consumen su responsabilidad.</documentation>
+      <property key="Rol" value="Servicio publicado del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-bi-006" name="Interfaz de evaluación de riesgo">
+      <documentation>Interfaz de aplicación del contexto de evaluación de riesgo. Expone su servicio publicado y oculta el modelo interno.</documentation>
+      <property key="Rol" value="Interfaz del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-bc-007" name="Contexto de Operación y seguimiento del yate">
+      <documentation>Contexto delimitado que controla el estado físico del yate entre la entrega y la recepción, y las lecturas del uso. Provee la evidencia a Liquidación.</documentation>
+      <property key="Tipo DDD" value="Contexto delimitado"/>
+      <property key="Clasificación" value="Core"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" id="id-f5-bs-008" name="Servicio de operación del yate">
+      <documentation>Servicio de aplicación publicado por el contexto de operación y seguimiento del yate. Es la puerta por la que los demás contextos consumen su responsabilidad.</documentation>
+      <property key="Rol" value="Servicio publicado del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-bi-009" name="Interfaz de operación del yate">
+      <documentation>Interfaz de aplicación del contexto de operación y seguimiento del yate. Expone su servicio publicado y oculta el modelo interno.</documentation>
+      <property key="Rol" value="Interfaz del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-bc-010" name="Contexto de Liquidación">
+      <documentation>Contexto delimitado que resuelve los valores económicos del arriendo hasta el cierre: cargos, garantía y reclamaciones.</documentation>
+      <property key="Tipo DDD" value="Contexto delimitado"/>
+      <property key="Clasificación" value="Supporting"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" id="id-f5-bs-011" name="Servicio de liquidación del arriendo">
+      <documentation>Servicio de aplicación publicado por el contexto de liquidación. Es la puerta por la que los demás contextos consumen su responsabilidad.</documentation>
+      <property key="Rol" value="Servicio publicado del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-bi-012" name="Interfaz de liquidación">
+      <documentation>Interfaz de aplicación del contexto de liquidación. Expone su servicio publicado y oculta el modelo interno.</documentation>
+      <property key="Rol" value="Interfaz del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-bc-013" name="Contexto de Reputación">
+      <documentation>Contexto delimitado que conserva las valoraciones entre clientes y propietarios y las revisiones de una valoración cuestionada.</documentation>
+      <property key="Tipo DDD" value="Contexto delimitado"/>
+      <property key="Clasificación" value="Supporting"/>
+    </element>
+    <element xsi:type="archimate:ApplicationService" id="id-f5-bs-014" name="Servicio de reputación">
+      <documentation>Servicio de aplicación publicado por el contexto de reputación. Es la puerta por la que los demás contextos consumen su responsabilidad.</documentation>
+      <property key="Rol" value="Servicio publicado del contexto"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-bi-015" name="Interfaz de reputación">
+      <documentation>Interfaz de aplicación del contexto de reputación. Expone su servicio publicado y oculta el modelo interno.</documentation>
+      <property key="Rol" value="Interfaz del contexto"/>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-grp-016" name="Núcleo compartido: Arriendo, Yate y Participante">
+      <documentation>Núcleo compartido por Gestión del arriendo y Operación y seguimiento. Los identificadores de Arriendo, Yate y Participante y el calendario de compromisos se interpretan igual en los dos contextos, sin traducción.</documentation>
+      <property key="Patrón" value="Núcleo compartido"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-acl-017" name="Capa anticorrupción del arrendamiento">
+      <documentation>Capa anticorrupción (ACL). Traduce entre el modelo de cada sistema externo y el modelo de los contextos del arriendo, de modo que un cambio en un tercero no arrastre los dominios. Es la cara de aplicación de la capa anticorrupción de la fase 2.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Rol" value="Traducción e interoperabilidad"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-018" name="CRM comercial">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-019" name="ACL - CRM comercial">
+      <documentation>Interfaz de la capa anticorrupción hacia CRM comercial. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Datos comerciales del cliente y estados de la reserva"/>
+      <property key="Contexto destino" value="Contexto de Gestión del arriendo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-020" name="Gestión de contratos">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-021" name="ACL - Gestión de contratos">
+      <documentation>Interfaz de la capa anticorrupción hacia Gestión de contratos. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Condiciones vigentes y cambios que requieren aceptación"/>
+      <property key="Contexto destino" value="Contexto de Gestión del arriendo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-022" name="Evaluación de riesgo externa">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-023" name="ACL - Evaluación de riesgo externa">
+      <documentation>Interfaz de la capa anticorrupción hacia Evaluación de riesgo externa. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Solicitud de evaluación y recomendación de un tercero"/>
+      <property key="Contexto destino" value="Contexto de Evaluación de riesgo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-024" name="Aseguradora">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-025" name="ACL - Aseguradora">
+      <documentation>Interfaz de la capa anticorrupción hacia Aseguradora. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Cobertura, siniestros y evidencias del estado del yate"/>
+      <property key="Contexto destino" value="Contexto de Operación y seguimiento del yate"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-026" name="Marinas">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-027" name="ACL - Marinas">
+      <documentation>Interfaz de la capa anticorrupción hacia Marinas. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Horarios, personas autorizadas, preparación y novedades de entrega"/>
+      <property key="Contexto destino" value="Contexto de Operación y seguimiento del yate"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-028" name="Pasarela de pagos">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-029" name="ACL - Pasarela de pagos">
+      <documentation>Interfaz de la capa anticorrupción hacia Pasarela de pagos. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Cobros, garantías, retenciones y reembolsos con su resultado"/>
+      <property key="Contexto destino" value="Contexto de Liquidación"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-030" name="Fuente de ubicación y combustible">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-031" name="ACL - Fuente de ubicación y combustible">
+      <documentation>Interfaz de la capa anticorrupción hacia Fuente de ubicación y combustible. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Posición y nivel de combustible con su hora de medición"/>
+      <property key="Contexto destino" value="Contexto de Operación y seguimiento del yate"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" id="id-f5-ext-032" name="Contabilidad">
+      <documentation>Sistema o proceso externo con el que el arrendamiento intercambia información. Se alcanza solo a través de la capa anticorrupción.</documentation>
+      <property key="Tipo" value="Sistema o proceso externo"/>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f5-aclif-033" name="ACL - Contabilidad">
+      <documentation>Interfaz de la capa anticorrupción hacia Contabilidad. Recibe y entrega la información del intercambio y la traduce al modelo del contexto que la usa.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+      <property key="Información" value="Valores calculados para registro y conciliación"/>
+      <property key="Contexto destino" value="Contexto de Liquidación"/>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-111" name="Cliente-proveedor">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-113" name="Conformista">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-115" name="Núcleo compartido">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-117" name="Servicio abierto">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-119" name="Lenguaje publicado">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
+    <element xsi:type="archimate:Grouping" id="id-f5-leg-121" name="Capa anticorrupción (ACL)">
+      <documentation>Patrón de relación señalado en el mapa de contextos delimitados.</documentation>
+    </element>
   </folder>
   <folder name="Technology &amp; Physical" id="id-4e83da1b96274b8099370812b5d0becc" type="technology"/>
   <folder name="Motivation" id="id-9702c1e18db64882b49e263b5b465236" type="motivation">
@@ -3097,6 +3270,149 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-499" source="id-f4-cmd-496" target="id-f4-ev-498"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-500" source="id-f4-re-perfil-472" target="term34"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-501" source="id-f4-re-revision-479" target="term36"/>
+  
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5-rel-034" source="id-f5-bc-001" target="id-f5-bs-002">
+      <documentation>El contexto realiza el servicio que publica.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-035" source="id-f5-bc-001" target="id-f5-bi-003">
+      <documentation>El contexto se expone a través de su interfaz de aplicación.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5-rel-036" source="id-f5-bc-004" target="id-f5-bs-005">
+      <documentation>El contexto realiza el servicio que publica.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-037" source="id-f5-bc-004" target="id-f5-bi-006">
+      <documentation>El contexto se expone a través de su interfaz de aplicación.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5-rel-038" source="id-f5-bc-007" target="id-f5-bs-008">
+      <documentation>El contexto realiza el servicio que publica.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-039" source="id-f5-bc-007" target="id-f5-bi-009">
+      <documentation>El contexto se expone a través de su interfaz de aplicación.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5-rel-040" source="id-f5-bc-010" target="id-f5-bs-011">
+      <documentation>El contexto realiza el servicio que publica.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-041" source="id-f5-bc-010" target="id-f5-bi-012">
+      <documentation>El contexto se expone a través de su interfaz de aplicación.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5-rel-042" source="id-f5-bc-013" target="id-f5-bs-014">
+      <documentation>El contexto realiza el servicio que publica.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-043" source="id-f5-bc-013" target="id-f5-bi-015">
+      <documentation>El contexto se expone a través de su interfaz de aplicación.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-044" source="id-f5-bc-004" target="id-f5-bc-001" name="Patrón: cliente-proveedor">
+      <documentation>Evaluación de riesgo es el proveedor (upstream) y Gestión del arriendo el cliente (downstream): el resultado de la evaluación alimenta la decisión de reserva.</documentation>
+      <property key="Patrón" value="Cliente-proveedor"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-045" source="id-f5-bc-001" target="id-f5-bc-007" name="Patrón: cliente-proveedor">
+      <documentation>Gestión del arriendo es el proveedor y Operación el cliente: la reserva confirmada es la entrada de la operación.</documentation>
+      <property key="Patrón" value="Cliente-proveedor"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-046" source="id-f5-bc-007" target="id-f5-bc-010" name="Patrón: cliente-proveedor">
+      <documentation>Operación es el proveedor y Liquidación el cliente: las actas y novedades sustentan los ajustes económicos.</documentation>
+      <property key="Patrón" value="Cliente-proveedor"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-047" source="id-f5-bs-002" target="id-f5-bc-013" name="Patrón: servicio abierto + lenguaje publicado">
+      <documentation>Gestión del arriendo expone un servicio abierto con el lenguaje publicado del arriendo; Reputación lo consume de forma conformista, adoptando sus identificadores sin traducirlos.</documentation>
+      <property key="Patrón" value="Servicio abierto + lenguaje publicado"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-048" source="id-f5-grp-016" target="id-f5-bc-001" name="Núcleo compartido">
+      <documentation>El núcleo compartido se acuerda entre Gestión del arriendo y Operación y seguimiento.</documentation>
+      <property key="Patrón" value="Núcleo compartido"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f5-rel-049" source="id-f5-grp-016" target="id-f5-bc-007" name="Núcleo compartido">
+      <documentation>El núcleo compartido se acuerda entre Gestión del arriendo y Operación y seguimiento.</documentation>
+      <property key="Patrón" value="Núcleo compartido"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-050" source="id-f5-acl-017" target="id-f5-aclif-019">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a CRM comercial.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-051" source="id-f5-ext-018" target="id-f5-aclif-019" name="Datos comerciales del cliente y estados de la reserva">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Datos comerciales del cliente y estados de la reserva.</documentation>
+      <property key="Información" value="Datos comerciales del cliente y estados de la reserva"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-052" source="id-f5-aclif-019" target="id-f5-bc-001" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de gestión del arriendo con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-053" source="id-f5-acl-017" target="id-f5-aclif-021">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Gestión de contratos.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-054" source="id-f5-ext-020" target="id-f5-aclif-021" name="Condiciones vigentes y cambios que requieren aceptación">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Condiciones vigentes y cambios que requieren aceptación.</documentation>
+      <property key="Información" value="Condiciones vigentes y cambios que requieren aceptación"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-055" source="id-f5-aclif-021" target="id-f5-bc-001" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de gestión del arriendo con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-056" source="id-f5-acl-017" target="id-f5-aclif-023">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Evaluación de riesgo externa.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-057" source="id-f5-ext-022" target="id-f5-aclif-023" name="Solicitud de evaluación y recomendación de un tercero">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Solicitud de evaluación y recomendación de un tercero.</documentation>
+      <property key="Información" value="Solicitud de evaluación y recomendación de un tercero"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-058" source="id-f5-aclif-023" target="id-f5-bc-004" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de evaluación de riesgo con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-059" source="id-f5-acl-017" target="id-f5-aclif-025">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Aseguradora.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-060" source="id-f5-ext-024" target="id-f5-aclif-025" name="Cobertura, siniestros y evidencias del estado del yate">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Cobertura, siniestros y evidencias del estado del yate.</documentation>
+      <property key="Información" value="Cobertura, siniestros y evidencias del estado del yate"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-061" source="id-f5-aclif-025" target="id-f5-bc-007" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-062" source="id-f5-acl-017" target="id-f5-aclif-027">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Marinas.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-063" source="id-f5-ext-026" target="id-f5-aclif-027" name="Horarios, personas autorizadas, preparación y novedades de entrega">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Horarios, personas autorizadas, preparación y novedades de entrega.</documentation>
+      <property key="Información" value="Horarios, personas autorizadas, preparación y novedades de entrega"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-064" source="id-f5-aclif-027" target="id-f5-bc-007" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-065" source="id-f5-acl-017" target="id-f5-aclif-029">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Pasarela de pagos.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-066" source="id-f5-ext-028" target="id-f5-aclif-029" name="Cobros, garantías, retenciones y reembolsos con su resultado">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Cobros, garantías, retenciones y reembolsos con su resultado.</documentation>
+      <property key="Información" value="Cobros, garantías, retenciones y reembolsos con su resultado"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-067" source="id-f5-aclif-029" target="id-f5-bc-010" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de liquidación con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-068" source="id-f5-acl-017" target="id-f5-aclif-031">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Fuente de ubicación y combustible.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-069" source="id-f5-ext-030" target="id-f5-aclif-031" name="Posición y nivel de combustible con su hora de medición">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Posición y nivel de combustible con su hora de medición.</documentation>
+      <property key="Información" value="Posición y nivel de combustible con su hora de medición"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-070" source="id-f5-aclif-031" target="id-f5-bc-007" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-071" source="id-f5-acl-017" target="id-f5-aclif-033">
+      <documentation>La capa anticorrupción compone la interfaz que traduce a Contabilidad.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5-rel-072" source="id-f5-ext-032" target="id-f5-aclif-033" name="Valores calculados para registro y conciliación">
+      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Valores calculados para registro y conciliación.</documentation>
+      <property key="Información" value="Valores calculados para registro y conciliación"/>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f5-rel-073" source="id-f5-aclif-033" target="id-f5-bc-010" name="Servicio anticorrupción al contexto">
+      <documentation>La interfaz anticorrupción sirve al contexto de liquidación con la información ya traducida.</documentation>
+      <property key="Patrón" value="Capa anticorrupción"/>
+    </element>
   </folder>
   <folder name="Views" id="id-58ff9e2292be46e9b1d94d1125439f03" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="V1. Motivación" id="id-3c72efbf02fe4ab289024b901256c78f">
@@ -5425,6 +5741,64 @@ Momento: Una sola vez, al arrancar.</documentation>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-517" archimateElement="id-f4-ev-494" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-518" archimateElement="id-f4-cmd-496" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-536" source="id-f4-o-518" target="id-f4-o-509" archimateRelationship="id-f4-rel-497"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-537" source="id-f4-o-518" target="id-f4-o-519" archimateRelationship="id-f4-rel-499"/></child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-519" archimateElement="id-f4-ev-498" fillColor="#d5e8d4"><bounds x="920" y="312" width="400" height="54"/></child>
+    </element>
+  
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V8. Mapa de contextos delimitados y patrones" id="id-f5-v8">
+      <documentation>V8 - Mapa de contextos delimitados y patrones de relación. Los cinco contextos delimitados aparecen como componentes de aplicación, cada uno con el servicio que publica y su interfaz. Las flechas indican el patrón de relación: cliente-proveedor, servicio abierto y lenguaje publicado, núcleo compartido y la capa anticorrupción hacia los sistemas externos. Es coherente con la interoperabilidad de la fase 2.</documentation>      <child xsi:type="archimate:Group" id="id-f5-g-103" name="Contexto de Evaluación de riesgo (Supporting)" textAlignment="1"><bounds x="20" y="20" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-077" archimateElement="id-f5-bc-004" fillColor="#dae8fc"><bounds x="20" y="42" width="320" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-091" source="id-f5-o-077" target="id-f5-o-078" archimateRelationship="id-f5-rel-036"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-092" source="id-f5-o-077" target="id-f5-o-079" archimateRelationship="id-f5-rel-037"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-099" source="id-f5-o-077" target="id-f5-o-074" archimateRelationship="id-f5-rel-044"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-078" archimateElement="id-f5-bs-005" fillColor="#ffe6cc"><bounds x="20" y="114" width="320" height="50"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-079" archimateElement="id-f5-bi-006" fillColor="#e1d5e7"><bounds x="20" y="178" width="320" height="50"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-104" name="Contexto de Gestión del arriendo (Core)" textAlignment="1"><bounds x="410" y="20" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-074" archimateElement="id-f5-bc-001" fillColor="#d5e8d4"><bounds x="20" y="42" width="320" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-089" source="id-f5-o-074" target="id-f5-o-075" archimateRelationship="id-f5-rel-034"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-090" source="id-f5-o-074" target="id-f5-o-076" archimateRelationship="id-f5-rel-035"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-100" source="id-f5-o-074" target="id-f5-o-080" archimateRelationship="id-f5-rel-045"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-075" archimateElement="id-f5-bs-002" fillColor="#ffe6cc"><bounds x="20" y="114" width="320" height="50"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-102" source="id-f5-o-075" target="id-f5-o-086" archimateRelationship="id-f5-rel-047"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-076" archimateElement="id-f5-bi-003" fillColor="#e1d5e7"><bounds x="20" y="178" width="320" height="50"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-105" name="Contexto de Operación y seguimiento del yate (Core)" textAlignment="1"><bounds x="800" y="20" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-080" archimateElement="id-f5-bc-007" fillColor="#d5e8d4"><bounds x="20" y="42" width="320" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-093" source="id-f5-o-080" target="id-f5-o-081" archimateRelationship="id-f5-rel-038"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-094" source="id-f5-o-080" target="id-f5-o-082" archimateRelationship="id-f5-rel-039"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-101" source="id-f5-o-080" target="id-f5-o-083" archimateRelationship="id-f5-rel-046"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-081" archimateElement="id-f5-bs-008" fillColor="#ffe6cc"><bounds x="20" y="114" width="320" height="50"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-082" archimateElement="id-f5-bi-009" fillColor="#e1d5e7"><bounds x="20" y="178" width="320" height="50"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-106" name="Contexto de Liquidación (Supporting)" textAlignment="1"><bounds x="1190" y="20" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-083" archimateElement="id-f5-bc-010" fillColor="#dae8fc"><bounds x="20" y="42" width="320" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-095" source="id-f5-o-083" target="id-f5-o-084" archimateRelationship="id-f5-rel-040"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-096" source="id-f5-o-083" target="id-f5-o-085" archimateRelationship="id-f5-rel-041"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-084" archimateElement="id-f5-bs-011" fillColor="#ffe6cc"><bounds x="20" y="114" width="320" height="50"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-085" archimateElement="id-f5-bi-012" fillColor="#e1d5e7"><bounds x="20" y="178" width="320" height="50"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-107" name="Contexto de Reputación (Supporting)" textAlignment="1"><bounds x="410" y="320" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-086" archimateElement="id-f5-bc-013" fillColor="#dae8fc"><bounds x="20" y="42" width="320" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-097" source="id-f5-o-086" target="id-f5-o-087" archimateRelationship="id-f5-rel-042"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-098" source="id-f5-o-086" target="id-f5-o-088" archimateRelationship="id-f5-rel-043"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-087" archimateElement="id-f5-bs-014" fillColor="#ffe6cc"><bounds x="20" y="114" width="320" height="50"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-088" archimateElement="id-f5-bi-015" fillColor="#e1d5e7"><bounds x="20" y="178" width="320" height="50"/></child>
+</child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-108" archimateElement="id-f5-grp-016" fillColor="#f2f2f2"><bounds x="800" y="380" width="360" height="90"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-109" source="id-f5-o-108" target="id-f5-o-074" archimateRelationship="id-f5-rel-048"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-110" source="id-f5-o-108" target="id-f5-o-080" archimateRelationship="id-f5-rel-049"/></child>
+      <child xsi:type="archimate:Group" id="id-f5-g-123" name="PATRONES DE RELACIÓN" textAlignment="1"><bounds x="20" y="320" width="360" height="250"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-112" archimateElement="id-f5-leg-111"><bounds x="20" y="42" width="320" height="30"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-114" archimateElement="id-f5-leg-113"><bounds x="20" y="78" width="320" height="30"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-116" archimateElement="id-f5-leg-115"><bounds x="20" y="114" width="320" height="30"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-118" archimateElement="id-f5-leg-117"><bounds x="20" y="150" width="320" height="30"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-120" archimateElement="id-f5-leg-119"><bounds x="20" y="186" width="320" height="30"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-122" archimateElement="id-f5-leg-121"><bounds x="20" y="222" width="320" height="30"/></child>
+</child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V8b. Interoperabilidad de aplicación y anticorrupción" id="id-f5-v8b">
+      <documentation>V8b - Interoperabilidad de aplicación y capa anticorrupción. Cada contexto del arrendamiento se conecta con los sistemas y procesos externos a través de una interfaz de la capa anticorrupción, que traduce los modelos. Corresponde a la capa anticorrupción de la fase 2 llevada al nivel de aplicación.</documentation>      <child xsi:type="archimate:Group" id="id-f5-g-129" name="Aplicación de arrendamiento de yates (contextos delimitados)" textAlignment="1"><bounds x="20" y="20" width="340" height="580"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-124" archimateElement="id-f5-bc-001" fillColor="#d5e8d4"><bounds x="20" y="44" width="300" height="72"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-125" archimateElement="id-f5-bc-004" fillColor="#dae8fc"><bounds x="20" y="144" width="300" height="72"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-126" archimateElement="id-f5-bc-007" fillColor="#d5e8d4"><bounds x="20" y="244" width="300" height="72"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-127" archimateElement="id-f5-bc-010" fillColor="#dae8fc"><bounds x="20" y="344" width="300" height="72"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-128" archimateElement="id-f5-bc-013" fillColor="#dae8fc"><bounds x="20" y="444" width="300" height="72"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-155" name="Lenguaje publicado" textAlignment="1"><bounds x="400" y="20" width="380" height="580"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-130" archimateElement="id-f5-acl-017" fillColor="#f8cecc"><bounds x="20" y="40" width="340" height="56"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-132" source="id-f5-o-130" target="id-f5-o-131" archimateRelationship="id-f5-rel-050"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-135" source="id-f5-o-130" target="id-f5-o-134" archimateRelationship="id-f5-rel-053"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-138" source="id-f5-o-130" target="id-f5-o-137" archimateRelationship="id-f5-rel-056"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-141" source="id-f5-o-130" target="id-f5-o-140" archimateRelationship="id-f5-rel-059"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-144" source="id-f5-o-130" target="id-f5-o-143" archimateRelationship="id-f5-rel-062"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-147" source="id-f5-o-130" target="id-f5-o-146" archimateRelationship="id-f5-rel-065"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-150" source="id-f5-o-130" target="id-f5-o-149" archimateRelationship="id-f5-rel-068"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-153" source="id-f5-o-130" target="id-f5-o-152" archimateRelationship="id-f5-rel-071"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-131" archimateElement="id-f5-aclif-019" fillColor="#e1d5e7"><bounds x="20" y="112" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-133" source="id-f5-o-131" target="id-f5-o-124" archimateRelationship="id-f5-rel-052"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-134" archimateElement="id-f5-aclif-021" fillColor="#e1d5e7"><bounds x="20" y="168" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-136" source="id-f5-o-134" target="id-f5-o-124" archimateRelationship="id-f5-rel-055"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-137" archimateElement="id-f5-aclif-023" fillColor="#e1d5e7"><bounds x="20" y="224" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-139" source="id-f5-o-137" target="id-f5-o-125" archimateRelationship="id-f5-rel-058"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-140" archimateElement="id-f5-aclif-025" fillColor="#e1d5e7"><bounds x="20" y="280" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-142" source="id-f5-o-140" target="id-f5-o-126" archimateRelationship="id-f5-rel-061"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-143" archimateElement="id-f5-aclif-027" fillColor="#e1d5e7"><bounds x="20" y="336" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-145" source="id-f5-o-143" target="id-f5-o-126" archimateRelationship="id-f5-rel-064"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-146" archimateElement="id-f5-aclif-029" fillColor="#e1d5e7"><bounds x="20" y="392" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-148" source="id-f5-o-146" target="id-f5-o-127" archimateRelationship="id-f5-rel-067"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-149" archimateElement="id-f5-aclif-031" fillColor="#e1d5e7"><bounds x="20" y="448" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-151" source="id-f5-o-149" target="id-f5-o-126" archimateRelationship="id-f5-rel-070"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-152" archimateElement="id-f5-aclif-033" fillColor="#e1d5e7"><bounds x="20" y="504" width="340" height="48"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-154" source="id-f5-o-152" target="id-f5-o-127" archimateRelationship="id-f5-rel-073"/></child>
+</child>
+      <child xsi:type="archimate:Group" id="id-f5-g-172" name="Sistemas y procesos externos" textAlignment="1"><bounds x="820" y="20" width="360" height="580"/>      <child xsi:type="archimate:DiagramObject" id="id-f5-o-156" archimateElement="id-f5-ext-018" fillColor="#f2f2f2"><bounds x="20" y="44" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-157" source="id-f5-o-156" target="id-f5-o-131" archimateRelationship="id-f5-rel-051"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-158" archimateElement="id-f5-ext-020" fillColor="#f2f2f2"><bounds x="20" y="108" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-159" source="id-f5-o-158" target="id-f5-o-134" archimateRelationship="id-f5-rel-054"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-160" archimateElement="id-f5-ext-022" fillColor="#f2f2f2"><bounds x="20" y="172" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-161" source="id-f5-o-160" target="id-f5-o-137" archimateRelationship="id-f5-rel-057"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-162" archimateElement="id-f5-ext-024" fillColor="#f2f2f2"><bounds x="20" y="236" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-163" source="id-f5-o-162" target="id-f5-o-140" archimateRelationship="id-f5-rel-060"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-164" archimateElement="id-f5-ext-026" fillColor="#f2f2f2"><bounds x="20" y="300" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-165" source="id-f5-o-164" target="id-f5-o-143" archimateRelationship="id-f5-rel-063"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-166" archimateElement="id-f5-ext-028" fillColor="#f2f2f2"><bounds x="20" y="364" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-167" source="id-f5-o-166" target="id-f5-o-146" archimateRelationship="id-f5-rel-066"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-168" archimateElement="id-f5-ext-030" fillColor="#f2f2f2"><bounds x="20" y="428" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-169" source="id-f5-o-168" target="id-f5-o-149" archimateRelationship="id-f5-rel-069"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f5-o-170" archimateElement="id-f5-ext-032" fillColor="#f2f2f2"><bounds x="20" y="492" width="320" height="52"/><sourceConnection xsi:type="archimate:Connection" id="id-f5-c-171" source="id-f5-o-170" target="id-f5-o-152" archimateRelationship="id-f5-rel-072"/></child>
+</child>
     </element>
   </folder>
 </archimate:model>

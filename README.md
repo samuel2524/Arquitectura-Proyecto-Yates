@@ -2,7 +2,7 @@
 
 La empresa arrienda yates de terceros que están en distintas marinas. Debe saber cuáles se pueden ofrecer, gestionar las reservas y coordinar lo que pasa entre la entrega y la devolución. También se ocupa de los pagos, el seguimiento del yate durante el arriendo y las calificaciones entre clientes y propietarios. Como las embarcaciones no son suyas, necesita dejar constancia de su estado y de lo ocurrido en cada alquiler.
 
-Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2, el análisis de dominios de la fase 3 y el diseño táctico de la fase 4. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
+Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2, el análisis de dominios de la fase 3, el diseño táctico de la fase 4 y el mapa de contextos de la fase 5. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
 
 ## Índice
 
@@ -21,7 +21,8 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [13. Dominios: V5 (fase 3)](#13-dominios-v5-fase-3)
 - [14. Lenguaje ubicuo: V7 (fase 3)](#14-lenguaje-ubicuo-v7-fase-3)
 - [15. Diseño táctico: agregados, comandos y eventos (fase 4)](#15-diseno-tactico-agregados-comandos-y-eventos-fase-4)
-- [16. Modelo y evidencias](#16-modelo-y-evidencias)
+- [16. Mapa de contextos delimitados (fase 5)](#16-mapa-de-contextos-delimitados-fase-5)
+- [17. Modelo y evidencias](#17-modelo-y-evidencias)
 
 ## 1. Contexto y entrevista (fase 0)
 
@@ -344,10 +345,29 @@ Ningún comando de este dominio produce evento de negocio: el arriendo puede exi
 
 Las raíces de agregado realizan los términos de negocio de V7 mediante relaciones `Realization` en el modelo: Arriendo, Disponibilidad del yate, Evaluación de riesgo, Garantía, Reclamación de cobro y los demás ya aparecían como términos del glosario. Ese enlace se dejó en la carpeta de Relaciones pero no se dibujó en V6 para no saturar la lectura. Así, cada agregado queda atado al término del negocio que implementa.
 
-## 16. Modelo y evidencias
+## 16. Mapa de contextos delimitados (fase 5)
+
+La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se relacionan los dominios entre sí y con el exterior. Los cinco dominios de la fase 3 se vuelven contextos delimitados de aplicación, cada uno con su servicio y su interfaz, y cada relación lleva el patrón que usa. El detalle por vista está en el [índice de la fase 5](Fase5/00_Indice_Fase5.md); las dos vistas salen del mismo modelo, ahora en la capa de Aplicaciones.
+
+### 16.1 V8. Mapa de contextos delimitados y patrones (fase 5)
+
+![V8. Mapa de contextos delimitados y patrones](vistas/V08.%20Mapa%20de%20contextos%20delimitados%20y%20patrones.png)
+
+La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido, limitado a arriendo, yate y participante, se conecta a Gestión y a Operación con asociación para que no lleguen a acoplarse.
+
+Cada contexto realiza su propio servicio de aplicación, así que esta vista también explica de dónde salen los servicios que la fase 2 listaba. Los eventos de dominio de la fase 4 no aparecen a propósito: se disparan dentro del contexto y no cruzan la frontera; los contratos detallados siguen en V9.
+
+### 16.2 V8b. Interoperabilidad de aplicación y anticorrupción (fase 5)
+
+![V8b. Interoperabilidad de aplicación y anticorrupción](vistas/V08b.%20Interoperabilidad%20de%20aplicaci%C3%B3n%20y%20anticorrupci%C3%B3n.png)
+
+La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9 entran por una interfaz de la ACL con un flujo, la interfaz sirve a su contexto y el contexto se agrega a la ACL. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
+
+## 17. Modelo y evidencias
 
 - [Modelo ArchiMate fuente](modelo/arrendamiento_yates.archimate), que contiene las vistas anteriores en un solo archivo.
 - [Diseño táctico por dominio](Fase4/00_Indice_Fase4.md): agregados, comandos, eventos e invariantes de la fase 4.
+- [Mapa de contextos delimitados](Fase5/00_Indice_Fase5.md): contextos, patrones de relación y capa anticorrupción de la fase 5.
 - [Guion de entrevista](Entrevista/01_guion_entrevista.md).
 - [Instrucción de rol enviada a la IA](Entrevista/02_instruccion_rol_ia.md).
 - [Conversación con el experto simulado](Entrevista/03_conversacion_experto.md).
