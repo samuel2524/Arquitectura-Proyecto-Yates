@@ -6,29 +6,30 @@ La vista tiene tres columnas: a la izquierda los contextos delimitados de la apl
 
 ## Los sistemas externos y a qué contexto sirven
 
-| Sistema externo | Interfaz ACL | Contexto que lo consume |
+| Sistema externo | Adaptador ACL | Contexto que lo consume |
 | --- | --- | --- |
-| CRM comercial | Interfaz de reserva | Gestión del arriendo |
-| Gestión de contratos | Interfaz de reserva | Gestión del arriendo |
-| Evaluación de riesgo externa | Interfaz de evaluación de riesgo | Evaluación de riesgo |
-| Aseguradora | Interfaz de evaluación de riesgo | Evaluación de riesgo |
-| Marinas | Interfaz de operación del yate | Operación y seguimiento del yate |
-| Fuente de ubicación y combustible | Interfaz de operación del yate | Operación y seguimiento del yate |
-| Pasarela de pagos | Interfaz de liquidación | Liquidación |
-| Contabilidad | Interfaz de reputación | Reputación |
+| CRM comercial | ACL - CRM comercial | Gestión del arriendo |
+| Gestión de contratos | ACL - Gestión de contratos | Gestión del arriendo |
+| Evaluación de riesgo externa | ACL - Evaluación de riesgo externa | Evaluación de riesgo |
+| Aseguradora | ACL - Aseguradora | Operación y seguimiento del yate |
+| Marinas | ACL - Marinas | Operación y seguimiento del yate |
+| Fuente de ubicación y combustible | ACL - Fuente de ubicación y combustible | Operación y seguimiento del yate |
+| Pasarela de pagos | ACL - Pasarela de pagos | Liquidación |
+| Contabilidad | ACL - Contabilidad | Liquidación |
 
-Los flujos entran por la interfaz de la ACL (`Flow`), la interfaz sirve a su contexto (`Serving`) y el contexto está agregado a la ACL (`Aggregation`). El sistema externo trae su propio formato; la ACL lo convierte al contrato que el contexto espera, y en sentido inverso cuando el contexto responde.
+El sistema externo entra con un `Flow` a su adaptador de la ACL; el adaptador sirve a su contexto (`Serving`); y la capa anticorrupción agrega a todos sus adaptadores (`Aggregation`). Cada contexto expone además su propia interfaz, asociada al contexto (`Association`), y realiza su servicio (`Realization`). El sistema externo trae su propio formato; el adaptador lo convierte al contrato que el contexto espera, y en sentido inverso cuando el contexto responde.
 
 ## Qué traduce la ACL en cada caso
 
 La traducción no es solo de campos. Cada caso cambia forma, nombre o ambos:
 
 - **CRM y Gestión de contratos:** llegan clientes, propietarios y las condiciones pactadas del canal. La ACL los proyecta a los términos del arriendo (cuándo se aparta, cuánto tarda en confirmar).
-- **Evaluación de riesgo externa:** entrega puntajes con su propio esquema. La ACL los convierte en el veredicto y la elegibilidad que Evaluación de riesgo necesita.
-- **Marinas:** confirman disponibilidad, amarres y la liberación del yate. La ACL convierte esos estados en la operación que el contexto entiende.
+- **Evaluación de riesgo externa:** entrega puntajes con su propio esquema. El adaptador los traduce a los campos que Evaluación de riesgo espera; el veredicto y la elegibilidad los decide el contexto, no la frontera.
+- **Aseguradora:** coberturas y reclamaciones del yate; el adaptador las traduce a los hechos de operación que sigue el contexto de Operación y seguimiento.
+- **Marinas:** confirman disponibilidad, amarres y la liberación del yate. El adaptador convierte esos estados en la operación que el contexto entiende.
 - **Fuente de ubicación y combustible:** posiciones y niveles de llenado, que la ACL traduce a hitos de seguimiento (entrega, circulación, devolución).
-- **Pasarela de pagos:** intentos y resultados de cobro, traducidos a los saldos de la liquidación.
-- **Contabilidad:** los cargos ya liquidados, traducidos a los hechos que alimentan la reputación.
+- **Pasarela de pagos:** intentos y resultados de cobro, traducidos a los movimientos de pago que Liquidación registra.
+- **Contabilidad:** los movimientos contables, traducidos a los hechos que alimentan la Liquidación.
 
 ## Notas de diseño
 
