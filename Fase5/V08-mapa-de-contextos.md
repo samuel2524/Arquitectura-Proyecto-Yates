@@ -1,6 +1,6 @@
 # V8. Mapa de contextos delimitados y patrones
 
-![V8. Mapa de contextos delimitados y patrones](../vistas/V08.%20Mapa%20de%20contextos%20delimitados%20y%20patrones.png)
+![V8. Mapa de contextos delimitados y patrones](../vistas/V08-mapa-de-contextos-delimitados-y-patrones.png)
 
 La vista junta los cinco contextos de aplicación, el núcleo compartido y una leyenda de los tiempos de relación usados. Cada contexto se dibuja como un componente de aplicación; cada flecha entre ellos lleva el patrón como nombre.
 

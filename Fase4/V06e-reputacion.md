@@ -1,6 +1,6 @@
 # V6e. Reputación
 
-![V6e. Agregados, comandos y eventos - Reputación](../vistas/V06e.%20Agregados,%20comandos%20y%20eventos%20-%20Reputaci%C3%B3n.png)
+![V6e. Agregados, comandos y eventos - Reputación](../vistas/V06e-agregados-comandos-eventos-reputacion.png)
 
 Dominio **Supporting**. Conserva las calificaciones entre cliente y propietario y revisa las que se cuestionan. La vista muestra dos agregados: el perfil de reputación y la revisión de una valoración.
 

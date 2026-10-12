@@ -1,6 +1,6 @@
 # V6b. Evaluación de riesgo
 
-![V6b. Agregados, comandos y eventos - Evaluación de riesgo](../vistas/V06b.%20Agregados,%20comandos%20y%20eventos%20-%20Evaluaci%C3%B3n%20de%20riesgo.png)
+![V6b. Agregados, comandos y eventos - Evaluación de riesgo](../vistas/V06b-agregados-comandos-eventos-evaluacion-de-riesgo.png)
 
 Dominio **Supporting**. Decide si un arriendo puede continuar y bajo qué condiciones. La vista muestra dos agregados: la evaluación propiamente dicha y el expediente del cliente con lo que se reutiliza entre arriendos.
 

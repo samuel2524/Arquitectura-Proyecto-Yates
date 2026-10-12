@@ -1,6 +1,6 @@
 # V8b. Interoperabilidad de aplicación y anticorrupción
 
-![V8b. Interoperabilidad de aplicación y anticorrupción](../vistas/V08b.%20Interoperabilidad%20de%20aplicaci%C3%B3n%20y%20anticorrupci%C3%B3n.png)
+![V8b. Interoperabilidad de aplicación y anticorrupción](../vistas/V08b-interoperabilidad-de-aplicacion-y-anticorrupcion.png)
 
 La vista tiene tres columnas: a la izquierda los contextos delimitados de la aplicación de arriendo, al centro la **capa anticorrupción (ACL)**, a la derecha los sistemas y procesos externos. La ACL traduce el lenguaje de cada sistema de afuera al del contexto interno; nada externo llama directo a un contexto, todo pasa por la frontera.
 

@@ -1,6 +1,6 @@
 # V6a. Gestión del arriendo
 
-![V6a. Agregados, comandos y eventos - Gestión del arriendo](../vistas/V06a.%20Agregados,%20comandos%20y%20eventos%20-%20Gesti%C3%B3n%20del%20arriendo.png)
+![V6a. Agregados, comandos y eventos - Gestión del arriendo](../vistas/V06a-agregados-comandos-eventos-gestion-del-arriendo.png)
 
 Dominio **Core**. Es donde se decide si un yate puede comprometerse con un cliente en unas fechas y una marina. La vista reúne tres agregados que hasta ahora vivían juntos en V5: el arriendo, la disponibilidad del yate y el propio yate.
 

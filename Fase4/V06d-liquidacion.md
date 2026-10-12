@@ -1,6 +1,6 @@
 # V6d. Liquidación
 
-![V6d. Agregados, comandos y eventos - Liquidación](../vistas/V06d.%20Agregados,%20comandos%20y%20eventos%20-%20Liquidaci%C3%B3n.png)
+![V6d. Agregados, comandos y eventos - Liquidación](../vistas/V06d-agregados-comandos-eventos-liquidacion.png)
 
 Dominio **Supporting**. Resuelve los valores económicos del arriendo: alquiler, garantía, ajustes y reclamaciones, hasta dejarlo cerrado. La vista muestra tres agregados: la liquidación, la garantía y la reclamación de cobro.
 

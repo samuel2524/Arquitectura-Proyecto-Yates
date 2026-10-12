@@ -303,7 +303,7 @@ ArchiMate no trae estereotipos de agregado ni de comando, así que se fijó una 
 
 ### 15.1 Gestión del arriendo: V6a (fase 4)
 
-![V6a. Agregados, comandos y eventos - Gestión del arriendo](vistas/V06a.%20Agregados,%20comandos%20y%20eventos%20-%20Gesti%C3%B3n%20del%20arriendo.png)
+![V6a. Agregados, comandos y eventos - Gestión del arriendo](vistas/V06a-agregados-comandos-eventos-gestion-del-arriendo.png)
 
 El agregado **Arriendo** contiene la reserva, el estado y la cancelación. Su invariante central es que solo se confirma con la elegibilidad aprobada y, cuando el acuerdo lo exija, con la autorización del propietario; una reserva confirmada no autoriza la entrega. **Disponibilidad del yate** conserva el periodo, el bloqueo y el apartado temporal, y garantiza que dos periodos confirmados sobre el mismo yate no se solapen. **Yate** agrupa la ficha y la habilitación que decide el propietario.
 
@@ -311,7 +311,7 @@ Se separaron el apartado temporal y el bloqueo porque no son lo mismo: el primer
 
 ### 15.2 Evaluación de riesgo: V6b (fase 4)
 
-![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/V06b.%20Agregados,%20comandos%20y%20eventos%20-%20Evaluaci%C3%B3n%20de%20riesgo.png)
+![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/V06b-agregados-comandos-eventos-evaluacion-de-riesgo.png)
 
 Aquí las raíces son **Evaluación de riesgo**, con la verificación, el resultado y la condición especial, y **Expediente del cliente**, con el requisito, la habilitación y los antecedentes. La evaluación exige que ningún resultado sea «apto» si falta un requisito obligatorio, y aclara que la recomendación externa informa pero no decide. El expediente mantiene la regla de que una habilitación vencida no permite aprobar y que los datos comerciales no viven aquí sino en el CRM.
 
@@ -319,7 +319,7 @@ La recomendación externa se guardó como insumo y no como decisión final, tal 
 
 ### 15.3 Operación y seguimiento del yate: V6c (fase 4)
 
-![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/V06c.%20Agregados,%20comandos%20y%20eventos%20-%20Operaci%C3%B3n%20y%20seguimiento%20del%20yate.png)
+![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/V06c-agregados-comandos-eventos-operacion-y-seguimiento-del-yate.png)
 
 **Operación del arriendo** reúne la inspección, la autorización de entrega, la novedad, el estado del yate y la evidencia. Su invariante impide entregar sin inspección completa y yate apto, exige el mismo checklist en la entrega y la devolución, y recuerda que registrar una novedad no atribuye responsabilidad. **Seguimiento del yate** agrupa la lectura, el incidente, la ubicación y la marca de tiempo, y fija que cada lectura lleva su hora de medición y que una lectura ausente no equivale a cero.
 
@@ -327,7 +327,7 @@ Autorizar entrega y registrar entrega quedaron como comandos distintos porque no
 
 ### 15.4 Liquidación: V6d (fase 4)
 
-![V6d. Agregados, comandos y eventos - Liquidación](vistas/V06d.%20Agregados,%20comandos%20y%20eventos%20-%20Liquidaci%C3%B3n.png)
+![V6d. Agregados, comandos y eventos - Liquidación](vistas/V06d-agregados-comandos-eventos-liquidacion.png)
 
 Las raíces son **Liquidación del arriendo**, con el cargo, el ajuste y el saldo; **Garantía**, con la retención y su saldo; y **Reclamación de cobro**, con su estado. La liquidación exige que todo cargo se sustente en evidencia comparada y en una condición contractual, y que el saldo no quede negativo sin un reembolso explícito. La garantía deja claro que no es ingreso: solo se retiene lo sustentado y el resto se libera o se reembolsa. La reclamación no permite cerrar el arriendo mientras siga abierta.
 
@@ -335,7 +335,7 @@ Se separó la garantía de la liquidación aunque las dos tocan dinero, porque c
 
 ### 15.5 Reputación: V6e (fase 4)
 
-![V6e. Agregados, comandos y eventos - Reputación](vistas/V06e.%20Agregados,%20comandos%20y%20eventos%20-%20Reputaci%C3%B3n.png)
+![V6e. Agregados, comandos y eventos - Reputación](vistas/V06e-agregados-comandos-eventos-reputacion.png)
 
 **Perfil de reputación** contiene la calificación, el historial y el promedio, con la regla de una única calificación por participante y por arriendo y con la aclaración de que la reputación informa pero no aprueba ni rechaza una reserva. **Revisión de valoración** agrupa la valoración cuestionada y su estado, y mantiene que una valoración cuestionada no se publica hasta resolverse.
 
@@ -351,7 +351,7 @@ La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se r
 
 ### 16.1 V8. Mapa de contextos delimitados y patrones (fase 5)
 
-![V8. Mapa de contextos delimitados y patrones](vistas/V08.%20Mapa%20de%20contextos%20delimitados%20y%20patrones.png)
+![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones.png)
 
 La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido, limitado a arriendo, yate y participante, se conecta a Gestión y a Operación con asociación para que no lleguen a acoplarse.
 
@@ -359,7 +359,7 @@ Cada contexto realiza su propio servicio de aplicación, así que esta vista tam
 
 ### 16.2 V8b. Interoperabilidad de aplicación y anticorrupción (fase 5)
 
-![V8b. Interoperabilidad de aplicación y anticorrupción](vistas/V08b.%20Interoperabilidad%20de%20aplicaci%C3%B3n%20y%20anticorrupci%C3%B3n.png)
+![V8b. Interoperabilidad de aplicación y anticorrupción](vistas/V08b-interoperabilidad-de-aplicacion-y-anticorrupcion.png)
 
 La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9 entran por una interfaz de la ACL con un flujo, la interfaz sirve a su contexto y el contexto se agrega a la ACL. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
 

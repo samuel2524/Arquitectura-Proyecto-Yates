@@ -1,6 +1,6 @@
 # V6c. Operación y seguimiento del yate
 
-![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](../vistas/V06c.%20Agregados,%20comandos%20y%20eventos%20-%20Operaci%C3%B3n%20y%20seguimiento%20del%20yate.png)
+![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](../vistas/V06c-agregados-comandos-eventos-operacion-y-seguimiento-del-yate.png)
 
 Dominio **Core**. Cubre el estado físico del yate entre la preparación y la recepción. En la fase 3 se decidió mantener entrega, seguimiento y devolución juntos porque comparten el conocimiento sobre el mismo yate; aquí ese conjunto se reparte en dos agregados.
 
