@@ -2,7 +2,7 @@
 
 La empresa arrienda yates de terceros que están en distintas marinas. Debe saber cuáles se pueden ofrecer, gestionar las reservas y coordinar lo que pasa entre la entrega y la devolución. También se ocupa de los pagos, el seguimiento del yate durante el arriendo y las calificaciones entre clientes y propietarios. Como las embarcaciones no son suyas, necesita dejar constancia de su estado y de lo ocurrido en cada alquiler.
 
-Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2 y el análisis de dominios de la fase 3. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
+Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2, el análisis de dominios de la fase 3 y el diseño táctico de la fase 4. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
 
 ## Índice
 
@@ -20,7 +20,8 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [12. DDD estratégico: dominios y clasificación](#12-ddd-estrategico-dominios-y-clasificacion)
 - [13. Dominios: V5 (fase 3)](#13-dominios-v5-fase-3)
 - [14. Lenguaje ubicuo: V7 (fase 3)](#14-lenguaje-ubicuo-v7-fase-3)
-- [15. Modelo y evidencias](#15-modelo-y-evidencias)
+- [15. Diseño táctico: agregados, comandos y eventos (fase 4)](#15-diseno-tactico-agregados-comandos-y-eventos-fase-4)
+- [16. Modelo y evidencias](#16-modelo-y-evidencias)
 
 ## 1. Contexto y entrevista (fase 0)
 
@@ -293,9 +294,60 @@ V7 agrupa los términos según el dominio donde se usan. Cada término está rep
 
 Los nombres parecidos no siempre hablan de la misma decisión. **Devolución** es el regreso físico del yate; **reembolso** es dinero que vuelve al cliente y puede ocurrir después. Un **resultado de riesgo** ayuda a decidir sobre la solicitud, mientras que la **autorización de entrega** se refiere al estado del yate y a las condiciones de salida en ese momento. El **estado del arriendo** describe el avance administrativo; el **estado del yate**, su condición física u operativa. De forma similar, el riesgo del arriendo se evalúa antes de comprometerlo y el riesgo operativo se observa en la entrega o durante el uso. Mantener esas diferencias en el lenguaje evita atribuir a un dominio decisiones que le corresponden a otro.
 
-## 15. Modelo y evidencias
+## 15. Diseño táctico: agregados, comandos y eventos (fase 4)
+
+La fase 3 respondió *qué partes tiene el negocio*; esta responde *cómo se guardan y cómo cambian*. Cada uno de los cinco dominios tiene su propia vista V6. En todas, el agregado queda a la izquierda con sus entidades y objetos de valor, los comandos que lo modifican en el centro y los eventos que producen a la derecha. Así se lee de un vistazo quién cambia qué y qué queda registrado.
+
+ArchiMate no trae estereotipos de agregado ni de comando, así que se fijó una correspondencia y se documentó en el [índice de la fase 4](Fase4/00_Indice_Fase4.md): los agregados, entidades y objetos de valor son `ApplicationDataObject`; los comandos, `ApplicationProcess`; los eventos de dominio, `ApplicationEvent`; y los hitos de negocio, `BusinessEvent`. Las relaciones dibujadas son acceso de escritura del comando al agregado, disparo del comando al evento y composición del agregado hacia sus partes. Como las raíces y varios conceptos ya existían desde V5, se reutilizaron y solo se les añadieron las propiedades de tipo DDD e invariante; no se duplicó información. El detalle por dominio está en la carpeta [Fase4](Fase4/).
+
+### 15.1 Gestión del arriendo: V6a (fase 4)
+
+![V6a. Agregados, comandos y eventos - Gestión del arriendo](vistas/V06a.%20Agregados,%20comandos%20y%20eventos%20-%20Gesti%C3%B3n%20del%20arriendo.png)
+
+El agregado **Arriendo** contiene la reserva, el estado y la cancelación. Su invariante central es que solo se confirma con la elegibilidad aprobada y, cuando el acuerdo lo exija, con la autorización del propietario; una reserva confirmada no autoriza la entrega. **Disponibilidad del yate** conserva el periodo, el bloqueo y el apartado temporal, y garantiza que dos periodos confirmados sobre el mismo yate no se solapen. **Yate** agrupa la ficha y la habilitación que decide el propietario.
+
+Se separaron el apartado temporal y el bloqueo porque no son lo mismo: el primero aparta unas horas mientras se cierran las condiciones y el segundo inhabilita el periodo por decisión del propietario o por mantenimiento. Confirmar, rechazar y cancelar producen eventos de negocio, no solo de dominio, porque cambian el estado del yate frente al propietario y la marina. La comprobación de riesgo se dejó como invariante del arriendo, ya que Gestión del arriendo consulta un resultado que produce otro dominio pero no lo calcula.
+
+### 15.2 Evaluación de riesgo: V6b (fase 4)
+
+![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/V06b.%20Agregados,%20comandos%20y%20eventos%20-%20Evaluaci%C3%B3n%20de%20riesgo.png)
+
+Aquí las raíces son **Evaluación de riesgo**, con la verificación, el resultado y la condición especial, y **Expediente del cliente**, con el requisito, la habilitación y los antecedentes. La evaluación exige que ningún resultado sea «apto» si falta un requisito obligatorio, y aclara que la recomendación externa informa pero no decide. El expediente mantiene la regla de que una habilitación vencida no permite aprobar y que los datos comerciales no viven aquí sino en el CRM.
+
+La recomendación externa se guardó como insumo y no como decisión final, tal como se argumentó en la fase 3. Por eso registrarla es un evento de dominio, mientras que aprobar la elegibilidad sí es un evento de negocio: es la señal que habilita la confirmación de la reserva. Imponer una condición especial no la convierte en un requisito general, así que quedó como objeto de valor de esa evaluación y no del expediente.
+
+### 15.3 Operación y seguimiento del yate: V6c (fase 4)
+
+![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/V06c.%20Agregados,%20comandos%20y%20eventos%20-%20Operaci%C3%B3n%20y%20seguimiento%20del%20yate.png)
+
+**Operación del arriendo** reúne la inspección, la autorización de entrega, la novedad, el estado del yate y la evidencia. Su invariante impide entregar sin inspección completa y yate apto, exige el mismo checklist en la entrega y la devolución, y recuerda que registrar una novedad no atribuye responsabilidad. **Seguimiento del yate** agrupa la lectura, el incidente, la ubicación y la marca de tiempo, y fija que cada lectura lleva su hora de medición y que una lectura ausente no equivale a cero.
+
+Autorizar entrega y registrar entrega quedaron como comandos distintos porque no son la misma decisión: uno es una autorización operativa y el otro deja constancia de que el yate salió. El estado del yate y la evidencia son objetos de valor porque se comparan por su contenido y no tienen identidad propia. Registrar una novedad no dispara evento de negocio a propósito: el cobro se decide en Liquidación a partir de las actas, y el único hito de negocio aquí es la devolución del yate.
+
+### 15.4 Liquidación: V6d (fase 4)
+
+![V6d. Agregados, comandos y eventos - Liquidación](vistas/V06d.%20Agregados,%20comandos%20y%20eventos%20-%20Liquidaci%C3%B3n.png)
+
+Las raíces son **Liquidación del arriendo**, con el cargo, el ajuste y el saldo; **Garantía**, con la retención y su saldo; y **Reclamación de cobro**, con su estado. La liquidación exige que todo cargo se sustente en evidencia comparada y en una condición contractual, y que el saldo no quede negativo sin un reembolso explícito. La garantía deja claro que no es ingreso: solo se retiene lo sustentado y el resto se libera o se reembolsa. La reclamación no permite cerrar el arriendo mientras siga abierta.
+
+Se separó la garantía de la liquidación aunque las dos tocan dinero, porque constituir, retener o liberar un depósito no es lo mismo que calcular el saldo final. Cerrar arriendo es el único comando de este dominio que produce un evento de negocio, ya que es el hito que deja el arriendo sin pagos, garantías ni reclamaciones pendientes. La retención de dinero en la pasarela se dejó como evento de dominio, porque el procesamiento real ocurre fuera del dominio.
+
+### 15.5 Reputación: V6e (fase 4)
+
+![V6e. Agregados, comandos y eventos - Reputación](vistas/V06e.%20Agregados,%20comandos%20y%20eventos%20-%20Reputaci%C3%B3n.png)
+
+**Perfil de reputación** contiene la calificación, el historial y el promedio, con la regla de una única calificación por participante y por arriendo y con la aclaración de que la reputación informa pero no aprueba ni rechaza una reserva. **Revisión de valoración** agrupa la valoración cuestionada y su estado, y mantiene que una valoración cuestionada no se publica hasta resolverse.
+
+Ningún comando de este dominio produce evento de negocio: el arriendo puede existir sin depender de la reputación, como se concluyó al clasificarla como Supporting. La revisión se modeló como agregado aparte del perfil para no mezclar el historial publicado con lo que está en discusión.
+
+### 15.6 Correspondencia con el lenguaje ubicuo
+
+Las raíces de agregado realizan los términos de negocio de V7 mediante relaciones `Realization` en el modelo: Arriendo, Disponibilidad del yate, Evaluación de riesgo, Garantía, Reclamación de cobro y los demás ya aparecían como términos del glosario. Ese enlace se dejó en la carpeta de Relaciones pero no se dibujó en V6 para no saturar la lectura. Así, cada agregado queda atado al término del negocio que implementa.
+
+## 16. Modelo y evidencias
 
 - [Modelo ArchiMate fuente](modelo/arrendamiento_yates.archimate), que contiene las vistas anteriores en un solo archivo.
+- [Diseño táctico por dominio](Fase4/00_Indice_Fase4.md): agregados, comandos, eventos e invariantes de la fase 4.
 - [Guion de entrevista](Entrevista/01_guion_entrevista.md).
 - [Instrucción de rol enviada a la IA](Entrevista/02_instruccion_rol_ia.md).
 - [Conversación con el experto simulado](Entrevista/03_conversacion_experto.md).

@@ -1431,7 +1431,469 @@ Momento: Una sola vez, al arrancar.</documentation>
       <property key="Ejemplo" value="Cliente o propietario evaluado después de un arriendo."/>
     </element>
   <element xsi:type="archimate:Meaning" id="id-69e55654722246ceb44c18f1740ce00b" name="Devolución física ≠ Reembolso"><documentation>Devolución física significa que el yate regresó y fue recibido; reembolso significa devolver dinero al cliente.</documentation></element><element xsi:type="archimate:Meaning" id="id-98d7873eca2c4169b1c9a205ef8fb95a" name="Resultado de riesgo ≠ Autorización de entrega"><documentation>El resultado de riesgo indica si el arriendo puede continuar y bajo qué condiciones; la autorización de entrega confirma que el yate puede salir físicamente en ese momento.</documentation></element><element xsi:type="archimate:Meaning" id="id-a7adf06f07904a0cb50e1fc248b4f5f2" name="Estado del arriendo ≠ Estado del yate"><documentation>El estado del arriendo describe el ciclo administrativo; el estado del yate describe la condición física u operativa de la embarcación.</documentation></element><element xsi:type="archimate:Meaning" id="id-8f6d5a3ceed84c118682f7e5fd68bd85" name="Daño observado ≠ Cargo por daño"><documentation>Operación registra una novedad o daño observado; Liquidación determina si existe un cargo económico sustentado.</documentation></element></folder>
-  <folder name="Application" id="id-5fa97bfbd29940d7b76fdf18dde5b82a" type="application"><element xsi:type="archimate:ApplicationFunction" id="id-16f74957484a47e080374754c6ff4135" name="Gestión del arriendo"><documentation>Controla el ciclo general del arriendo: disponibilidad, solicitud, reserva, estados y cancelaciones.</documentation></element><element xsi:type="archimate:DataObject" id="id-cacdaf92e3c2487d8ab97101376d7ee5" name="Arriendo"><documentation>Información que identifica y mantiene el ciclo general de un arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-ce6958e1f2ab4e7ea18a5b1b01f63daa" name="Reserva"><documentation>Información de la solicitud y confirmación de uso de un yate en un periodo.</documentation></element><element xsi:type="archimate:DataObject" id="id-26040ce9c0f94c378700942bc84ae939" name="Disponibilidad del yate"><documentation>Información sobre periodos, bloqueos y posibilidad de comprometer un yate.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-63f803f1647e4c3d9919c9a0333c53f5" name="Operación y seguimiento del yate"><documentation>Controla preparación, entrega, seguimiento durante el uso, recepción e inspección del yate.</documentation></element><element xsi:type="archimate:DataObject" id="id-7ae85d4387244a728a5e430392330786" name="Inspección del yate"><documentation>Información resultante de las revisiones antes de entrega y después de devolución.</documentation></element><element xsi:type="archimate:DataObject" id="id-bd26c4ae38b3445b85344f84c46f8ec9" name="Lectura operativa"><documentation>Información de ubicación, combustible y momento de medición durante el arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-d250af364fda4892997f5175468dc211" name="Incidente"><documentation>Información de una situación anormal registrada durante la operación.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-08c99edc4bbe46c9a74598601fd5c811" name="Evaluación de riesgo"><documentation>Determina si un arriendo puede continuar y bajo qué condiciones desde la perspectiva de riesgo.</documentation></element><element xsi:type="archimate:DataObject" id="id-95185947936f48139e74d1473a639362" name="Evaluación de riesgo"><documentation>Información de la evaluación realizada sobre cliente y condiciones del arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-42956fdf5f9b4885ba1e1bc551cf7504" name="Requisito del cliente"><documentation>Información de las condiciones que el cliente debe cumplir para continuar.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-29f1a448a76348edb62d8497f9c9223c" name="Liquidación"><documentation>Determina obligaciones económicas, ajustes y cierre económico del arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-f388d78a240547dcb72acc7ed81ec7aa" name="Garantía"><documentation>Información de depósito o garantía asociada al arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-f98db1a961d44917a05c5336068cc166" name="Ajuste económico"><documentation>Información de modificaciones económicas posteriores al uso.</documentation></element><element xsi:type="archimate:DataObject" id="id-2db9c41d2746491d8856dbc5ac2b1326" name="Reclamación de cobro"><documentation>Información de una objeción frente a un cargo del arriendo.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-4c8f87372e9c4fb39d4e04471d59fa98" name="Reputación"><documentation>Gestiona valoraciones e historial de reputación de clientes y propietarios.</documentation></element><element xsi:type="archimate:DataObject" id="id-d1dc9e548b4d4fdda0a6710f3caede07" name="Calificación"><documentation>Información de la valoración emitida tras una experiencia de arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-258da4d378224caebf0269f6def39957" name="Historial de reputación"><documentation>Información acumulada de valoraciones previas de un participante.</documentation></element></folder>
+  <folder name="Application" id="id-5fa97bfbd29940d7b76fdf18dde5b82a" type="application"><element xsi:type="archimate:ApplicationFunction" id="id-16f74957484a47e080374754c6ff4135" name="Gestión del arriendo"><documentation>Controla el ciclo general del arriendo: disponibilidad, solicitud, reserva, estados y cancelaciones.</documentation></element><element xsi:type="archimate:DataObject" id="id-cacdaf92e3c2487d8ab97101376d7ee5" name="Arriendo">      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Solo se confirma con elegibilidad aprobada y, cuando el acuerdo lo exija, autorización del propietario. Una reserva confirmada no autoriza la entrega."/>
+<documentation>Información que identifica y mantiene el ciclo general de un arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-ce6958e1f2ab4e7ea18a5b1b01f63daa" name="Reserva">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información de la solicitud y confirmación de uso de un yate en un periodo.</documentation></element><element xsi:type="archimate:DataObject" id="id-26040ce9c0f94c378700942bc84ae939" name="Disponibilidad del yate">      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Dos periodos confirmados sobre el mismo yate no pueden solaparse. Un bloqueo impide confirmar; liberar un compromiso exige gestionar el incumplimiento."/>
+<documentation>Información sobre periodos, bloqueos y posibilidad de comprometer un yate.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-63f803f1647e4c3d9919c9a0333c53f5" name="Operación y seguimiento del yate"><documentation>Controla preparación, entrega, seguimiento durante el uso, recepción e inspección del yate.</documentation></element><element xsi:type="archimate:DataObject" id="id-7ae85d4387244a728a5e430392330786" name="Inspección del yate">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información resultante de las revisiones antes de entrega y después de devolución.</documentation></element><element xsi:type="archimate:DataObject" id="id-bd26c4ae38b3445b85344f84c46f8ec9" name="Lectura operativa">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información de ubicación, combustible y momento de medición durante el arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-d250af364fda4892997f5175468dc211" name="Incidente">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información de una situación anormal registrada durante la operación.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-08c99edc4bbe46c9a74598601fd5c811" name="Evaluación de riesgo"><documentation>Determina si un arriendo puede continuar y bajo qué condiciones desde la perspectiva de riesgo.</documentation></element><element xsi:type="archimate:DataObject" id="id-95185947936f48139e74d1473a639362" name="Evaluación de riesgo">      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Ningún resultado es apto si falta un requisito obligatorio. La recomendación externa informa, pero no decide por sí sola."/>
+<documentation>Información de la evaluación realizada sobre cliente y condiciones del arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-42956fdf5f9b4885ba1e1bc551cf7504" name="Requisito del cliente">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información de las condiciones que el cliente debe cumplir para continuar.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-29f1a448a76348edb62d8497f9c9223c" name="Liquidación"><documentation>Determina obligaciones económicas, ajustes y cierre económico del arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-f388d78a240547dcb72acc7ed81ec7aa" name="Garantía">      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="La garantía no es ingreso: solo se retiene lo sustentado y el saldo se libera o se reembolsa."/>
+<documentation>Información de depósito o garantía asociada al arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-f98db1a961d44917a05c5336068cc166" name="Ajuste económico">      <property key="Tipo DDD" value="Objeto de valor"/>
+<documentation>Información de modificaciones económicas posteriores al uso.</documentation></element><element xsi:type="archimate:DataObject" id="id-2db9c41d2746491d8856dbc5ac2b1326" name="Reclamación de cobro">      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Se resuelve con evidencia y antes del cierre económico; no se cierra el arriendo con reclamaciones abiertas."/>
+<documentation>Información de una objeción frente a un cargo del arriendo.</documentation></element><element xsi:type="archimate:ApplicationFunction" id="id-4c8f87372e9c4fb39d4e04471d59fa98" name="Reputación"><documentation>Gestiona valoraciones e historial de reputación de clientes y propietarios.</documentation></element><element xsi:type="archimate:DataObject" id="id-d1dc9e548b4d4fdda0a6710f3caede07" name="Calificación">      <property key="Tipo DDD" value="Entidad"/>
+<documentation>Información de la valoración emitida tras una experiencia de arriendo.</documentation></element><element xsi:type="archimate:DataObject" id="id-258da4d378224caebf0269f6def39957" name="Historial de reputación">      <property key="Tipo DDD" value="Objeto de valor"/>
+<documentation>Información acumulada de valoraciones previas de un participante.</documentation></element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-arriendo-c-004" name="Estado del arriendo">
+      <documentation>Parte del agregado Arriendo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-arriendo-c-006" name="Cancelación">
+      <documentation>Parte del agregado Arriendo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-disponibilidad-c-009" name="Periodo de arriendo">
+      <documentation>Parte del agregado Disponibilidad del yate.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-disponibilidad-c-011" name="Bloqueo">
+      <documentation>Parte del agregado Disponibilidad del yate.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-disponibilidad-c-013" name="Apartado temporal">
+      <documentation>Parte del agregado Disponibilidad del yate.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-yate-015" name="Yate">
+      <documentation>Raíz de agregado. Ficha e inventario de un yate ofrecido por el propietario.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Un yate pertenece a un único propietario y a una única marina. El propietario decide si está habilitado o bloqueado."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-yate-c-016" name="Ficha del yate">
+      <documentation>Parte del agregado Yate.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-ga-yate-c-018" name="Habilitación">
+      <documentation>Parte del agregado Yate.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-020" name="Solicitar reserva">
+      <documentation>Comando del dominio. Modifica el agregado Arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-022" name="Solicitud de reserva registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Solicitar reserva.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-024" name="Apartar yate">
+      <documentation>Comando del dominio. Modifica el agregado Disponibilidad del yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-026" name="Yate apartado">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Apartar yate.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-028" name="Autorizar arriendo (propietario)">
+      <documentation>Comando del dominio. Modifica el agregado Arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-030" name="Autorización del propietario otorgada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Autorizar arriendo (propietario).</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-032" name="Confirmar reserva">
+      <documentation>Comando del dominio. Modifica el agregado Arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" id="id-f4-ev-034" name="Reserva confirmada">
+      <documentation>Evento de negocio que marca un hito del arriendo.</documentation>
+      <property key="Tipo" value="Evento de negocio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-036" name="Rechazar solicitud">
+      <documentation>Comando del dominio. Modifica el agregado Arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-039" name="Cancelar reserva">
+      <documentation>Comando del dominio. Modifica el agregado Arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-042" name="Bloquear disponibilidad">
+      <documentation>Comando del dominio. Modifica el agregado Disponibilidad del yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-044" name="Disponibilidad bloqueada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Bloquear disponibilidad.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-046" name="Habilitar yate">
+      <documentation>Comando del dominio. Modifica el agregado Yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-048" name="Yate habilitado">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Habilitar yate.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-eval-c-116" name="Verificación">
+      <documentation>Parte del agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-eval-c-118" name="Resultado de riesgo">
+      <documentation>Parte del agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-eval-c-120" name="Condición especial">
+      <documentation>Parte del agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-expediente-122" name="Expediente del cliente">
+      <documentation>Raíz de agregado. Datos del cliente relevantes para la elegibilidad.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Solo guarda lo relevante para la elegibilidad; los datos comerciales viven en el CRM. Una habilitación vencida no permite aprobar."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-expediente-c-125" name="Habilitación del cliente">
+      <documentation>Parte del agregado Expediente del cliente.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-er-expediente-c-127" name="Antecedente">
+      <documentation>Parte del agregado Expediente del cliente.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-129" name="Evaluar solicitud">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-131" name="Evaluación de riesgo iniciada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Evaluar solicitud.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-133" name="Registrar verificación">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-135" name="Verificación registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar verificación.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-137" name="Solicitar evaluación externa">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-139" name="Evaluación externa solicitada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Solicitar evaluación externa.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-141" name="Registrar recomendación externa">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-143" name="Recomendación externa recibida">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar recomendación externa.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-145" name="Aprobar elegibilidad">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:BusinessEvent" id="id-f4-ev-147" name="Elegibilidad aprobada">
+      <documentation>Evento de negocio que marca un hito del arriendo.</documentation>
+      <property key="Tipo" value="Evento de negocio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-149" name="Rechazar elegibilidad">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-151" name="Elegibilidad rechazada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Rechazar elegibilidad.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-153" name="Imponer condición especial">
+      <documentation>Comando del dominio. Modifica el agregado Evaluación de riesgo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-155" name="Condición especial impuesta">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Imponer condición especial.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-157" name="Actualizar habilitaciones">
+      <documentation>Comando del dominio. Modifica el agregado Expediente del cliente.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-159" name="Habilitaciones actualizadas">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Actualizar habilitaciones.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-operacion-218" name="Operación del arriendo">
+      <documentation>Raíz de agregado. Estado físico del yate entre la preparación y la recepción.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="No se autoriza la entrega sin inspección completa y yate apto. Toda devolución deja acta con el mismo checklist. Registrar una novedad no atribuye responsabilidad."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-operacion-c-221" name="Autorización de entrega">
+      <documentation>Parte del agregado Operación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-operacion-c-223" name="Novedad">
+      <documentation>Parte del agregado Operación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-operacion-c-225" name="Estado del yate">
+      <documentation>Parte del agregado Operación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-operacion-c-227" name="Evidencia">
+      <documentation>Parte del agregado Operación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-seguimiento-229" name="Seguimiento del yate">
+      <documentation>Raíz de agregado. Lecturas e incidentes durante el uso del yate.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Cada lectura lleva su hora de medición; una lectura ausente no equivale a cero. El sistema alerta, pero no atiende el incidente."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-seguimiento-c-234" name="Ubicación">
+      <documentation>Parte del agregado Seguimiento del yate.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-os-seguimiento-c-236" name="Marca de tiempo">
+      <documentation>Parte del agregado Seguimiento del yate.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-238" name="Registrar inspección de entrega">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-240" name="Inspección de entrega registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar inspección de entrega.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-242" name="Autorizar entrega">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-244" name="Entrega autorizada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Autorizar entrega.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-246" name="No autorizar entrega">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-248" name="Entrega no autorizada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando No autorizar entrega.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-250" name="Registrar entrega">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-252" name="Yate entregado">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar entrega.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-254" name="Registrar inspección de devolución">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-256" name="Inspección de devolución registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar inspección de devolución.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-258" name="Registrar novedad">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-260" name="Novedad registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar novedad.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-262" name="Registrar recepción">
+      <documentation>Comando del dominio. Modifica el agregado Operación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-265" name="Registrar lectura">
+      <documentation>Comando del dominio. Modifica el agregado Seguimiento del yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-267" name="Lectura registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar lectura.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-269" name="Detectar lectura ausente">
+      <documentation>Comando del dominio. Modifica el agregado Seguimiento del yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-271" name="Lectura ausente">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Detectar lectura ausente.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-273" name="Registrar incidente">
+      <documentation>Comando del dominio. Modifica el agregado Seguimiento del yate.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-275" name="Incidente registrado">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar incidente.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-liquidacion-351" name="Liquidación del arriendo">
+      <documentation>Raíz de agregado. Valores económicos finales del arriendo.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Todo cargo se sustenta en evidencia comparada (acta de entrega frente a devolución) y en una condición contractual. El saldo no queda negativo sin un reembolso explícito."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-liquidacion-c-352" name="Cargo">
+      <documentation>Parte del agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-liquidacion-c-356" name="Saldo">
+      <documentation>Parte del agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-garantia-c-359" name="Retención">
+      <documentation>Parte del agregado Garantía.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-garantia-c-361" name="Saldo de la garantía">
+      <documentation>Parte del agregado Garantía.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-li-reclamacion-c-364" name="Estado de la reclamación">
+      <documentation>Parte del agregado Reclamación de cobro.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-366" name="Registrar anticipo">
+      <documentation>Comando del dominio. Modifica el agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-368" name="Anticipo recibido">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Registrar anticipo.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-370" name="Cobrar saldo, seguro y depósito">
+      <documentation>Comando del dominio. Modifica el agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-372" name="Saldo cobrado">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Cobrar saldo, seguro y depósito.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-374" name="Calcular liquidación">
+      <documentation>Comando del dominio. Modifica el agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-376" name="Liquidación calculada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Calcular liquidación.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-378" name="Constituir garantía">
+      <documentation>Comando del dominio. Modifica el agregado Garantía.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-380" name="Garantía constituida">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Constituir garantía.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-382" name="Retener garantía">
+      <documentation>Comando del dominio. Modifica el agregado Garantía.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-384" name="Garantía retenida">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Retener garantía.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-386" name="Liberar garantía">
+      <documentation>Comando del dominio. Modifica el agregado Garantía.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-388" name="Garantía liberada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Liberar garantía.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-390" name="Emitir reembolso">
+      <documentation>Comando del dominio. Modifica el agregado Garantía.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-392" name="Reembolso emitido">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Emitir reembolso.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-394" name="Abrir reclamación">
+      <documentation>Comando del dominio. Modifica el agregado Reclamación de cobro.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-396" name="Reclamación abierta">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Abrir reclamación.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-398" name="Resolver reclamación">
+      <documentation>Comando del dominio. Modifica el agregado Reclamación de cobro.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-400" name="Reclamación resuelta">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Resolver reclamación.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-402" name="Cerrar arriendo">
+      <documentation>Comando del dominio. Modifica el agregado Liquidación del arriendo.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-re-perfil-472" name="Perfil de reputación">
+      <documentation>Raíz de agregado. Valoraciones y antecedentes de un participante.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Se registra una única calificación por participante y por arriendo. La reputación previa informa, pero no aprueba ni rechaza una reserva."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-re-perfil-c-477" name="Promedio">
+      <documentation>Parte del agregado Perfil de reputación.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-re-revision-479" name="Revisión de valoración">
+      <documentation>Raíz de agregado. Reclamación sobre la validez o el contenido de una valoración.</documentation>
+      <property key="Tipo DDD" value="Raíz de agregado"/>
+      <property key="Invariante" value="Una valoración cuestionada no se publica hasta que la revisión se resuelva."/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-re-revision-c-480" name="Valoración cuestionada">
+      <documentation>Parte del agregado Revisión de valoración.</documentation>
+      <property key="Tipo DDD" value="Entidad"/>
+    </element>
+    <element xsi:type="archimate:DataObject" id="id-f4-re-revision-c-482" name="Estado de la revisión">
+      <documentation>Parte del agregado Revisión de valoración.</documentation>
+      <property key="Tipo DDD" value="Objeto de valor"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-484" name="Calificar participante">
+      <documentation>Comando del dominio. Modifica el agregado Perfil de reputación.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-486" name="Calificación registrada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Calificar participante.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-488" name="Actualizar reputación">
+      <documentation>Comando del dominio. Modifica el agregado Perfil de reputación.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-490" name="Reputación actualizada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Actualizar reputación.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-492" name="Cuestionar valoración">
+      <documentation>Comando del dominio. Modifica el agregado Revisión de valoración.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-494" name="Valoración cuestionada">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Cuestionar valoración.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+    <element xsi:type="archimate:ApplicationProcess" id="id-f4-cmd-496" name="Resolver valoración">
+      <documentation>Comando del dominio. Modifica el agregado Revisión de valoración.</documentation>
+      <property key="Tipo" value="Comando"/>
+    </element>
+    <element xsi:type="archimate:ApplicationEvent" id="id-f4-ev-498" name="Valoración resuelta">
+      <documentation>Evento de dominio emitido al ejecutarse el comando Resolver valoración.</documentation>
+      <property key="Tipo" value="Evento de dominio"/>
+    </element>
+  </folder>
   <folder name="Technology &amp; Physical" id="id-4e83da1b96274b8099370812b5d0becc" type="technology"/>
   <folder name="Motivation" id="id-9702c1e18db64882b49e263b5b465236" type="motivation">
     <element xsi:type="archimate:Stakeholder" name="Dirección general" id="id-SH1">
@@ -2508,7 +2970,134 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AssociationRelationship" name="incluye término" id="repRel36" source="rep05" target="term36"/>
     <element xsi:type="archimate:AssociationRelationship" name="significa" id="rel37" source="term37" target="meaning37"/>
     <element xsi:type="archimate:AssociationRelationship" name="incluye término" id="repRel37" source="rep05" target="term37"/>
-  <element xsi:type="archimate:AccessRelationship" id="id-48e9cef080e6426a93fafe5c05dc0bb8" source="id-16f74957484a47e080374754c6ff4135" target="id-cacdaf92e3c2487d8ab97101376d7ee5"/><element xsi:type="archimate:AccessRelationship" id="id-6ae2c034902648729559f5dda9e1f29f" source="id-16f74957484a47e080374754c6ff4135" target="id-ce6958e1f2ab4e7ea18a5b1b01f63daa"/><element xsi:type="archimate:AccessRelationship" id="id-ce9bf264d06447a495957c423c1321c3" source="id-16f74957484a47e080374754c6ff4135" target="id-26040ce9c0f94c378700942bc84ae939"/><element xsi:type="archimate:AccessRelationship" id="id-7b9d6336e6dd4f9f82efd58ec72423ab" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-7ae85d4387244a728a5e430392330786"/><element xsi:type="archimate:AccessRelationship" id="id-a09f20a7606446e7bd33b7a9ce1c0dc5" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-bd26c4ae38b3445b85344f84c46f8ec9"/><element xsi:type="archimate:AccessRelationship" id="id-258380f1998d445cab65e2b564d62202" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-d250af364fda4892997f5175468dc211"/><element xsi:type="archimate:AccessRelationship" id="id-52220e58bffc4e21b220005aece3504e" source="id-08c99edc4bbe46c9a74598601fd5c811" target="id-95185947936f48139e74d1473a639362"/><element xsi:type="archimate:AccessRelationship" id="id-982461971f3245178c11976d3cd9eef4" source="id-08c99edc4bbe46c9a74598601fd5c811" target="id-42956fdf5f9b4885ba1e1bc551cf7504"/><element xsi:type="archimate:AccessRelationship" id="id-370993fddbb2457f8dd2a2844e19068a" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-f388d78a240547dcb72acc7ed81ec7aa"/><element xsi:type="archimate:AccessRelationship" id="id-ce32c23e79464af8ace968455b87ffcf" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-f98db1a961d44917a05c5336068cc166"/><element xsi:type="archimate:AccessRelationship" id="id-7d6bad91e17e4fea92100f64d6d5954f" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-2db9c41d2746491d8856dbc5ac2b1326"/><element xsi:type="archimate:AccessRelationship" id="id-d7476a8e45d04872b720cad62005d2ef" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/><element xsi:type="archimate:AccessRelationship" id="id-266f9ff3e1b14454bc5dc5d4275d0c35" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-258da4d378224caebf0269f6def39957"/></folder>
+  <element xsi:type="archimate:AccessRelationship" id="id-48e9cef080e6426a93fafe5c05dc0bb8" source="id-16f74957484a47e080374754c6ff4135" target="id-cacdaf92e3c2487d8ab97101376d7ee5"/><element xsi:type="archimate:AccessRelationship" id="id-6ae2c034902648729559f5dda9e1f29f" source="id-16f74957484a47e080374754c6ff4135" target="id-ce6958e1f2ab4e7ea18a5b1b01f63daa"/><element xsi:type="archimate:AccessRelationship" id="id-ce9bf264d06447a495957c423c1321c3" source="id-16f74957484a47e080374754c6ff4135" target="id-26040ce9c0f94c378700942bc84ae939"/><element xsi:type="archimate:AccessRelationship" id="id-7b9d6336e6dd4f9f82efd58ec72423ab" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-7ae85d4387244a728a5e430392330786"/><element xsi:type="archimate:AccessRelationship" id="id-a09f20a7606446e7bd33b7a9ce1c0dc5" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-bd26c4ae38b3445b85344f84c46f8ec9"/><element xsi:type="archimate:AccessRelationship" id="id-258380f1998d445cab65e2b564d62202" source="id-63f803f1647e4c3d9919c9a0333c53f5" target="id-d250af364fda4892997f5175468dc211"/><element xsi:type="archimate:AccessRelationship" id="id-52220e58bffc4e21b220005aece3504e" source="id-08c99edc4bbe46c9a74598601fd5c811" target="id-95185947936f48139e74d1473a639362"/><element xsi:type="archimate:AccessRelationship" id="id-982461971f3245178c11976d3cd9eef4" source="id-08c99edc4bbe46c9a74598601fd5c811" target="id-42956fdf5f9b4885ba1e1bc551cf7504"/><element xsi:type="archimate:AccessRelationship" id="id-370993fddbb2457f8dd2a2844e19068a" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-f388d78a240547dcb72acc7ed81ec7aa"/><element xsi:type="archimate:AccessRelationship" id="id-ce32c23e79464af8ace968455b87ffcf" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-f98db1a961d44917a05c5336068cc166"/><element xsi:type="archimate:AccessRelationship" id="id-7d6bad91e17e4fea92100f64d6d5954f" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-2db9c41d2746491d8856dbc5ac2b1326"/><element xsi:type="archimate:AccessRelationship" id="id-d7476a8e45d04872b720cad62005d2ef" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/><element xsi:type="archimate:AccessRelationship" id="id-266f9ff3e1b14454bc5dc5d4275d0c35" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-258da4d378224caebf0269f6def39957"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-003" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-ce6958e1f2ab4e7ea18a5b1b01f63daa"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-005" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-004"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-007" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-006"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-010" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-009"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-012" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-011"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-014" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-013"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-017" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-016"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-019" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-018"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-021" source="id-f4-cmd-020" target="id-cacdaf92e3c2487d8ab97101376d7ee5" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-023" source="id-f4-cmd-020" target="id-f4-ev-022"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-025" source="id-f4-cmd-024" target="id-26040ce9c0f94c378700942bc84ae939" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-027" source="id-f4-cmd-024" target="id-f4-ev-026"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-029" source="id-f4-cmd-028" target="id-cacdaf92e3c2487d8ab97101376d7ee5" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-031" source="id-f4-cmd-028" target="id-f4-ev-030"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-033" source="id-f4-cmd-032" target="id-cacdaf92e3c2487d8ab97101376d7ee5" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-035" source="id-f4-cmd-032" target="id-f4-ev-034"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-037" source="id-f4-cmd-036" target="id-cacdaf92e3c2487d8ab97101376d7ee5" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-038" source="id-f4-cmd-036" target="id-EV2"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-040" source="id-f4-cmd-039" target="id-cacdaf92e3c2487d8ab97101376d7ee5" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-041" source="id-f4-cmd-039" target="id-EV3"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-043" source="id-f4-cmd-042" target="id-26040ce9c0f94c378700942bc84ae939" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-045" source="id-f4-cmd-042" target="id-f4-ev-044"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-047" source="id-f4-cmd-046" target="id-f4-ga-yate-015" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-049" source="id-f4-cmd-046" target="id-f4-ev-048"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-050" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-21be10965bf940a8862eb2ac2425a620"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-051" source="id-26040ce9c0f94c378700942bc84ae939" target="id-7af20e3d1e4d4c488405aee480c3ee44"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-052" source="id-f4-ga-yate-015" target="id-OB01"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-117" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-116"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-119" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-118"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-121" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-120"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-124" source="id-f4-er-expediente-122" target="id-42956fdf5f9b4885ba1e1bc551cf7504"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-126" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-125"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-128" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-127"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-130" source="id-f4-cmd-129" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-132" source="id-f4-cmd-129" target="id-f4-ev-131"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-134" source="id-f4-cmd-133" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-136" source="id-f4-cmd-133" target="id-f4-ev-135"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-138" source="id-f4-cmd-137" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-140" source="id-f4-cmd-137" target="id-f4-ev-139"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-142" source="id-f4-cmd-141" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-144" source="id-f4-cmd-141" target="id-f4-ev-143"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-146" source="id-f4-cmd-145" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-148" source="id-f4-cmd-145" target="id-f4-ev-147"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-150" source="id-f4-cmd-149" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-152" source="id-f4-cmd-149" target="id-f4-ev-151"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-154" source="id-f4-cmd-153" target="id-95185947936f48139e74d1473a639362" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-156" source="id-f4-cmd-153" target="id-f4-ev-155"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-158" source="id-f4-cmd-157" target="id-f4-er-expediente-122" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-160" source="id-f4-cmd-157" target="id-f4-ev-159"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-161" source="id-95185947936f48139e74d1473a639362" target="id-b9ddcb0a601c4d49800e102541137c9b"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-162" source="id-f4-er-expediente-122" target="id-OB03"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-220" source="id-f4-os-operacion-218" target="id-7ae85d4387244a728a5e430392330786"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-222" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-221"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-224" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-223"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-226" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-225"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-228" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-227"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-231" source="id-f4-os-seguimiento-229" target="id-bd26c4ae38b3445b85344f84c46f8ec9"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-233" source="id-f4-os-seguimiento-229" target="id-d250af364fda4892997f5175468dc211"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-235" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-234"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-237" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-236"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-239" source="id-f4-cmd-238" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-241" source="id-f4-cmd-238" target="id-f4-ev-240"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-243" source="id-f4-cmd-242" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-245" source="id-f4-cmd-242" target="id-f4-ev-244"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-247" source="id-f4-cmd-246" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-249" source="id-f4-cmd-246" target="id-f4-ev-248"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-251" source="id-f4-cmd-250" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-253" source="id-f4-cmd-250" target="id-f4-ev-252"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-255" source="id-f4-cmd-254" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-257" source="id-f4-cmd-254" target="id-f4-ev-256"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-259" source="id-f4-cmd-258" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-261" source="id-f4-cmd-258" target="id-f4-ev-260"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-263" source="id-f4-cmd-262" target="id-f4-os-operacion-218" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-264" source="id-f4-cmd-262" target="id-EV4"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-266" source="id-f4-cmd-265" target="id-f4-os-seguimiento-229" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-268" source="id-f4-cmd-265" target="id-f4-ev-267"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-270" source="id-f4-cmd-269" target="id-f4-os-seguimiento-229" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-272" source="id-f4-cmd-269" target="id-f4-ev-271"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-274" source="id-f4-cmd-273" target="id-f4-os-seguimiento-229" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-276" source="id-f4-cmd-273" target="id-f4-ev-275"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-277" source="id-f4-os-operacion-218" target="term17"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-278" source="id-f4-os-seguimiento-229" target="id-OB15"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-353" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-352"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-355" source="id-f4-li-liquidacion-351" target="id-f98db1a961d44917a05c5336068cc166"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-357" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-356"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-360" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-359"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-362" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-361"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-365" source="id-2db9c41d2746491d8856dbc5ac2b1326" target="id-f4-li-reclamacion-c-364"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-367" source="id-f4-cmd-366" target="id-f4-li-liquidacion-351" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-369" source="id-f4-cmd-366" target="id-f4-ev-368"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-371" source="id-f4-cmd-370" target="id-f4-li-liquidacion-351" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-373" source="id-f4-cmd-370" target="id-f4-ev-372"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-375" source="id-f4-cmd-374" target="id-f4-li-liquidacion-351" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-377" source="id-f4-cmd-374" target="id-f4-ev-376"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-379" source="id-f4-cmd-378" target="id-f388d78a240547dcb72acc7ed81ec7aa" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-381" source="id-f4-cmd-378" target="id-f4-ev-380"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-383" source="id-f4-cmd-382" target="id-f388d78a240547dcb72acc7ed81ec7aa" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-385" source="id-f4-cmd-382" target="id-f4-ev-384"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-387" source="id-f4-cmd-386" target="id-f388d78a240547dcb72acc7ed81ec7aa" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-389" source="id-f4-cmd-386" target="id-f4-ev-388"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-391" source="id-f4-cmd-390" target="id-f388d78a240547dcb72acc7ed81ec7aa" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-393" source="id-f4-cmd-390" target="id-f4-ev-392"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-395" source="id-f4-cmd-394" target="id-2db9c41d2746491d8856dbc5ac2b1326" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-397" source="id-f4-cmd-394" target="id-f4-ev-396"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-399" source="id-f4-cmd-398" target="id-2db9c41d2746491d8856dbc5ac2b1326" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-401" source="id-f4-cmd-398" target="id-f4-ev-400"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-403" source="id-f4-cmd-402" target="id-f4-li-liquidacion-351" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-404" source="id-f4-cmd-402" target="id-EV5"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-405" source="id-f4-li-liquidacion-351" target="id-OB17"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-406" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="term27"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-407" source="id-2db9c41d2746491d8856dbc5ac2b1326" target="id-OB18"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-474" source="id-f4-re-perfil-472" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-476" source="id-f4-re-perfil-472" target="id-258da4d378224caebf0269f6def39957"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-478" source="id-f4-re-perfil-472" target="id-f4-re-perfil-c-477"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-481" source="id-f4-re-revision-479" target="id-f4-re-revision-c-480"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-483" source="id-f4-re-revision-479" target="id-f4-re-revision-c-482"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-485" source="id-f4-cmd-484" target="id-f4-re-perfil-472" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-487" source="id-f4-cmd-484" target="id-f4-ev-486"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-489" source="id-f4-cmd-488" target="id-f4-re-perfil-472" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-491" source="id-f4-cmd-488" target="id-f4-ev-490"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-493" source="id-f4-cmd-492" target="id-f4-re-revision-479" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-495" source="id-f4-cmd-492" target="id-f4-ev-494"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-497" source="id-f4-cmd-496" target="id-f4-re-revision-479" accessType="Write"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-499" source="id-f4-cmd-496" target="id-f4-ev-498"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-500" source="id-f4-re-perfil-472" target="term34"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-501" source="id-f4-re-revision-479" target="term36"/>
+  </folder>
   <folder name="Views" id="id-58ff9e2292be46e9b1d94d1125439f03" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="V1. Motivación" id="id-3c72efbf02fe4ab289024b901256c78f">
       <child xsi:type="archimate:DiagramObject" id="id-0196958769fc425c945ffd0f529b38ce" archimateElement="id-SH3">
@@ -4680,5 +5269,162 @@ Momento: Una sola vez, al arrancar.</documentation>
       <documentation>V5 - Dominios DDD. Los dominios se representan mediante Application Functions reutilizables del modelo, agrupadas visualmente por clasificación estratégica. Los Data Objects muestran conceptos de información representativos; no son todavía entidades u objetos de valor del DDD táctico.</documentation><child xsi:type="archimate:Group" id="id-6139b0bf8f2f4312a4463e86780f70a7" name="CORE DOMAINS" textAlignment="1"><bounds x="25" y="25" width="1280" height="430"/><child xsi:type="archimate:Group" id="id-69d18495168a49c3bfd5bccf61c3a8b3" name="Gestión del arriendo" textAlignment="1"><bounds x="25" y="45" width="590" height="330"/><child xsi:type="archimate:DiagramObject" id="id-03f13605ecec41aab02b923b91b3dc88" archimateElement="id-16f74957484a47e080374754c6ff4135" fillColor="#b7d7f0" sourceConnections="id-5904cfdc3a654506a2b19dee8af68a2f id-84319081a23140c5a78dbcd54854f301 id-c9e012c3108247bbb52da5ab0a307853"><bounds x="20" y="42" width="550" height="70"/><sourceConnection xsi:type="archimate:Connection" id="id-5904cfdc3a654506a2b19dee8af68a2f" source="id-03f13605ecec41aab02b923b91b3dc88" target="id-deb2b11a7fda46f1945638eae2d5ed36" archimateRelationship="id-48e9cef080e6426a93fafe5c05dc0bb8"/><sourceConnection xsi:type="archimate:Connection" id="id-84319081a23140c5a78dbcd54854f301" source="id-03f13605ecec41aab02b923b91b3dc88" target="id-69a0d3dd964f405fa5ac92cd9e8178dc" archimateRelationship="id-6ae2c034902648729559f5dda9e1f29f"/><sourceConnection xsi:type="archimate:Connection" id="id-c9e012c3108247bbb52da5ab0a307853" source="id-03f13605ecec41aab02b923b91b3dc88" target="id-a1b26a40ecd24962acd2c362405e745c" archimateRelationship="id-ce9bf264d06447a495957c423c1321c3"/></child><child xsi:type="archimate:DiagramObject" id="id-deb2b11a7fda46f1945638eae2d5ed36" archimateElement="id-cacdaf92e3c2487d8ab97101376d7ee5" fillColor="#cfe2f3" targetConnections="id-5904cfdc3a654506a2b19dee8af68a2f"><bounds x="20" y="145" width="172" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-69a0d3dd964f405fa5ac92cd9e8178dc" archimateElement="id-ce6958e1f2ab4e7ea18a5b1b01f63daa" fillColor="#cfe2f3" targetConnections="id-84319081a23140c5a78dbcd54854f301"><bounds x="208" y="145" width="172" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-a1b26a40ecd24962acd2c362405e745c" archimateElement="id-26040ce9c0f94c378700942bc84ae939" fillColor="#cfe2f3" targetConnections="id-c9e012c3108247bbb52da5ab0a307853"><bounds x="396" y="145" width="172" height="62"/></child></child><child xsi:type="archimate:Group" id="id-7f15f93238c34f198230a43879ee8309" name="Operación y seguimiento del yate" textAlignment="1"><bounds x="640" y="45" width="590" height="330"/><child xsi:type="archimate:DiagramObject" id="id-85997d994ed345f297603f1d2eb8e682" archimateElement="id-63f803f1647e4c3d9919c9a0333c53f5" fillColor="#b7d7f0" sourceConnections="id-bc8f227e79c946c7842ce49a343fc7e7 id-3c5987adb0f2434191973bd9542cc543 id-867242cec43a49b2968187b100fd0572"><bounds x="20" y="42" width="550" height="70"/><sourceConnection xsi:type="archimate:Connection" id="id-bc8f227e79c946c7842ce49a343fc7e7" source="id-85997d994ed345f297603f1d2eb8e682" target="id-b50ecc6c7e294225a3899532774f36b2" archimateRelationship="id-7b9d6336e6dd4f9f82efd58ec72423ab"/><sourceConnection xsi:type="archimate:Connection" id="id-3c5987adb0f2434191973bd9542cc543" source="id-85997d994ed345f297603f1d2eb8e682" target="id-2ebbce2e7778454b94d58b3c8bfd86f8" archimateRelationship="id-a09f20a7606446e7bd33b7a9ce1c0dc5"/><sourceConnection xsi:type="archimate:Connection" id="id-867242cec43a49b2968187b100fd0572" source="id-85997d994ed345f297603f1d2eb8e682" target="id-7489fd0ed1cc4874b277d0cf212e935d" archimateRelationship="id-258380f1998d445cab65e2b564d62202"/></child><child xsi:type="archimate:DiagramObject" id="id-b50ecc6c7e294225a3899532774f36b2" archimateElement="id-7ae85d4387244a728a5e430392330786" fillColor="#cfe2f3" targetConnections="id-bc8f227e79c946c7842ce49a343fc7e7"><bounds x="20" y="145" width="172" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-2ebbce2e7778454b94d58b3c8bfd86f8" archimateElement="id-bd26c4ae38b3445b85344f84c46f8ec9" fillColor="#cfe2f3" targetConnections="id-3c5987adb0f2434191973bd9542cc543"><bounds x="208" y="145" width="172" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-7489fd0ed1cc4874b277d0cf212e935d" archimateElement="id-d250af364fda4892997f5175468dc211" fillColor="#cfe2f3" targetConnections="id-867242cec43a49b2968187b100fd0572"><bounds x="396" y="145" width="172" height="62"/></child></child></child><child xsi:type="archimate:Group" id="id-bfac7c157e3448fe839f46cd9bc25ec6" name="SUPPORTING DOMAINS" textAlignment="1"><bounds x="25" y="485" width="1280" height="430"/><child xsi:type="archimate:Group" id="id-eed4c892b43f4ff69ea10fc15d9bb6e0" name="Evaluación de riesgo" textAlignment="1"><bounds x="25" y="45" width="380" height="330"/><child xsi:type="archimate:DiagramObject" id="id-4ebc008b4b554abeb7b0ae814dcae421" archimateElement="id-08c99edc4bbe46c9a74598601fd5c811" fillColor="#b7d7f0" sourceConnections="id-8cd6a72c7d6d40b185891f3ea0b89483 id-38868c0603ce40fc8c3a8e372b58b919"><bounds x="20" y="42" width="340" height="70"/><sourceConnection xsi:type="archimate:Connection" id="id-8cd6a72c7d6d40b185891f3ea0b89483" source="id-4ebc008b4b554abeb7b0ae814dcae421" target="id-cf7296108cb9471ca88f7399da4ebeeb" archimateRelationship="id-52220e58bffc4e21b220005aece3504e"/><sourceConnection xsi:type="archimate:Connection" id="id-38868c0603ce40fc8c3a8e372b58b919" source="id-4ebc008b4b554abeb7b0ae814dcae421" target="id-192adde61afd407cb761989a2b29f068" archimateRelationship="id-982461971f3245178c11976d3cd9eef4"/></child><child xsi:type="archimate:DiagramObject" id="id-cf7296108cb9471ca88f7399da4ebeeb" archimateElement="id-95185947936f48139e74d1473a639362" fillColor="#cfe2f3" targetConnections="id-8cd6a72c7d6d40b185891f3ea0b89483"><bounds x="20" y="145" width="162" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-192adde61afd407cb761989a2b29f068" archimateElement="id-42956fdf5f9b4885ba1e1bc551cf7504" fillColor="#cfe2f3" targetConnections="id-38868c0603ce40fc8c3a8e372b58b919"><bounds x="198" y="145" width="162" height="62"/></child></child><child xsi:type="archimate:Group" id="id-6a3f4fb8d9af4e619854479a6b54eba9" name="Liquidación" textAlignment="1"><bounds x="425" y="45" width="430" height="330"/><child xsi:type="archimate:DiagramObject" id="id-ef25a5bcac314f70a305b11c01227352" archimateElement="id-29f1a448a76348edb62d8497f9c9223c" fillColor="#b7d7f0" sourceConnections="id-a8ae1346fc7c47e5a4079ba7047a35e3 id-107c9ec7c9db4e71b49230960796c4bc id-d85071d430c24e1fb01e7daed628540d"><bounds x="20" y="42" width="390" height="70"/><sourceConnection xsi:type="archimate:Connection" id="id-a8ae1346fc7c47e5a4079ba7047a35e3" source="id-ef25a5bcac314f70a305b11c01227352" target="id-841f01bba4034b438d98b640028ec22e" archimateRelationship="id-370993fddbb2457f8dd2a2844e19068a"/><sourceConnection xsi:type="archimate:Connection" id="id-107c9ec7c9db4e71b49230960796c4bc" source="id-ef25a5bcac314f70a305b11c01227352" target="id-53b653f75ae54aac99baad7ac80205d2" archimateRelationship="id-ce32c23e79464af8ace968455b87ffcf"/><sourceConnection xsi:type="archimate:Connection" id="id-d85071d430c24e1fb01e7daed628540d" source="id-ef25a5bcac314f70a305b11c01227352" target="id-080bd0043aed4cc486cce2b7c4cff1c0" archimateRelationship="id-7d6bad91e17e4fea92100f64d6d5954f"/></child><child xsi:type="archimate:DiagramObject" id="id-841f01bba4034b438d98b640028ec22e" archimateElement="id-f388d78a240547dcb72acc7ed81ec7aa" fillColor="#cfe2f3" targetConnections="id-a8ae1346fc7c47e5a4079ba7047a35e3"><bounds x="20" y="145" width="119" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-53b653f75ae54aac99baad7ac80205d2" archimateElement="id-f98db1a961d44917a05c5336068cc166" fillColor="#cfe2f3" targetConnections="id-107c9ec7c9db4e71b49230960796c4bc"><bounds x="155" y="145" width="119" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-080bd0043aed4cc486cce2b7c4cff1c0" archimateElement="id-2db9c41d2746491d8856dbc5ac2b1326" fillColor="#cfe2f3" targetConnections="id-d85071d430c24e1fb01e7daed628540d"><bounds x="290" y="145" width="119" height="62"/></child></child><child xsi:type="archimate:Group" id="id-b0ecff5bf1a042bfb537dc3dddd34d37" name="Reputación" textAlignment="1"><bounds x="875" y="45" width="355" height="330"/><child xsi:type="archimate:DiagramObject" id="id-2b930fcc32a641c7bab3e8cdac3b91e7" archimateElement="id-4c8f87372e9c4fb39d4e04471d59fa98" fillColor="#b7d7f0" sourceConnections="id-54c3f9673c194ebc877429a41925c75e id-c407b40b390e499585626340b2527835"><bounds x="20" y="42" width="315" height="70"/><sourceConnection xsi:type="archimate:Connection" id="id-54c3f9673c194ebc877429a41925c75e" source="id-2b930fcc32a641c7bab3e8cdac3b91e7" target="id-376f999515e84b2cacc238a45a90b30f" archimateRelationship="id-d7476a8e45d04872b720cad62005d2ef"/><sourceConnection xsi:type="archimate:Connection" id="id-c407b40b390e499585626340b2527835" source="id-2b930fcc32a641c7bab3e8cdac3b91e7" target="id-172e79b9a35042c4aec647782e1fb777" archimateRelationship="id-266f9ff3e1b14454bc5dc5d4275d0c35"/></child><child xsi:type="archimate:DiagramObject" id="id-376f999515e84b2cacc238a45a90b30f" archimateElement="id-d1dc9e548b4d4fdda0a6710f3caede07" fillColor="#cfe2f3" targetConnections="id-54c3f9673c194ebc877429a41925c75e"><bounds x="20" y="145" width="149" height="62"/></child><child xsi:type="archimate:DiagramObject" id="id-172e79b9a35042c4aec647782e1fb777" archimateElement="id-258da4d378224caebf0269f6def39957" fillColor="#cfe2f3" targetConnections="id-c407b40b390e499585626340b2527835"><bounds x="185" y="145" width="149" height="62"/></child></child></child></element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V7. Lenguaje ubicuo" id="id-a72c665a0d034f358155293ec4cea731">
       <child xsi:type="archimate:Group" id="id-58c5aa13234745b79e200987f8b68986" name="CORE — Gestión del arriendo" textAlignment="1"><bounds x="40" y="50" width="620" height="806"/><child xsi:type="archimate:DiagramObject" id="id-da0435b2f75e413d888e03ec21fd1f76" archimateElement="term01" fillColor="#fff2cc" sourceConnections="id-afc648323dcb4570aae00dcae76af901"><bounds x="22" y="105" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-afc648323dcb4570aae00dcae76af901" source="id-da0435b2f75e413d888e03ec21fd1f76" target="id-dbc9563202dc487a949090b6295ea498" archimateRelationship="rel01"/></child><child xsi:type="archimate:DiagramObject" id="id-dbc9563202dc487a949090b6295ea498" archimateElement="meaning01" fillColor="#e4dfec" targetConnections="id-afc648323dcb4570aae00dcae76af901"><bounds x="245" y="100" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-9c3c45e9c73940d08993bc49f25514da" archimateElement="term02" fillColor="#fff2cc" sourceConnections="id-ca7b2f682c494ed3a63b222412c89db9"><bounds x="22" y="187" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-ca7b2f682c494ed3a63b222412c89db9" source="id-9c3c45e9c73940d08993bc49f25514da" target="id-b661352283b84060808e04b3c937ecd2" archimateRelationship="rel02"/></child><child xsi:type="archimate:DiagramObject" id="id-b661352283b84060808e04b3c937ecd2" archimateElement="meaning02" fillColor="#e4dfec" targetConnections="id-ca7b2f682c494ed3a63b222412c89db9"><bounds x="245" y="182" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-0cabb88e9bd449a981afb9ce8cad984e" archimateElement="term03" fillColor="#fff2cc" sourceConnections="id-e7f4b55619ee49f8b3a459dd8a8bea19"><bounds x="22" y="269" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-e7f4b55619ee49f8b3a459dd8a8bea19" source="id-0cabb88e9bd449a981afb9ce8cad984e" target="id-4f158f86ebb8427a87bc9eedfc8a8b09" archimateRelationship="rel03"/></child><child xsi:type="archimate:DiagramObject" id="id-4f158f86ebb8427a87bc9eedfc8a8b09" archimateElement="meaning03" fillColor="#e4dfec" targetConnections="id-e7f4b55619ee49f8b3a459dd8a8bea19"><bounds x="245" y="264" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-956346fbabe84d2fa51890d1ae873a5f" archimateElement="term04" fillColor="#fff2cc" sourceConnections="id-30c441d281cb4bc393a6a528c45cb693"><bounds x="22" y="351" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-30c441d281cb4bc393a6a528c45cb693" source="id-956346fbabe84d2fa51890d1ae873a5f" target="id-18ebd5db25f1401f857be384c7ae1659" archimateRelationship="rel04"/></child><child xsi:type="archimate:DiagramObject" id="id-18ebd5db25f1401f857be384c7ae1659" archimateElement="meaning04" fillColor="#e4dfec" targetConnections="id-30c441d281cb4bc393a6a528c45cb693"><bounds x="245" y="346" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-814e30034a694487b6db293c5e33e62b" archimateElement="term05" fillColor="#fff2cc" sourceConnections="id-e872bbd3d1484b4f8654720a80077790"><bounds x="22" y="433" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-e872bbd3d1484b4f8654720a80077790" source="id-814e30034a694487b6db293c5e33e62b" target="id-19285f5b13b9401faf5ff8841bf93fe7" archimateRelationship="rel05"/></child><child xsi:type="archimate:DiagramObject" id="id-19285f5b13b9401faf5ff8841bf93fe7" archimateElement="meaning05" fillColor="#e4dfec" targetConnections="id-e872bbd3d1484b4f8654720a80077790"><bounds x="245" y="428" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-bcdb4047419a4434bb3f1d200fabda84" archimateElement="term06" fillColor="#fff2cc" sourceConnections="id-86b50e87abb74e8ead85b78eac6a253c"><bounds x="22" y="515" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-86b50e87abb74e8ead85b78eac6a253c" source="id-bcdb4047419a4434bb3f1d200fabda84" target="id-0c6850160a7e43ada587f1a0610b0f38" archimateRelationship="rel06"/></child><child xsi:type="archimate:DiagramObject" id="id-0c6850160a7e43ada587f1a0610b0f38" archimateElement="meaning06" fillColor="#e4dfec" targetConnections="id-86b50e87abb74e8ead85b78eac6a253c"><bounds x="245" y="510" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-ae302cafbf08400fa0da95a0a77d22a9" archimateElement="term07" fillColor="#fff2cc" sourceConnections="id-31890328c364496fb282c4f4674ce2b8"><bounds x="22" y="597" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-31890328c364496fb282c4f4674ce2b8" source="id-ae302cafbf08400fa0da95a0a77d22a9" target="id-88b76e9e89ba422e9d8078a8b0566d9b" archimateRelationship="rel07"/></child><child xsi:type="archimate:DiagramObject" id="id-88b76e9e89ba422e9d8078a8b0566d9b" archimateElement="meaning07" fillColor="#e4dfec" targetConnections="id-31890328c364496fb282c4f4674ce2b8"><bounds x="245" y="592" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-a5407de06dfc4cc3a618b732d75eebd8" archimateElement="term08" fillColor="#fff2cc" sourceConnections="id-3d84454cf0124620b3316e75cf0ae983"><bounds x="22" y="679" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-3d84454cf0124620b3316e75cf0ae983" source="id-a5407de06dfc4cc3a618b732d75eebd8" target="id-6354b6b71d10433f95f0b13e76d055e5" archimateRelationship="rel08"/></child><child xsi:type="archimate:DiagramObject" id="id-6354b6b71d10433f95f0b13e76d055e5" archimateElement="meaning08" fillColor="#e4dfec" targetConnections="id-3d84454cf0124620b3316e75cf0ae983"><bounds x="245" y="674" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-a69508776bc04d5a84f0daa502660e99" archimateElement="rep01" fillColor="#fff2cc"><bounds x="20" y="35" width="580" height="45"/></child></child><child xsi:type="archimate:Group" id="id-450a83c328764966ac7ca3c2eac292a7" name="CORE — Operación y seguimiento del yate" textAlignment="1"><bounds x="690" y="50" width="620" height="970"/><child xsi:type="archimate:DiagramObject" id="id-0e2d48efea3042208863f06ad3b90b41" archimateElement="term16" fillColor="#fff2cc" sourceConnections="id-b39b0a9570234943a86c58e287099ea6"><bounds x="22" y="105" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-b39b0a9570234943a86c58e287099ea6" source="id-0e2d48efea3042208863f06ad3b90b41" target="id-83051af2e8f34e04a8714fb6c4722af4" archimateRelationship="rel16"/></child><child xsi:type="archimate:DiagramObject" id="id-83051af2e8f34e04a8714fb6c4722af4" archimateElement="meaning16" fillColor="#e4dfec" targetConnections="id-b39b0a9570234943a86c58e287099ea6"><bounds x="245" y="100" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-3a16f3eafba044659d4cb0e65889bc11" archimateElement="term17" fillColor="#fff2cc" sourceConnections="id-82333771ef06443fbee9b2c8df8bd569"><bounds x="22" y="187" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-82333771ef06443fbee9b2c8df8bd569" source="id-3a16f3eafba044659d4cb0e65889bc11" target="id-f74ca4ae38a84bd7b94cbaabb3597ed2" archimateRelationship="rel17"/></child><child xsi:type="archimate:DiagramObject" id="id-f74ca4ae38a84bd7b94cbaabb3597ed2" archimateElement="meaning17" fillColor="#e4dfec" targetConnections="id-82333771ef06443fbee9b2c8df8bd569"><bounds x="245" y="182" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-3c7cd6deeb674147a13f84879169df5d" archimateElement="term18" fillColor="#fff2cc" sourceConnections="id-74b4a01665e14ef1b47e6a08e73a0a48"><bounds x="22" y="269" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-74b4a01665e14ef1b47e6a08e73a0a48" source="id-3c7cd6deeb674147a13f84879169df5d" target="id-80a735e5b32146f98c21ada1f20d4429" archimateRelationship="rel18"/></child><child xsi:type="archimate:DiagramObject" id="id-80a735e5b32146f98c21ada1f20d4429" archimateElement="meaning18" fillColor="#e4dfec" targetConnections="id-74b4a01665e14ef1b47e6a08e73a0a48"><bounds x="245" y="264" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-c9e3f4daf1124ba38b4deae983ce27a5" archimateElement="term19" fillColor="#fff2cc" sourceConnections="id-85be983dd2574ab6946c0c88fc46b838"><bounds x="22" y="351" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-85be983dd2574ab6946c0c88fc46b838" source="id-c9e3f4daf1124ba38b4deae983ce27a5" target="id-3dbf2073752a4176a742fb853a723797" archimateRelationship="rel19"/></child><child xsi:type="archimate:DiagramObject" id="id-3dbf2073752a4176a742fb853a723797" archimateElement="meaning19" fillColor="#e4dfec" targetConnections="id-85be983dd2574ab6946c0c88fc46b838"><bounds x="245" y="346" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-af719a7be15d484094711502232541a7" archimateElement="term20" fillColor="#fff2cc" sourceConnections="id-2c4e7687d8b544939da8e6c7c9a3f1aa"><bounds x="22" y="433" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-2c4e7687d8b544939da8e6c7c9a3f1aa" source="id-af719a7be15d484094711502232541a7" target="id-8de67a986e8347c6975ba446b0c9a5cd" archimateRelationship="rel20"/></child><child xsi:type="archimate:DiagramObject" id="id-8de67a986e8347c6975ba446b0c9a5cd" archimateElement="meaning20" fillColor="#e4dfec" targetConnections="id-2c4e7687d8b544939da8e6c7c9a3f1aa"><bounds x="245" y="428" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-95b7a08b3f524489a6ad96c8b7edb467" archimateElement="term21" fillColor="#fff2cc" sourceConnections="id-948f1b9960814dd38983e24f28967b38"><bounds x="22" y="515" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-948f1b9960814dd38983e24f28967b38" source="id-95b7a08b3f524489a6ad96c8b7edb467" target="id-73864bd0ec0c44aab5a16e51a3e9221e" archimateRelationship="rel21"/></child><child xsi:type="archimate:DiagramObject" id="id-73864bd0ec0c44aab5a16e51a3e9221e" archimateElement="meaning21" fillColor="#e4dfec" targetConnections="id-948f1b9960814dd38983e24f28967b38"><bounds x="245" y="510" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-04697bfc0f4e4bb88c3fc7b38b068c28" archimateElement="term22" fillColor="#fff2cc" sourceConnections="id-67970c6dd5f142a0aca3f2edec6c745d"><bounds x="22" y="597" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-67970c6dd5f142a0aca3f2edec6c745d" source="id-04697bfc0f4e4bb88c3fc7b38b068c28" target="id-5ed979764122454d8f6132d34ca1ed9b" archimateRelationship="rel22"/></child><child xsi:type="archimate:DiagramObject" id="id-5ed979764122454d8f6132d34ca1ed9b" archimateElement="meaning22" fillColor="#e4dfec" targetConnections="id-67970c6dd5f142a0aca3f2edec6c745d"><bounds x="245" y="592" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-5a8cbe88f0af465e8bf699469fa30eb1" archimateElement="term23" fillColor="#fff2cc" sourceConnections="id-93df3c49eb9d49e2aaff696511b31a52"><bounds x="22" y="679" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-93df3c49eb9d49e2aaff696511b31a52" source="id-5a8cbe88f0af465e8bf699469fa30eb1" target="id-e4d6027098904162b75a24bd3d2c7df3" archimateRelationship="rel23"/></child><child xsi:type="archimate:DiagramObject" id="id-e4d6027098904162b75a24bd3d2c7df3" archimateElement="meaning23" fillColor="#e4dfec" targetConnections="id-93df3c49eb9d49e2aaff696511b31a52"><bounds x="245" y="674" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-ec4c91cfa8f3475b893d678c19640dd2" archimateElement="term24" fillColor="#fff2cc" sourceConnections="id-d35ee187b6a64ed5bd9b8dc76b6dcd23"><bounds x="22" y="761" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-d35ee187b6a64ed5bd9b8dc76b6dcd23" source="id-ec4c91cfa8f3475b893d678c19640dd2" target="id-ffda7d58be9b463a85897f66b7e41281" archimateRelationship="rel24"/></child><child xsi:type="archimate:DiagramObject" id="id-ffda7d58be9b463a85897f66b7e41281" archimateElement="meaning24" fillColor="#e4dfec" targetConnections="id-d35ee187b6a64ed5bd9b8dc76b6dcd23"><bounds x="245" y="756" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-c4ce7d1e54bd401fb8f14e7bbc174de4" archimateElement="term25" fillColor="#fff2cc" sourceConnections="id-d9f4dbd13ebd427aa0d9be5fe05c34c3"><bounds x="22" y="843" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-d9f4dbd13ebd427aa0d9be5fe05c34c3" source="id-c4ce7d1e54bd401fb8f14e7bbc174de4" target="id-6fef17b08be8429990390f1b92ee69ba" archimateRelationship="rel25"/></child><child xsi:type="archimate:DiagramObject" id="id-6fef17b08be8429990390f1b92ee69ba" archimateElement="meaning25" fillColor="#e4dfec" targetConnections="id-d9f4dbd13ebd427aa0d9be5fe05c34c3"><bounds x="245" y="838" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-5227cd9fd721464e9e62a3442c745dfb" archimateElement="rep03" fillColor="#fff2cc"><bounds x="20" y="35" width="580" height="45"/></child></child><child xsi:type="archimate:Group" id="id-9cfe507a3b0246a98caefb9e2f9169ab" name="SUPPORTING — Evaluación de riesgo" textAlignment="1"><bounds x="1340" y="50" width="620" height="724"/><child xsi:type="archimate:DiagramObject" id="id-80dbdd5ce7f6429aa914e14ba81dc55e" archimateElement="term09" fillColor="#fff2cc" sourceConnections="id-ae3f41a3bff2452794f19812a6ddf379"><bounds x="22" y="105" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-ae3f41a3bff2452794f19812a6ddf379" source="id-80dbdd5ce7f6429aa914e14ba81dc55e" target="id-cb9c0ace0d584f81beb3ca144e39f09e" archimateRelationship="rel09"/></child><child xsi:type="archimate:DiagramObject" id="id-cb9c0ace0d584f81beb3ca144e39f09e" archimateElement="meaning09" fillColor="#e4dfec" targetConnections="id-ae3f41a3bff2452794f19812a6ddf379"><bounds x="245" y="100" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-6c667a2843f24bdeb3e6a4cd145db25e" archimateElement="term10" fillColor="#fff2cc" sourceConnections="id-87a844eccb35478c9c2a7203cf37533a"><bounds x="22" y="187" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-87a844eccb35478c9c2a7203cf37533a" source="id-6c667a2843f24bdeb3e6a4cd145db25e" target="id-d761689c318840c79a37bb7a7ac36b62" archimateRelationship="rel10"/></child><child xsi:type="archimate:DiagramObject" id="id-d761689c318840c79a37bb7a7ac36b62" archimateElement="meaning10" fillColor="#e4dfec" targetConnections="id-87a844eccb35478c9c2a7203cf37533a"><bounds x="245" y="182" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-29c8f27f8b1542cf9bfd738e6384aa51" archimateElement="term11" fillColor="#fff2cc" sourceConnections="id-5d478949325b432fa29a302b62cc68b9"><bounds x="22" y="269" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-5d478949325b432fa29a302b62cc68b9" source="id-29c8f27f8b1542cf9bfd738e6384aa51" target="id-a647cc656b9442a7b2ad330b1ff84985" archimateRelationship="rel11"/></child><child xsi:type="archimate:DiagramObject" id="id-a647cc656b9442a7b2ad330b1ff84985" archimateElement="meaning11" fillColor="#e4dfec" targetConnections="id-5d478949325b432fa29a302b62cc68b9"><bounds x="245" y="264" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-057bc1288f6048f0a67b838b6f32376d" archimateElement="term12" fillColor="#fff2cc" sourceConnections="id-cf722101e92b4370b56e26935a174f5a"><bounds x="22" y="351" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-cf722101e92b4370b56e26935a174f5a" source="id-057bc1288f6048f0a67b838b6f32376d" target="id-b638366cd5f34e51966f49f561edafc7" archimateRelationship="rel12"/></child><child xsi:type="archimate:DiagramObject" id="id-b638366cd5f34e51966f49f561edafc7" archimateElement="meaning12" fillColor="#e4dfec" targetConnections="id-cf722101e92b4370b56e26935a174f5a"><bounds x="245" y="346" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-6bd821cdd3124c97adb7ebe8cb30c24c" archimateElement="term13" fillColor="#fff2cc" sourceConnections="id-c07e16412274485f886df189bfbab311"><bounds x="22" y="433" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-c07e16412274485f886df189bfbab311" source="id-6bd821cdd3124c97adb7ebe8cb30c24c" target="id-8dd2c222ec4446558e1efc27237a494e" archimateRelationship="rel13"/></child><child xsi:type="archimate:DiagramObject" id="id-8dd2c222ec4446558e1efc27237a494e" archimateElement="meaning13" fillColor="#e4dfec" targetConnections="id-c07e16412274485f886df189bfbab311"><bounds x="245" y="428" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-12e770297eac4d79b55761513eaad08d" archimateElement="term14" fillColor="#fff2cc" sourceConnections="id-3ad2b852efb846b9a384f07857fb6f44"><bounds x="22" y="515" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-3ad2b852efb846b9a384f07857fb6f44" source="id-12e770297eac4d79b55761513eaad08d" target="id-8ba60340642b484e96251d4341a73c2d" archimateRelationship="rel14"/></child><child xsi:type="archimate:DiagramObject" id="id-8ba60340642b484e96251d4341a73c2d" archimateElement="meaning14" fillColor="#e4dfec" targetConnections="id-3ad2b852efb846b9a384f07857fb6f44"><bounds x="245" y="510" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-75e15fb959c7494c89574b4cbdc43491" archimateElement="term15" fillColor="#fff2cc" sourceConnections="id-57b863c83f3348039382e824b26e160e"><bounds x="22" y="597" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-57b863c83f3348039382e824b26e160e" source="id-75e15fb959c7494c89574b4cbdc43491" target="id-27d9cb0ad5a44defaa0cdd2cd2001c07" archimateRelationship="rel15"/></child><child xsi:type="archimate:DiagramObject" id="id-27d9cb0ad5a44defaa0cdd2cd2001c07" archimateElement="meaning15" fillColor="#e4dfec" targetConnections="id-57b863c83f3348039382e824b26e160e"><bounds x="245" y="592" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-a0671294079941bdbbf69fc298426b7e" archimateElement="rep02" fillColor="#fff2cc"><bounds x="20" y="35" width="580" height="45"/></child></child><child xsi:type="archimate:Group" id="id-29b0124ce8a64fdc8c179b57efc28aba" name="SUPPORTING — Liquidación" textAlignment="1"><bounds x="40" y="1010" width="620" height="724"/><child xsi:type="archimate:DiagramObject" id="id-71ea15d362de43bfa2da45c48ebae55a" archimateElement="term26" fillColor="#fff2cc" sourceConnections="id-32177513a5b44f039f790cee45579e15"><bounds x="22" y="105" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-32177513a5b44f039f790cee45579e15" source="id-71ea15d362de43bfa2da45c48ebae55a" target="id-b4ff88a5c8a5497e898c613c3c2baa35" archimateRelationship="rel26"/></child><child xsi:type="archimate:DiagramObject" id="id-b4ff88a5c8a5497e898c613c3c2baa35" archimateElement="meaning26" fillColor="#e4dfec" targetConnections="id-32177513a5b44f039f790cee45579e15"><bounds x="245" y="100" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-dfb6d78ce3c247e8b0d3010213a5d3dc" archimateElement="term27" fillColor="#fff2cc" sourceConnections="id-e00705f5d16e4ec5b6f5a3a0a28cdeef"><bounds x="22" y="187" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-e00705f5d16e4ec5b6f5a3a0a28cdeef" source="id-dfb6d78ce3c247e8b0d3010213a5d3dc" target="id-6c67a87ec6c743f5811de2c896f5093b" archimateRelationship="rel27"/></child><child xsi:type="archimate:DiagramObject" id="id-6c67a87ec6c743f5811de2c896f5093b" archimateElement="meaning27" fillColor="#e4dfec" targetConnections="id-e00705f5d16e4ec5b6f5a3a0a28cdeef"><bounds x="245" y="182" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-9e1204355bac403cabc1673b2ce27bfe" archimateElement="term28" fillColor="#fff2cc" sourceConnections="id-7a6ce136ad724509b4a2087f171ce3a2"><bounds x="22" y="269" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-7a6ce136ad724509b4a2087f171ce3a2" source="id-9e1204355bac403cabc1673b2ce27bfe" target="id-526a00fa9743499ebf719a50afea5bb0" archimateRelationship="rel28"/></child><child xsi:type="archimate:DiagramObject" id="id-526a00fa9743499ebf719a50afea5bb0" archimateElement="meaning28" fillColor="#e4dfec" targetConnections="id-7a6ce136ad724509b4a2087f171ce3a2"><bounds x="245" y="264" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-38ed5b8d42544653aa7be7c370589ab6" archimateElement="term29" fillColor="#fff2cc" sourceConnections="id-c2af6548b2064006a591fa2039e0fc9c"><bounds x="22" y="351" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-c2af6548b2064006a591fa2039e0fc9c" source="id-38ed5b8d42544653aa7be7c370589ab6" target="id-075857c039914b2bb540e0c679903227" archimateRelationship="rel29"/></child><child xsi:type="archimate:DiagramObject" id="id-075857c039914b2bb540e0c679903227" archimateElement="meaning29" fillColor="#e4dfec" targetConnections="id-c2af6548b2064006a591fa2039e0fc9c"><bounds x="245" y="346" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-f5c024965afb4052b20d7e71914b01ea" archimateElement="term30" fillColor="#fff2cc" sourceConnections="id-ba488c1a39a44a13971ae1b896ff42f3"><bounds x="22" y="433" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-ba488c1a39a44a13971ae1b896ff42f3" source="id-f5c024965afb4052b20d7e71914b01ea" target="id-33b7b7f3a11c476990160cf3ae722b16" archimateRelationship="rel30"/></child><child xsi:type="archimate:DiagramObject" id="id-33b7b7f3a11c476990160cf3ae722b16" archimateElement="meaning30" fillColor="#e4dfec" targetConnections="id-ba488c1a39a44a13971ae1b896ff42f3"><bounds x="245" y="428" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-a340b5c6112a47fcbd9e135e1833dc74" archimateElement="term31" fillColor="#fff2cc" sourceConnections="id-c6c79d3bb4c34a55929b7a9c17e97022"><bounds x="22" y="515" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-c6c79d3bb4c34a55929b7a9c17e97022" source="id-a340b5c6112a47fcbd9e135e1833dc74" target="id-e2fbfb75196b4d419f569fcc2adf70d1" archimateRelationship="rel31"/></child><child xsi:type="archimate:DiagramObject" id="id-e2fbfb75196b4d419f569fcc2adf70d1" archimateElement="meaning31" fillColor="#e4dfec" targetConnections="id-c6c79d3bb4c34a55929b7a9c17e97022"><bounds x="245" y="510" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-80d2586912fb4f8c8d4a698ad23f9963" archimateElement="term32" fillColor="#fff2cc" sourceConnections="id-0ef6270cef7244fca1205bf14db3149d"><bounds x="22" y="597" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-0ef6270cef7244fca1205bf14db3149d" source="id-80d2586912fb4f8c8d4a698ad23f9963" target="id-cc2212b954b04fd7ac430eb1ad551b84" archimateRelationship="rel32"/></child><child xsi:type="archimate:DiagramObject" id="id-cc2212b954b04fd7ac430eb1ad551b84" archimateElement="meaning32" fillColor="#e4dfec" targetConnections="id-0ef6270cef7244fca1205bf14db3149d"><bounds x="245" y="592" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-b59d23a53858492baaa21ee96e84a75d" archimateElement="rep04" fillColor="#fff2cc"><bounds x="20" y="35" width="580" height="45"/></child></child><child xsi:type="archimate:Group" id="id-4ddf969e14d74d37a62806a95c45dae8" name="SUPPORTING — Reputación" textAlignment="1"><bounds x="690" y="1010" width="620" height="560"/><child xsi:type="archimate:DiagramObject" id="id-2ab1418873c74e3fb9c245d495d84f9f" archimateElement="term33" fillColor="#fff2cc" sourceConnections="id-ed2f517a6e424be69d335236cb667c5f"><bounds x="22" y="105" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-ed2f517a6e424be69d335236cb667c5f" source="id-2ab1418873c74e3fb9c245d495d84f9f" target="id-a448d0d381214e88bebcb346a2648239" archimateRelationship="rel33"/></child><child xsi:type="archimate:DiagramObject" id="id-a448d0d381214e88bebcb346a2648239" archimateElement="meaning33" fillColor="#e4dfec" targetConnections="id-ed2f517a6e424be69d335236cb667c5f"><bounds x="245" y="100" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-18e37f73294149779b045be7b8598366" archimateElement="term34" fillColor="#fff2cc" sourceConnections="id-83083309f5b741df852aeba8ba2fef97"><bounds x="22" y="187" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-83083309f5b741df852aeba8ba2fef97" source="id-18e37f73294149779b045be7b8598366" target="id-ed025e6db7fc40e392b7dcbc3ca475d1" archimateRelationship="rel34"/></child><child xsi:type="archimate:DiagramObject" id="id-ed025e6db7fc40e392b7dcbc3ca475d1" archimateElement="meaning34" fillColor="#e4dfec" targetConnections="id-83083309f5b741df852aeba8ba2fef97"><bounds x="245" y="182" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-aa7a6aea8c1648a1a494049458af0d27" archimateElement="term35" fillColor="#fff2cc" sourceConnections="id-7a0f07777ba64efdadd793ce92379d7f"><bounds x="22" y="269" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-7a0f07777ba64efdadd793ce92379d7f" source="id-aa7a6aea8c1648a1a494049458af0d27" target="id-969a053b4e054df7b55de3d448fa65eb" archimateRelationship="rel35"/></child><child xsi:type="archimate:DiagramObject" id="id-969a053b4e054df7b55de3d448fa65eb" archimateElement="meaning35" fillColor="#e4dfec" targetConnections="id-7a0f07777ba64efdadd793ce92379d7f"><bounds x="245" y="264" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-0343213dd78343008e30bc86abb532b7" archimateElement="term36" fillColor="#fff2cc" sourceConnections="id-1736a27b244b4931b41122f0aed8c572"><bounds x="22" y="351" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-1736a27b244b4931b41122f0aed8c572" source="id-0343213dd78343008e30bc86abb532b7" target="id-be1d51913de848bbb0b82dc74fd7e0aa" archimateRelationship="rel36"/></child><child xsi:type="archimate:DiagramObject" id="id-be1d51913de848bbb0b82dc74fd7e0aa" archimateElement="meaning36" fillColor="#e4dfec" targetConnections="id-1736a27b244b4931b41122f0aed8c572"><bounds x="245" y="346" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-3fb96bed488a476186d55612d6160ce6" archimateElement="term37" fillColor="#fff2cc" sourceConnections="id-e0401092ea754eb6963ead76ee32aa07"><bounds x="22" y="433" width="165" height="58"/><sourceConnection xsi:type="archimate:Connection" id="id-e0401092ea754eb6963ead76ee32aa07" source="id-3fb96bed488a476186d55612d6160ce6" target="id-7d965088c18f4b748fc36d708fe2332f" archimateRelationship="rel37"/></child><child xsi:type="archimate:DiagramObject" id="id-7d965088c18f4b748fc36d708fe2332f" archimateElement="meaning37" fillColor="#e4dfec" targetConnections="id-e0401092ea754eb6963ead76ee32aa07"><bounds x="245" y="428" width="345" height="68"/></child><child xsi:type="archimate:DiagramObject" id="id-2435c50740194ecf9ca11ead48feb40c" archimateElement="rep05" fillColor="#fff2cc"><bounds x="20" y="35" width="580" height="45"/></child></child><documentation>V7 - Lenguaje ubicuo. Cada dominio contiene una Representation de su glosario, términos modelados como Business Objects y sus definiciones como Meaning. Los ejemplos permanecen como propiedades de cada término. La vista hace explícitas diferencias de lenguaje que separan responsabilidades entre dominios.</documentation><child xsi:type="archimate:Group" id="id-1e7ac05dc8244487bcc843b97eb7227e" name="DIFERENCIAS DE LENGUAJE ENTRE DOMINIOS" textAlignment="1"><bounds x="40" y="1774" width="1270" height="300"/><child xsi:type="archimate:DiagramObject" id="id-03440dca85064758b9c53791fc953e07" archimateElement="id-69e55654722246ceb44c18f1740ce00b" fillColor="#e4dfec"><bounds x="20" y="45" width="585" height="80"/></child><child xsi:type="archimate:DiagramObject" id="id-b00d332d992a43dab90203c580b644e2" archimateElement="id-98d7873eca2c4169b1c9a205ef8fb95a" fillColor="#e4dfec"><bounds x="635" y="45" width="585" height="80"/></child><child xsi:type="archimate:DiagramObject" id="id-71d030e7cbc64163a12a4e6ef0fe0ab9" archimateElement="id-a7adf06f07904a0cb50e1fc248b4f5f2" fillColor="#e4dfec"><bounds x="20" y="150" width="585" height="80"/></child><child xsi:type="archimate:DiagramObject" id="id-8d53168424c3462e9751c3db5c78705d" archimateElement="id-8f6d5a3ceed84c118682f7e5fd68bd85" fillColor="#e4dfec"><bounds x="635" y="150" width="585" height="80"/></child></child></element>
+  
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V6a. Agregados, comandos y eventos - Gestión del arriendo" id="id-f4-v6a">
+      <documentation>V6a - DDD táctico del dominio Gestión del arriendo (Core). Cada agregado muestra su raíz, sus entidades y objetos de valor, con los comandos que lo modifican y los eventos que producen. La reserva confirmada no autoriza la entrega.</documentation>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-053" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1"><bounds x="20" y="20" width="420" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-054" name="COMANDOS (Application Process)" textAlignment="1"><bounds x="480" y="20" width="380" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-055" name="EVENTOS (Application Event / Business Event)" textAlignment="1"><bounds x="920" y="20" width="400" height="40"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-056" archimateElement="id-cacdaf92e3c2487d8ab97101376d7ee5" fillColor="#b7d7f0"><bounds x="20" y="90" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-091" source="id-f4-o-056" target="id-f4-o-083" archimateRelationship="id-f4-rel-003"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-092" source="id-f4-o-056" target="id-f4-o-084" archimateRelationship="id-f4-rel-005"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-093" source="id-f4-o-056" target="id-f4-o-085" archimateRelationship="id-f4-rel-007"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-060" archimateElement="id-26040ce9c0f94c378700942bc84ae939" fillColor="#b7d7f0"><bounds x="20" y="332" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-094" source="id-f4-o-060" target="id-f4-o-086" archimateRelationship="id-f4-rel-010"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-095" source="id-f4-o-060" target="id-f4-o-087" archimateRelationship="id-f4-rel-012"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-096" source="id-f4-o-060" target="id-f4-o-088" archimateRelationship="id-f4-rel-014"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-064" archimateElement="id-f4-ga-yate-015" fillColor="#b7d7f0"><bounds x="20" y="574" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-097" source="id-f4-o-064" target="id-f4-o-089" archimateRelationship="id-f4-rel-017"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-098" source="id-f4-o-064" target="id-f4-o-090" archimateRelationship="id-f4-rel-019"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-083" archimateElement="id-ce6958e1f2ab4e7ea18a5b1b01f63daa" fillColor="#dae8fc"><bounds x="50" y="152" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-084" archimateElement="id-f4-ga-arriendo-c-004" fillColor="#e1d5e7"><bounds x="50" y="204" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-085" archimateElement="id-f4-ga-arriendo-c-006" fillColor="#e1d5e7"><bounds x="50" y="256" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-086" archimateElement="id-f4-ga-disponibilidad-c-009" fillColor="#e1d5e7"><bounds x="50" y="394" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-087" archimateElement="id-f4-ga-disponibilidad-c-011" fillColor="#dae8fc"><bounds x="50" y="446" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-088" archimateElement="id-f4-ga-disponibilidad-c-013" fillColor="#dae8fc"><bounds x="50" y="498" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-089" archimateElement="id-f4-ga-yate-c-016" fillColor="#e1d5e7"><bounds x="50" y="636" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-090" archimateElement="id-f4-ga-yate-c-018" fillColor="#e1d5e7"><bounds x="50" y="688" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-067" archimateElement="id-f4-cmd-020" fillColor="#ffe6cc"><bounds x="480" y="90" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-099" source="id-f4-o-067" target="id-f4-o-056" archimateRelationship="id-f4-rel-021"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-100" source="id-f4-o-067" target="id-f4-o-068" archimateRelationship="id-f4-rel-023"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-068" archimateElement="id-f4-ev-022" fillColor="#d5e8d4"><bounds x="920" y="90" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-069" archimateElement="id-f4-cmd-024" fillColor="#ffe6cc"><bounds x="480" y="164" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-101" source="id-f4-o-069" target="id-f4-o-060" archimateRelationship="id-f4-rel-025"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-102" source="id-f4-o-069" target="id-f4-o-070" archimateRelationship="id-f4-rel-027"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-070" archimateElement="id-f4-ev-026" fillColor="#d5e8d4"><bounds x="920" y="164" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-071" archimateElement="id-f4-cmd-028" fillColor="#ffe6cc"><bounds x="480" y="238" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-103" source="id-f4-o-071" target="id-f4-o-056" archimateRelationship="id-f4-rel-029"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-104" source="id-f4-o-071" target="id-f4-o-072" archimateRelationship="id-f4-rel-031"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-072" archimateElement="id-f4-ev-030" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-073" archimateElement="id-f4-cmd-032" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-105" source="id-f4-o-073" target="id-f4-o-056" archimateRelationship="id-f4-rel-033"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-106" source="id-f4-o-073" target="id-f4-o-074" archimateRelationship="id-f4-rel-035"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-074" archimateElement="id-f4-ev-034" fillColor="#cdeb8b"><bounds x="920" y="312" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-075" archimateElement="id-f4-cmd-036" fillColor="#ffe6cc"><bounds x="480" y="386" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-107" source="id-f4-o-075" target="id-f4-o-056" archimateRelationship="id-f4-rel-037"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-108" source="id-f4-o-075" target="id-f4-o-076" archimateRelationship="id-f4-rel-038"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-076" archimateElement="id-EV2" fillColor="#d5e8d4"><bounds x="920" y="386" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-077" archimateElement="id-f4-cmd-039" fillColor="#ffe6cc"><bounds x="480" y="460" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-109" source="id-f4-o-077" target="id-f4-o-056" archimateRelationship="id-f4-rel-040"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-110" source="id-f4-o-077" target="id-f4-o-078" archimateRelationship="id-f4-rel-041"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-078" archimateElement="id-EV3" fillColor="#d5e8d4"><bounds x="920" y="460" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-079" archimateElement="id-f4-cmd-042" fillColor="#ffe6cc"><bounds x="480" y="534" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-111" source="id-f4-o-079" target="id-f4-o-060" archimateRelationship="id-f4-rel-043"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-112" source="id-f4-o-079" target="id-f4-o-080" archimateRelationship="id-f4-rel-045"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-080" archimateElement="id-f4-ev-044" fillColor="#d5e8d4"><bounds x="920" y="534" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-081" archimateElement="id-f4-cmd-046" fillColor="#ffe6cc"><bounds x="480" y="608" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-113" source="id-f4-o-081" target="id-f4-o-064" archimateRelationship="id-f4-rel-047"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-114" source="id-f4-o-081" target="id-f4-o-082" archimateRelationship="id-f4-rel-049"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-082" archimateElement="id-f4-ev-048" fillColor="#d5e8d4"><bounds x="920" y="608" width="400" height="54"/></child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V6b. Agregados, comandos y eventos - Evaluación de riesgo" id="id-f4-v6b">
+      <documentation>V6b - DDD táctico del dominio Evaluación de riesgo (Supporting). El resultado no es apto si falta un requisito obligatorio, y la recomendación externa informa pero no decide por sí sola.</documentation>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-163" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1"><bounds x="20" y="20" width="420" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-164" name="COMANDOS (Application Process)" textAlignment="1"><bounds x="480" y="20" width="380" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-165" name="EVENTOS (Application Event / Business Event)" textAlignment="1"><bounds x="920" y="20" width="400" height="40"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-166" archimateElement="id-95185947936f48139e74d1473a639362" fillColor="#b7d7f0"><bounds x="20" y="90" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-196" source="id-f4-o-166" target="id-f4-o-190" archimateRelationship="id-f4-rel-117"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-197" source="id-f4-o-166" target="id-f4-o-191" archimateRelationship="id-f4-rel-119"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-198" source="id-f4-o-166" target="id-f4-o-192" archimateRelationship="id-f4-rel-121"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-170" archimateElement="id-f4-er-expediente-122" fillColor="#b7d7f0"><bounds x="20" y="332" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-199" source="id-f4-o-170" target="id-f4-o-193" archimateRelationship="id-f4-rel-124"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-200" source="id-f4-o-170" target="id-f4-o-194" archimateRelationship="id-f4-rel-126"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-201" source="id-f4-o-170" target="id-f4-o-195" archimateRelationship="id-f4-rel-128"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-190" archimateElement="id-f4-er-eval-c-116" fillColor="#dae8fc"><bounds x="50" y="152" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-191" archimateElement="id-f4-er-eval-c-118" fillColor="#e1d5e7"><bounds x="50" y="204" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-192" archimateElement="id-f4-er-eval-c-120" fillColor="#e1d5e7"><bounds x="50" y="256" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-193" archimateElement="id-42956fdf5f9b4885ba1e1bc551cf7504" fillColor="#dae8fc"><bounds x="50" y="394" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-194" archimateElement="id-f4-er-expediente-c-125" fillColor="#e1d5e7"><bounds x="50" y="446" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-195" archimateElement="id-f4-er-expediente-c-127" fillColor="#e1d5e7"><bounds x="50" y="498" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-174" archimateElement="id-f4-cmd-129" fillColor="#ffe6cc"><bounds x="480" y="90" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-202" source="id-f4-o-174" target="id-f4-o-166" archimateRelationship="id-f4-rel-130"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-203" source="id-f4-o-174" target="id-f4-o-175" archimateRelationship="id-f4-rel-132"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-175" archimateElement="id-f4-ev-131" fillColor="#d5e8d4"><bounds x="920" y="90" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-176" archimateElement="id-f4-cmd-133" fillColor="#ffe6cc"><bounds x="480" y="164" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-204" source="id-f4-o-176" target="id-f4-o-166" archimateRelationship="id-f4-rel-134"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-205" source="id-f4-o-176" target="id-f4-o-177" archimateRelationship="id-f4-rel-136"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-177" archimateElement="id-f4-ev-135" fillColor="#d5e8d4"><bounds x="920" y="164" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-178" archimateElement="id-f4-cmd-137" fillColor="#ffe6cc"><bounds x="480" y="238" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-206" source="id-f4-o-178" target="id-f4-o-166" archimateRelationship="id-f4-rel-138"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-207" source="id-f4-o-178" target="id-f4-o-179" archimateRelationship="id-f4-rel-140"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-179" archimateElement="id-f4-ev-139" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-180" archimateElement="id-f4-cmd-141" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-208" source="id-f4-o-180" target="id-f4-o-166" archimateRelationship="id-f4-rel-142"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-209" source="id-f4-o-180" target="id-f4-o-181" archimateRelationship="id-f4-rel-144"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-181" archimateElement="id-f4-ev-143" fillColor="#d5e8d4"><bounds x="920" y="312" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-182" archimateElement="id-f4-cmd-145" fillColor="#ffe6cc"><bounds x="480" y="386" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-210" source="id-f4-o-182" target="id-f4-o-166" archimateRelationship="id-f4-rel-146"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-211" source="id-f4-o-182" target="id-f4-o-183" archimateRelationship="id-f4-rel-148"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-183" archimateElement="id-f4-ev-147" fillColor="#cdeb8b"><bounds x="920" y="386" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-184" archimateElement="id-f4-cmd-149" fillColor="#ffe6cc"><bounds x="480" y="460" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-212" source="id-f4-o-184" target="id-f4-o-166" archimateRelationship="id-f4-rel-150"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-213" source="id-f4-o-184" target="id-f4-o-185" archimateRelationship="id-f4-rel-152"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-185" archimateElement="id-f4-ev-151" fillColor="#d5e8d4"><bounds x="920" y="460" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-186" archimateElement="id-f4-cmd-153" fillColor="#ffe6cc"><bounds x="480" y="534" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-214" source="id-f4-o-186" target="id-f4-o-166" archimateRelationship="id-f4-rel-154"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-215" source="id-f4-o-186" target="id-f4-o-187" archimateRelationship="id-f4-rel-156"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-187" archimateElement="id-f4-ev-155" fillColor="#d5e8d4"><bounds x="920" y="534" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-188" archimateElement="id-f4-cmd-157" fillColor="#ffe6cc"><bounds x="480" y="608" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-216" source="id-f4-o-188" target="id-f4-o-170" archimateRelationship="id-f4-rel-158"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-217" source="id-f4-o-188" target="id-f4-o-189" archimateRelationship="id-f4-rel-160"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-189" archimateElement="id-f4-ev-159" fillColor="#d5e8d4"><bounds x="920" y="608" width="400" height="54"/></child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V6c. Agregados, comandos y eventos - Operación y seguimiento del yate" id="id-f4-v6c">
+      <documentation>V6c - DDD táctico del dominio Operación y seguimiento del yate (Core). Entrega, devolución y seguimiento comparten el estado físico del yate; registrar una novedad no atribuye responsabilidad.</documentation>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-279" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1"><bounds x="20" y="20" width="420" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-280" name="COMANDOS (Application Process)" textAlignment="1"><bounds x="480" y="20" width="380" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-281" name="EVENTOS (Application Event / Business Event)" textAlignment="1"><bounds x="920" y="20" width="400" height="40"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-282" archimateElement="id-f4-os-operacion-218" fillColor="#b7d7f0"><bounds x="20" y="90" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-322" source="id-f4-o-282" target="id-f4-o-313" archimateRelationship="id-f4-rel-220"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-323" source="id-f4-o-282" target="id-f4-o-314" archimateRelationship="id-f4-rel-222"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-324" source="id-f4-o-282" target="id-f4-o-315" archimateRelationship="id-f4-rel-224"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-325" source="id-f4-o-282" target="id-f4-o-316" archimateRelationship="id-f4-rel-226"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-326" source="id-f4-o-282" target="id-f4-o-317" archimateRelationship="id-f4-rel-228"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-288" archimateElement="id-f4-os-seguimiento-229" fillColor="#b7d7f0"><bounds x="20" y="436" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-327" source="id-f4-o-288" target="id-f4-o-318" archimateRelationship="id-f4-rel-231"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-328" source="id-f4-o-288" target="id-f4-o-319" archimateRelationship="id-f4-rel-233"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-329" source="id-f4-o-288" target="id-f4-o-320" archimateRelationship="id-f4-rel-235"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-330" source="id-f4-o-288" target="id-f4-o-321" archimateRelationship="id-f4-rel-237"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-313" archimateElement="id-7ae85d4387244a728a5e430392330786" fillColor="#dae8fc"><bounds x="50" y="152" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-314" archimateElement="id-f4-os-operacion-c-221" fillColor="#dae8fc"><bounds x="50" y="204" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-315" archimateElement="id-f4-os-operacion-c-223" fillColor="#dae8fc"><bounds x="50" y="256" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-316" archimateElement="id-f4-os-operacion-c-225" fillColor="#e1d5e7"><bounds x="50" y="308" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-317" archimateElement="id-f4-os-operacion-c-227" fillColor="#e1d5e7"><bounds x="50" y="360" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-318" archimateElement="id-bd26c4ae38b3445b85344f84c46f8ec9" fillColor="#dae8fc"><bounds x="50" y="498" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-319" archimateElement="id-d250af364fda4892997f5175468dc211" fillColor="#dae8fc"><bounds x="50" y="550" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-320" archimateElement="id-f4-os-seguimiento-c-234" fillColor="#e1d5e7"><bounds x="50" y="602" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-321" archimateElement="id-f4-os-seguimiento-c-236" fillColor="#e1d5e7"><bounds x="50" y="654" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-293" archimateElement="id-f4-cmd-238" fillColor="#ffe6cc"><bounds x="480" y="90" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-331" source="id-f4-o-293" target="id-f4-o-282" archimateRelationship="id-f4-rel-239"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-332" source="id-f4-o-293" target="id-f4-o-294" archimateRelationship="id-f4-rel-241"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-294" archimateElement="id-f4-ev-240" fillColor="#d5e8d4"><bounds x="920" y="90" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-295" archimateElement="id-f4-cmd-242" fillColor="#ffe6cc"><bounds x="480" y="164" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-333" source="id-f4-o-295" target="id-f4-o-282" archimateRelationship="id-f4-rel-243"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-334" source="id-f4-o-295" target="id-f4-o-296" archimateRelationship="id-f4-rel-245"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-296" archimateElement="id-f4-ev-244" fillColor="#d5e8d4"><bounds x="920" y="164" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-297" archimateElement="id-f4-cmd-246" fillColor="#ffe6cc"><bounds x="480" y="238" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-335" source="id-f4-o-297" target="id-f4-o-282" archimateRelationship="id-f4-rel-247"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-336" source="id-f4-o-297" target="id-f4-o-298" archimateRelationship="id-f4-rel-249"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-298" archimateElement="id-f4-ev-248" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-299" archimateElement="id-f4-cmd-250" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-337" source="id-f4-o-299" target="id-f4-o-282" archimateRelationship="id-f4-rel-251"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-338" source="id-f4-o-299" target="id-f4-o-300" archimateRelationship="id-f4-rel-253"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-300" archimateElement="id-f4-ev-252" fillColor="#d5e8d4"><bounds x="920" y="312" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-301" archimateElement="id-f4-cmd-254" fillColor="#ffe6cc"><bounds x="480" y="386" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-339" source="id-f4-o-301" target="id-f4-o-282" archimateRelationship="id-f4-rel-255"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-340" source="id-f4-o-301" target="id-f4-o-302" archimateRelationship="id-f4-rel-257"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-302" archimateElement="id-f4-ev-256" fillColor="#d5e8d4"><bounds x="920" y="386" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-303" archimateElement="id-f4-cmd-258" fillColor="#ffe6cc"><bounds x="480" y="460" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-341" source="id-f4-o-303" target="id-f4-o-282" archimateRelationship="id-f4-rel-259"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-342" source="id-f4-o-303" target="id-f4-o-304" archimateRelationship="id-f4-rel-261"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-304" archimateElement="id-f4-ev-260" fillColor="#d5e8d4"><bounds x="920" y="460" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-305" archimateElement="id-f4-cmd-262" fillColor="#ffe6cc"><bounds x="480" y="534" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-343" source="id-f4-o-305" target="id-f4-o-282" archimateRelationship="id-f4-rel-263"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-344" source="id-f4-o-305" target="id-f4-o-306" archimateRelationship="id-f4-rel-264"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-306" archimateElement="id-EV4" fillColor="#d5e8d4"><bounds x="920" y="534" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-307" archimateElement="id-f4-cmd-265" fillColor="#ffe6cc"><bounds x="480" y="608" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-345" source="id-f4-o-307" target="id-f4-o-288" archimateRelationship="id-f4-rel-266"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-346" source="id-f4-o-307" target="id-f4-o-308" archimateRelationship="id-f4-rel-268"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-308" archimateElement="id-f4-ev-267" fillColor="#d5e8d4"><bounds x="920" y="608" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-309" archimateElement="id-f4-cmd-269" fillColor="#ffe6cc"><bounds x="480" y="682" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-347" source="id-f4-o-309" target="id-f4-o-288" archimateRelationship="id-f4-rel-270"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-348" source="id-f4-o-309" target="id-f4-o-310" archimateRelationship="id-f4-rel-272"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-310" archimateElement="id-f4-ev-271" fillColor="#d5e8d4"><bounds x="920" y="682" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-311" archimateElement="id-f4-cmd-273" fillColor="#ffe6cc"><bounds x="480" y="756" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-349" source="id-f4-o-311" target="id-f4-o-288" archimateRelationship="id-f4-rel-274"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-350" source="id-f4-o-311" target="id-f4-o-312" archimateRelationship="id-f4-rel-276"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-312" archimateElement="id-f4-ev-275" fillColor="#d5e8d4"><bounds x="920" y="756" width="400" height="54"/></child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V6d. Agregados, comandos y eventos - Liquidación" id="id-f4-v6d">
+      <documentation>V6d - DDD táctico del dominio Liquidación (Supporting). El depósito es garantía y no ingreso; todo cargo se sustenta en evidencia comparada y en una condición contractual.</documentation>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-408" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1"><bounds x="20" y="20" width="420" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-409" name="COMANDOS (Application Process)" textAlignment="1"><bounds x="480" y="20" width="380" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-410" name="EVENTOS (Application Event / Business Event)" textAlignment="1"><bounds x="920" y="20" width="400" height="40"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-411" archimateElement="id-f4-li-liquidacion-351" fillColor="#b7d7f0"><bounds x="20" y="90" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-446" source="id-f4-o-411" target="id-f4-o-440" archimateRelationship="id-f4-rel-353"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-447" source="id-f4-o-411" target="id-f4-o-441" archimateRelationship="id-f4-rel-355"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-448" source="id-f4-o-411" target="id-f4-o-442" archimateRelationship="id-f4-rel-357"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-415" archimateElement="id-f388d78a240547dcb72acc7ed81ec7aa" fillColor="#b7d7f0"><bounds x="20" y="332" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-449" source="id-f4-o-415" target="id-f4-o-443" archimateRelationship="id-f4-rel-360"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-450" source="id-f4-o-415" target="id-f4-o-444" archimateRelationship="id-f4-rel-362"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-418" archimateElement="id-2db9c41d2746491d8856dbc5ac2b1326" fillColor="#b7d7f0"><bounds x="20" y="522" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-451" source="id-f4-o-418" target="id-f4-o-445" archimateRelationship="id-f4-rel-365"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-440" archimateElement="id-f4-li-liquidacion-c-352" fillColor="#dae8fc"><bounds x="50" y="152" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-441" archimateElement="id-f98db1a961d44917a05c5336068cc166" fillColor="#e1d5e7"><bounds x="50" y="204" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-442" archimateElement="id-f4-li-liquidacion-c-356" fillColor="#e1d5e7"><bounds x="50" y="256" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-443" archimateElement="id-f4-li-garantia-c-359" fillColor="#dae8fc"><bounds x="50" y="394" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-444" archimateElement="id-f4-li-garantia-c-361" fillColor="#e1d5e7"><bounds x="50" y="446" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-445" archimateElement="id-f4-li-reclamacion-c-364" fillColor="#e1d5e7"><bounds x="50" y="584" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-420" archimateElement="id-f4-cmd-366" fillColor="#ffe6cc"><bounds x="480" y="90" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-452" source="id-f4-o-420" target="id-f4-o-411" archimateRelationship="id-f4-rel-367"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-453" source="id-f4-o-420" target="id-f4-o-421" archimateRelationship="id-f4-rel-369"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-421" archimateElement="id-f4-ev-368" fillColor="#d5e8d4"><bounds x="920" y="90" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-422" archimateElement="id-f4-cmd-370" fillColor="#ffe6cc"><bounds x="480" y="164" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-454" source="id-f4-o-422" target="id-f4-o-411" archimateRelationship="id-f4-rel-371"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-455" source="id-f4-o-422" target="id-f4-o-423" archimateRelationship="id-f4-rel-373"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-423" archimateElement="id-f4-ev-372" fillColor="#d5e8d4"><bounds x="920" y="164" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-424" archimateElement="id-f4-cmd-374" fillColor="#ffe6cc"><bounds x="480" y="238" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-456" source="id-f4-o-424" target="id-f4-o-411" archimateRelationship="id-f4-rel-375"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-457" source="id-f4-o-424" target="id-f4-o-425" archimateRelationship="id-f4-rel-377"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-425" archimateElement="id-f4-ev-376" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-426" archimateElement="id-f4-cmd-378" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-458" source="id-f4-o-426" target="id-f4-o-415" archimateRelationship="id-f4-rel-379"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-459" source="id-f4-o-426" target="id-f4-o-427" archimateRelationship="id-f4-rel-381"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-427" archimateElement="id-f4-ev-380" fillColor="#d5e8d4"><bounds x="920" y="312" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-428" archimateElement="id-f4-cmd-382" fillColor="#ffe6cc"><bounds x="480" y="386" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-460" source="id-f4-o-428" target="id-f4-o-415" archimateRelationship="id-f4-rel-383"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-461" source="id-f4-o-428" target="id-f4-o-429" archimateRelationship="id-f4-rel-385"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-429" archimateElement="id-f4-ev-384" fillColor="#d5e8d4"><bounds x="920" y="386" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-430" archimateElement="id-f4-cmd-386" fillColor="#ffe6cc"><bounds x="480" y="460" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-462" source="id-f4-o-430" target="id-f4-o-415" archimateRelationship="id-f4-rel-387"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-463" source="id-f4-o-430" target="id-f4-o-431" archimateRelationship="id-f4-rel-389"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-431" archimateElement="id-f4-ev-388" fillColor="#d5e8d4"><bounds x="920" y="460" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-432" archimateElement="id-f4-cmd-390" fillColor="#ffe6cc"><bounds x="480" y="534" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-464" source="id-f4-o-432" target="id-f4-o-415" archimateRelationship="id-f4-rel-391"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-465" source="id-f4-o-432" target="id-f4-o-433" archimateRelationship="id-f4-rel-393"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-433" archimateElement="id-f4-ev-392" fillColor="#d5e8d4"><bounds x="920" y="534" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-434" archimateElement="id-f4-cmd-394" fillColor="#ffe6cc"><bounds x="480" y="608" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-466" source="id-f4-o-434" target="id-f4-o-418" archimateRelationship="id-f4-rel-395"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-467" source="id-f4-o-434" target="id-f4-o-435" archimateRelationship="id-f4-rel-397"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-435" archimateElement="id-f4-ev-396" fillColor="#d5e8d4"><bounds x="920" y="608" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-436" archimateElement="id-f4-cmd-398" fillColor="#ffe6cc"><bounds x="480" y="682" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-468" source="id-f4-o-436" target="id-f4-o-418" archimateRelationship="id-f4-rel-399"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-469" source="id-f4-o-436" target="id-f4-o-437" archimateRelationship="id-f4-rel-401"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-437" archimateElement="id-f4-ev-400" fillColor="#d5e8d4"><bounds x="920" y="682" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-438" archimateElement="id-f4-cmd-402" fillColor="#ffe6cc"><bounds x="480" y="756" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-470" source="id-f4-o-438" target="id-f4-o-411" archimateRelationship="id-f4-rel-403"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-471" source="id-f4-o-438" target="id-f4-o-439" archimateRelationship="id-f4-rel-404"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-439" archimateElement="id-EV5" fillColor="#d5e8d4"><bounds x="920" y="756" width="400" height="54"/></child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V6e. Agregados, comandos y eventos - Reputación" id="id-f4-v6e">
+      <documentation>V6e - DDD táctico del dominio Reputación (Supporting). Una calificación se registra una vez por participante y arriendo; una valoración cuestionada no se publica hasta resolverse.</documentation>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-502" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1"><bounds x="20" y="20" width="420" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-503" name="COMANDOS (Application Process)" textAlignment="1"><bounds x="480" y="20" width="380" height="40"/></child>
+      <child xsi:type="archimate:Group" id="id-f4-hdr-504" name="EVENTOS (Application Event / Business Event)" textAlignment="1"><bounds x="920" y="20" width="400" height="40"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-505" archimateElement="id-f4-re-perfil-472" fillColor="#b7d7f0"><bounds x="20" y="90" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-525" source="id-f4-o-505" target="id-f4-o-520" archimateRelationship="id-f4-rel-474"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-526" source="id-f4-o-505" target="id-f4-o-521" archimateRelationship="id-f4-rel-476"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-527" source="id-f4-o-505" target="id-f4-o-522" archimateRelationship="id-f4-rel-478"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-509" archimateElement="id-f4-re-revision-479" fillColor="#b7d7f0"><bounds x="20" y="332" width="420" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-528" source="id-f4-o-509" target="id-f4-o-523" archimateRelationship="id-f4-rel-481"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-529" source="id-f4-o-509" target="id-f4-o-524" archimateRelationship="id-f4-rel-483"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-520" archimateElement="id-d1dc9e548b4d4fdda0a6710f3caede07" fillColor="#dae8fc"><bounds x="50" y="152" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-521" archimateElement="id-258da4d378224caebf0269f6def39957" fillColor="#e1d5e7"><bounds x="50" y="204" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-522" archimateElement="id-f4-re-perfil-c-477" fillColor="#e1d5e7"><bounds x="50" y="256" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-523" archimateElement="id-f4-re-revision-c-480" fillColor="#dae8fc"><bounds x="50" y="394" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-524" archimateElement="id-f4-re-revision-c-482" fillColor="#e1d5e7"><bounds x="50" y="446" width="380" height="46"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-512" archimateElement="id-f4-cmd-484" fillColor="#ffe6cc"><bounds x="480" y="90" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-530" source="id-f4-o-512" target="id-f4-o-505" archimateRelationship="id-f4-rel-485"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-531" source="id-f4-o-512" target="id-f4-o-513" archimateRelationship="id-f4-rel-487"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-513" archimateElement="id-f4-ev-486" fillColor="#d5e8d4"><bounds x="920" y="90" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-514" archimateElement="id-f4-cmd-488" fillColor="#ffe6cc"><bounds x="480" y="164" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-532" source="id-f4-o-514" target="id-f4-o-505" archimateRelationship="id-f4-rel-489"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-533" source="id-f4-o-514" target="id-f4-o-515" archimateRelationship="id-f4-rel-491"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-515" archimateElement="id-f4-ev-490" fillColor="#d5e8d4"><bounds x="920" y="164" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-516" archimateElement="id-f4-cmd-492" fillColor="#ffe6cc"><bounds x="480" y="238" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-534" source="id-f4-o-516" target="id-f4-o-509" archimateRelationship="id-f4-rel-493"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-535" source="id-f4-o-516" target="id-f4-o-517" archimateRelationship="id-f4-rel-495"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-517" archimateElement="id-f4-ev-494" fillColor="#d5e8d4"><bounds x="920" y="238" width="400" height="54"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-518" archimateElement="id-f4-cmd-496" fillColor="#ffe6cc"><bounds x="480" y="312" width="380" height="54"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-536" source="id-f4-o-518" target="id-f4-o-509" archimateRelationship="id-f4-rel-497"/><sourceConnection xsi:type="archimate:Connection" id="id-f4-c-537" source="id-f4-o-518" target="id-f4-o-519" archimateRelationship="id-f4-rel-499"/></child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4-o-519" archimateElement="id-f4-ev-498" fillColor="#d5e8d4"><bounds x="920" y="312" width="400" height="54"/></child>
+    </element>
   </folder>
 </archimate:model>
