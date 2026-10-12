@@ -351,7 +351,7 @@ La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se r
 
 ### 16.1 V8. Mapa de contextos delimitados y patrones (fase 5)
 
-![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones.png)
+![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones-v2.png)
 
 La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido, limitado a arriendo, yate y participante, se conecta a Gestión y a Operación con asociación para que no lleguen a acoplarse.
 
