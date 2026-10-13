@@ -1,0 +1,8 @@
+# Respaldos automáticos de Archi
+*.archimate.bak
+*.bak
+
+# Temporales
+*.tmp
+Thumbs.db
+.DS_Store
