@@ -3222,14 +3222,14 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AccessRelationship" id="id-7d6bad91e17e4fea92100f64d6d5954f" source="id-29f1a448a76348edb62d8497f9c9223c" target="id-2db9c41d2746491d8856dbc5ac2b1326"/>
     <element xsi:type="archimate:AccessRelationship" id="id-d7476a8e45d04872b720cad62005d2ef" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/>
     <element xsi:type="archimate:AccessRelationship" id="id-266f9ff3e1b14454bc5dc5d4275d0c35" source="id-4c8f87372e9c4fb39d4e04471d59fa98" target="id-258da4d378224caebf0269f6def39957"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-003" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-ce6958e1f2ab4e7ea18a5b1b01f63daa"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-005" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-004"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-007" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-006"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-010" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-009"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-012" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-011"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-014" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-013"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-017" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-016"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-019" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-018"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-003" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-ce6958e1f2ab4e7ea18a5b1b01f63daa"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-005" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-004"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-007" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-f4-ga-arriendo-c-006"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-010" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-009"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-012" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-011"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-014" source="id-26040ce9c0f94c378700942bc84ae939" target="id-f4-ga-disponibilidad-c-013"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-017" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-016"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-019" source="id-f4-ga-yate-015" target="id-f4-ga-yate-c-018"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-021" source="id-f4-cmd-020" target="id-cacdaf92e3c2487d8ab97101376d7ee5"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-023" source="id-f4-cmd-020" target="id-f4-ev-022"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-025" source="id-f4-cmd-024" target="id-26040ce9c0f94c378700942bc84ae939"/>
@@ -3249,12 +3249,12 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-050" source="id-cacdaf92e3c2487d8ab97101376d7ee5" target="id-21be10965bf940a8862eb2ac2425a620"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-051" source="id-26040ce9c0f94c378700942bc84ae939" target="id-7af20e3d1e4d4c488405aee480c3ee44"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-052" source="id-f4-ga-yate-015" target="id-OB01"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-117" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-116"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-119" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-118"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-121" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-120"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-124" source="id-f4-er-expediente-122" target="id-42956fdf5f9b4885ba1e1bc551cf7504"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-126" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-125"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-128" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-127"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-117" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-116"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-119" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-118"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-121" source="id-95185947936f48139e74d1473a639362" target="id-f4-er-eval-c-120"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-124" source="id-f4-er-expediente-122" target="id-42956fdf5f9b4885ba1e1bc551cf7504"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-126" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-125"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-128" source="id-f4-er-expediente-122" target="id-f4-er-expediente-c-127"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-130" source="id-f4-cmd-129" target="id-95185947936f48139e74d1473a639362"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-132" source="id-f4-cmd-129" target="id-f4-ev-131"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-134" source="id-f4-cmd-133" target="id-95185947936f48139e74d1473a639362"/>
@@ -3273,15 +3273,15 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-160" source="id-f4-cmd-157" target="id-f4-ev-159"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-161" source="id-95185947936f48139e74d1473a639362" target="id-b9ddcb0a601c4d49800e102541137c9b"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-162" source="id-f4-er-expediente-122" target="id-OB03"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-220" source="id-f4-os-operacion-218" target="id-7ae85d4387244a728a5e430392330786"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-222" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-221"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-224" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-223"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-226" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-225"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-228" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-227"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-231" source="id-f4-os-seguimiento-229" target="id-bd26c4ae38b3445b85344f84c46f8ec9"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-233" source="id-f4-os-seguimiento-229" target="id-d250af364fda4892997f5175468dc211"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-235" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-234"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-237" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-236"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-220" source="id-f4-os-operacion-218" target="id-7ae85d4387244a728a5e430392330786"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-222" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-221"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-224" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-223"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-226" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-225"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-228" source="id-f4-os-operacion-218" target="id-f4-os-operacion-c-227"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-231" source="id-f4-os-seguimiento-229" target="id-bd26c4ae38b3445b85344f84c46f8ec9"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-233" source="id-f4-os-seguimiento-229" target="id-d250af364fda4892997f5175468dc211"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-235" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-234"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-237" source="id-f4-os-seguimiento-229" target="id-f4-os-seguimiento-c-236"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-239" source="id-f4-cmd-238" target="id-f4-os-operacion-218"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-241" source="id-f4-cmd-238" target="id-f4-ev-240"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-243" source="id-f4-cmd-242" target="id-f4-os-operacion-218"/>
@@ -3304,12 +3304,12 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-276" source="id-f4-cmd-273" target="id-f4-ev-275"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-277" source="id-f4-os-operacion-218" target="term17"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-278" source="id-f4-os-seguimiento-229" target="id-OB15"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-353" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-352"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-355" source="id-f4-li-liquidacion-351" target="id-f98db1a961d44917a05c5336068cc166"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-357" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-356"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-360" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-359"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-362" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-361"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-365" source="id-2db9c41d2746491d8856dbc5ac2b1326" target="id-f4-li-reclamacion-c-364"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-353" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-352"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-355" source="id-f4-li-liquidacion-351" target="id-f98db1a961d44917a05c5336068cc166"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-357" source="id-f4-li-liquidacion-351" target="id-f4-li-liquidacion-c-356"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-360" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-359"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-362" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="id-f4-li-garantia-c-361"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-365" source="id-2db9c41d2746491d8856dbc5ac2b1326" target="id-f4-li-reclamacion-c-364"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-367" source="id-f4-cmd-366" target="id-f4-li-liquidacion-351"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-369" source="id-f4-cmd-366" target="id-f4-ev-368"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-371" source="id-f4-cmd-370" target="id-f4-li-liquidacion-351"/>
@@ -3333,11 +3333,11 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-405" source="id-f4-li-liquidacion-351" target="id-OB17"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-406" source="id-f388d78a240547dcb72acc7ed81ec7aa" target="term27"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f4-rel-407" source="id-2db9c41d2746491d8856dbc5ac2b1326" target="id-OB18"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-474" source="id-f4-re-perfil-472" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-476" source="id-f4-re-perfil-472" target="id-258da4d378224caebf0269f6def39957"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-478" source="id-f4-re-perfil-472" target="id-f4-re-perfil-c-477"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-481" source="id-f4-re-revision-479" target="id-f4-re-revision-c-480"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-f4-rel-483" source="id-f4-re-revision-479" target="id-f4-re-revision-c-482"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-474" source="id-f4-re-perfil-472" target="id-d1dc9e548b4d4fdda0a6710f3caede07"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-476" source="id-f4-re-perfil-472" target="id-258da4d378224caebf0269f6def39957"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-478" source="id-f4-re-perfil-472" target="id-f4-re-perfil-c-477"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-481" source="id-f4-re-revision-479" target="id-f4-re-revision-c-480"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f4-rel-483" source="id-f4-re-revision-479" target="id-f4-re-revision-c-482"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-485" source="id-f4-cmd-484" target="id-f4-re-perfil-472"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-f4-rel-487" source="id-f4-cmd-484" target="id-f4-ev-486"/>
     <element xsi:type="archimate:AccessRelationship" id="id-f4-rel-489" source="id-f4-cmd-488" target="id-f4-re-perfil-472"/>
@@ -3406,8 +3406,68 @@ Momento: Una sola vez, al arrancar.</documentation>
       <documentation>La capa anticorrupción compone la interfaz que traduce a CRM comercial.</documentation>
     </element>
     <element xsi:type="archimate:FlowRelationship" name="datos del cliente" id="id-f5-rel-051" source="id-f5-ext-018" target="id-f5-aclif-019">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Datos comerciales del cliente y estados de la reserva.</documentation>
-      <property key="Información" value="Datos comerciales del cliente y estados de la reserva"/>
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Datos de contacto, preferencias y antecedentes del cliente.</documentation>
+      <property key="Información" value="Datos de contacto, preferencias y antecedentes del cliente"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="estados de la reserva" id="id-f5-rel-074" source="id-f5-aclif-019" target="id-f5-ext-018">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Estado de solicitudes y reservas, cancelaciones, finalización, incidentes y satisfacción.</documentation>
+      <property key="Información" value="Estado de solicitudes y reservas, cancelaciones, finalización, incidentes y satisfacción"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="condiciones y documentos" id="id-f5-rel-054" source="id-f5-ext-020" target="id-f5-aclif-021">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Condiciones vigentes y documentos aceptados.</documentation>
+      <property key="Información" value="Condiciones vigentes y documentos aceptados"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="datos del arriendo y cambios" id="id-f5-rel-075" source="id-f5-aclif-021" target="id-f5-ext-020">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Datos del arriendo, partes, condiciones particulares y modificaciones que requieren aceptación.</documentation>
+      <property key="Información" value="Datos del arriendo, partes, condiciones particulares y modificaciones que requieren aceptación"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="recomendación externa" id="id-f5-rel-057" source="id-f5-ext-022" target="id-f5-aclif-023">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Resultado, recomendación o solicitud de verificaciones adicionales.</documentation>
+      <property key="Información" value="Resultado, recomendación o solicitud de verificaciones adicionales"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="datos para evaluar" id="id-f5-rel-076" source="id-f5-aclif-023" target="id-f5-ext-022">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Identificación necesaria del cliente, características del arriendo y antecedentes documentados.</documentation>
+      <property key="Información" value="Identificación necesaria del cliente, características del arriendo y antecedentes documentados"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="cobertura y decisiones" id="id-f5-rel-060" source="id-f5-ext-024" target="id-f5-aclif-025">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Vigencia, cobertura, exclusiones, deducibles y decisión sobre reclamaciones.</documentation>
+      <property key="Información" value="Vigencia, cobertura, exclusiones, deducibles y decisión sobre reclamaciones"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="datos del arriendo y siniestros" id="id-f5-rel-077" source="id-f5-aclif-025" target="id-f5-ext-024">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Datos del yate, propietario, uso, período y capitán; ante siniestro, hechos y evidencias.</documentation>
+      <property key="Información" value="Datos del yate, propietario, uso, período y capitán; ante siniestro, hechos y evidencias"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="preparación y novedades" id="id-f5-rel-063" source="id-f5-ext-026" target="id-f5-aclif-027">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Confirmación, restricciones, estado de preparación, combustible, hora real de entrega y recepción, novedades.</documentation>
+      <property key="Información" value="Confirmación, restricciones, estado de preparación, combustible, hora real de entrega y recepción, novedades"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="reserva y horarios" id="id-f5-rel-078" source="id-f5-aclif-027" target="id-f5-ext-026">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Reserva, horarios, personas autorizadas, servicios solicitados y hora prevista de regreso.</documentation>
+      <property key="Información" value="Reserva, horarios, personas autorizadas, servicios solicitados y hora prevista de regreso"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="resultados de cobro" id="id-f5-rel-066" source="id-f5-ext-028" target="id-f5-aclif-029">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Resultado y estado de cobros, garantías, liberaciones y reembolsos, con referencia y fecha.</documentation>
+      <property key="Información" value="Resultado y estado de cobros, garantías, liberaciones y reembolsos, con referencia y fecha"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="solicitudes de cobro" id="id-f5-rel-079" source="id-f5-aclif-029" target="id-f5-ext-028">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Solicitudes de cobro, retención, liberación o reembolso.</documentation>
+      <property key="Información" value="Solicitudes de cobro, retención, liberación o reembolso"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="ubicación y combustible" id="id-f5-rel-069" source="id-f5-ext-030" target="id-f5-aclif-031">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Posición, nivel de combustible, momento de la medición y avisos de indisponibilidad.</documentation>
+      <property key="Información" value="Posición, nivel de combustible, momento de la medición y avisos de indisponibilidad"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="yate a consultar" id="id-f5-rel-080" source="id-f5-aclif-031" target="id-f5-ext-030">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Identificación del yate a consultar y reporte de lecturas ausentes o incorrectas.</documentation>
+      <property key="Información" value="Identificación del yate a consultar y reporte de lecturas ausentes o incorrectas"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="conciliaciones" id="id-f5-rel-081" source="id-f5-ext-032" target="id-f5-aclif-033">
+      <documentation>El sistema externo entrega información a la aplicación a través de la interfaz anticorrupción. Información: Conciliaciones y confirmación de registros.</documentation>
+      <property key="Información" value="Conciliaciones y confirmación de registros"/>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" name="valores para registro" id="id-f5-rel-072" source="id-f5-aclif-033" target="id-f5-ext-032">
+      <documentation>La aplicación entrega información al sistema externo a través de la interfaz anticorrupción. Información: Pagos, comisiones, reembolsos y lo que corresponde a cada propietario.</documentation>
+      <property key="Información" value="Pagos, comisiones, reembolsos y lo que corresponde a cada propietario"/>
     </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-052" source="id-f5-aclif-019" target="id-f5-bc-001">
       <documentation>La interfaz anticorrupción sirve al contexto de gestión del arriendo con la información ya traducida.</documentation>
@@ -3416,20 +3476,12 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-053" source="id-f5-acl-017" target="id-f5-aclif-021">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Gestión de contratos.</documentation>
     </element>
-    <element xsi:type="archimate:FlowRelationship" name="condiciones y documentos" id="id-f5-rel-054" source="id-f5-ext-020" target="id-f5-aclif-021">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Condiciones vigentes y cambios que requieren aceptación.</documentation>
-      <property key="Información" value="Condiciones vigentes y cambios que requieren aceptación"/>
-    </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-055" source="id-f5-aclif-021" target="id-f5-bc-001">
       <documentation>La interfaz anticorrupción sirve al contexto de gestión del arriendo con la información ya traducida.</documentation>
       <property key="Patrón" value="Capa anticorrupción"/>
     </element>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-056" source="id-f5-acl-017" target="id-f5-aclif-023">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Evaluación de riesgo externa.</documentation>
-    </element>
-    <element xsi:type="archimate:FlowRelationship" name="recomendación externa" id="id-f5-rel-057" source="id-f5-ext-022" target="id-f5-aclif-023">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Solicitud de evaluación y recomendación de un tercero.</documentation>
-      <property key="Información" value="Solicitud de evaluación y recomendación de un tercero"/>
     </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-058" source="id-f5-aclif-023" target="id-f5-bc-004">
       <documentation>La interfaz anticorrupción sirve al contexto de evaluación de riesgo con la información ya traducida.</documentation>
@@ -3438,20 +3490,12 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-059" source="id-f5-acl-017" target="id-f5-aclif-025">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Aseguradora.</documentation>
     </element>
-    <element xsi:type="archimate:FlowRelationship" name="cobertura y siniestros" id="id-f5-rel-060" source="id-f5-ext-024" target="id-f5-aclif-025">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Cobertura, siniestros y evidencias del estado del yate.</documentation>
-      <property key="Información" value="Cobertura, siniestros y evidencias del estado del yate"/>
-    </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-061" source="id-f5-aclif-025" target="id-f5-bc-007">
       <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
       <property key="Patrón" value="Capa anticorrupción"/>
     </element>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-062" source="id-f5-acl-017" target="id-f5-aclif-027">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Marinas.</documentation>
-    </element>
-    <element xsi:type="archimate:FlowRelationship" name="preparación y novedades" id="id-f5-rel-063" source="id-f5-ext-026" target="id-f5-aclif-027">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Horarios, personas autorizadas, preparación y novedades de entrega.</documentation>
-      <property key="Información" value="Horarios, personas autorizadas, preparación y novedades de entrega"/>
     </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-064" source="id-f5-aclif-027" target="id-f5-bc-007">
       <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
@@ -3460,10 +3504,6 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-065" source="id-f5-acl-017" target="id-f5-aclif-029">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Pasarela de pagos.</documentation>
     </element>
-    <element xsi:type="archimate:FlowRelationship" name="cobros y garantías" id="id-f5-rel-066" source="id-f5-ext-028" target="id-f5-aclif-029">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Cobros, garantías, retenciones y reembolsos con su resultado.</documentation>
-      <property key="Información" value="Cobros, garantías, retenciones y reembolsos con su resultado"/>
-    </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-067" source="id-f5-aclif-029" target="id-f5-bc-010">
       <documentation>La interfaz anticorrupción sirve al contexto de liquidación con la información ya traducida.</documentation>
       <property key="Patrón" value="Capa anticorrupción"/>
@@ -3471,20 +3511,12 @@ Momento: Una sola vez, al arrancar.</documentation>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-068" source="id-f5-acl-017" target="id-f5-aclif-031">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Fuente de ubicación y combustible.</documentation>
     </element>
-    <element xsi:type="archimate:FlowRelationship" name="ubicación y combustible" id="id-f5-rel-069" source="id-f5-ext-030" target="id-f5-aclif-031">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Posición y nivel de combustible con su hora de medición.</documentation>
-      <property key="Información" value="Posición y nivel de combustible con su hora de medición"/>
-    </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-070" source="id-f5-aclif-031" target="id-f5-bc-007">
       <documentation>La interfaz anticorrupción sirve al contexto de operación y seguimiento del yate con la información ya traducida.</documentation>
       <property key="Patrón" value="Capa anticorrupción"/>
     </element>
     <element xsi:type="archimate:AggregationRelationship" id="id-f5-rel-071" source="id-f5-acl-017" target="id-f5-aclif-033">
       <documentation>La capa anticorrupción compone la interfaz que traduce a Contabilidad.</documentation>
-    </element>
-    <element xsi:type="archimate:FlowRelationship" name="valores para registro" id="id-f5-rel-072" source="id-f5-ext-032" target="id-f5-aclif-033">
-      <documentation>El sistema externo entrega y recibe información a través de la interfaz anticorrupción. Información: Valores calculados para registro y conciliación.</documentation>
-      <property key="Información" value="Valores calculados para registro y conciliación"/>
     </element>
     <element xsi:type="archimate:ServingRelationship" name="traducida" id="id-f5-rel-073" source="id-f5-aclif-033" target="id-f5-bc-010">
       <documentation>La interfaz anticorrupción sirve al contexto de liquidación con la información ya traducida.</documentation>
@@ -5354,7 +5386,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
       </child>
     </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="V9. Interoperabilidad y anticorrupción" id="id-ae4e855ecd60433e852b8e561c85772c">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V9b. Interoperabilidad de negocio" id="id-ae4e855ecd60433e852b8e561c85772c">
       <child xsi:type="archimate:DiagramObject" id="id-41a1f94e234f48f785c610fe1cefe3e9" targetConnections="id-3af6aa36640f4986b9b6f6a226e00a06" archimateElement="id-ST03">
         <bounds x="20" y="20" width="170" height="62"/>
       </child>
@@ -6831,7 +6863,7 @@ Momento: Una sola vez, al arrancar.</documentation>
       </child>
       <documentation>V8 - Mapa de contextos delimitados y patrones de relación. Los cinco contextos delimitados aparecen como componentes de aplicación, cada uno con el servicio que publica y su interfaz. Las flechas indican el patrón de relación: cliente-proveedor, servicio abierto y lenguaje publicado, núcleo compartido y la capa anticorrupción hacia los sistemas externos. Es coherente con la interoperabilidad de la fase 2.</documentation>
     </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="V8b. Interoperabilidad de aplicación y anticorrupción" id="id-f5-v8b">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V9. Interoperabilidad y anticorrupción (Aplicación)" id="id-f5-v8b">
       <child xsi:type="archimate:Group" id="id-f5-g-129" name="Aplicación de arrendamiento de yates (contextos delimitados)" textAlignment="1">
         <bounds x="20" y="20" width="300" height="580"/>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-124" targetConnections="id-8a0bc524896747daa2a679e62773ab84 id-5abff4457b5f4fd3b9e82a5c576bb2fc" fillColor="#d5e8d4" archimateElement="id-f5-bc-001">
@@ -6903,6 +6935,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-131" targetConnections="id-d75d440c361b4ac7ad4e4da758aa21d9 id-2de35490278c4fa1819bd9561558415a" fillColor="#e1d5e7" archimateElement="id-f5-aclif-019">
           <bounds x="48" y="112" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-0" source="id-f5-o-131" target="id-f5-o-156" archimateRelationship="id-f5-rel-074"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-8a0bc524896747daa2a679e62773ab84" source="id-f5-o-131" target="id-f5-o-124" archimateRelationship="id-f5-rel-052">
             <bendpoint startX="-297" startY="7" endX="263" endY="63"/>
             <bendpoint startX="-365" startY="-60" endX="195" endY="-4"/>
@@ -6910,6 +6943,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-134" targetConnections="id-8fe091c3f3774a09922151097a0ab154 id-6e085be526134090b1e3b710f0f85df1" fillColor="#e1d5e7" archimateElement="id-f5-aclif-021">
           <bounds x="48" y="168" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-1" source="id-f5-o-134" target="id-f5-o-158" archimateRelationship="id-f5-rel-075"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-5abff4457b5f4fd3b9e82a5c576bb2fc" source="id-f5-o-134" target="id-f5-o-124" archimateRelationship="id-f5-rel-055">
             <bendpoint startX="-336" startY="-1" endX="224" endY="111"/>
             <bendpoint startX="-336" startY="-20" endX="224" endY="92"/>
@@ -6917,6 +6951,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-137" targetConnections="id-23b7aed96f1646edaac882e4dcd0a7fa id-9bcb93a446e54df189ac40b7f0ad2011" fillColor="#e1d5e7" archimateElement="id-f5-aclif-023">
           <bounds x="48" y="224" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-2" source="id-f5-o-137" target="id-f5-o-160" archimateRelationship="id-f5-rel-076"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-b9ef496db4ac4de2955c1dced608f80c" source="id-f5-o-137" target="id-f5-o-125" archimateRelationship="id-f5-rel-058">
             <bendpoint startX="-336" startY="-9" endX="224" endY="59"/>
             <bendpoint startX="-384" startY="-67" endX="176" endY="1"/>
@@ -6924,6 +6959,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-140" targetConnections="id-1c6475b2f8b2472ba28f334aabdd4299 id-b350a3425323477ba32c6a2c91906f4e" fillColor="#e1d5e7" archimateElement="id-f5-aclif-025">
           <bounds x="48" y="280" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-3" source="id-f5-o-140" target="id-f5-o-162" archimateRelationship="id-f5-rel-077"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-20768ba3c5e5415580960e9fb0bc5834" source="id-f5-o-140" target="id-f5-o-126" archimateRelationship="id-f5-rel-061">
             <bendpoint startX="-230" startY="-8" endX="330" endY="16"/>
             <bendpoint startX="-297" startY="-46" endX="263" endY="-22"/>
@@ -6931,6 +6967,7 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-143" targetConnections="id-f9e02decfcb947af9f28f34d4c57e988 id-9a7d3d1c5c5145a281686a5daaf6f995" fillColor="#e1d5e7" archimateElement="id-f5-aclif-027">
           <bounds x="48" y="336" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-4" source="id-f5-o-143" target="id-f5-o-164" archimateRelationship="id-f5-rel-078"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-77b0480e5fc6434f81b9413abff071fe" source="id-f5-o-143" target="id-f5-o-126" archimateRelationship="id-f5-rel-064">
             <bendpoint startX="-259" startY="-6" endX="301" endY="74"/>
             <bendpoint startX="-345" startY="-73" endX="215" endY="7"/>
@@ -6938,16 +6975,19 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-146" targetConnections="id-fcc799d4fbb740f98ac8eaeb60e527c5 id-8a6418ac0e924a2390ad37670dffb5b0" fillColor="#e1d5e7" archimateElement="id-f5-aclif-029">
           <bounds x="48" y="392" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-5" source="id-f5-o-146" target="id-f5-o-166" archimateRelationship="id-f5-rel-079"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-6f3de187cfb0415e82536779221dc51f" source="id-f5-o-146" target="id-f5-o-127" archimateRelationship="id-f5-rel-067">
             <bendpoint startX="-307" startY="5" endX="253" endY="41"/>
           </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-149" targetConnections="id-6f967b9b3c2a4165a3870feb2b1a9c53 id-ab84440f277f4b4dbf1aeae64e96a7f6" fillColor="#e1d5e7" archimateElement="id-f5-aclif-031">
           <bounds x="48" y="448" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-6" source="id-f5-o-149" target="id-f5-o-168" archimateRelationship="id-f5-rel-080"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-839d5bad7ecc40b4bc07484bdf9dc88f" source="id-f5-o-149" target="id-f5-o-126" archimateRelationship="id-f5-rel-070"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-152" targetConnections="id-7f50f773121049c8a8cda22edac10098 id-f75225e9967747d5b85158e3ef6269e4" fillColor="#e1d5e7" archimateElement="id-f5-aclif-033">
           <bounds x="48" y="504" width="321" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-7" source="id-f5-o-152" target="id-f5-o-170" archimateRelationship="id-f5-rel-072"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-9fd908618312480c918a8d1b49a932b2" source="id-f5-o-152" target="id-f5-o-127" archimateRelationship="id-f5-rel-073">
             <bendpoint startX="-374" startY="-1" endX="186" endY="147"/>
             <bendpoint startX="-374" startY="-145" endX="186" endY="3"/>
@@ -6956,57 +6996,40 @@ Momento: Una sola vez, al arrancar.</documentation>
       </child>
       <child xsi:type="archimate:Group" id="id-f5-g-172" name="Sistemas y procesos externos" textAlignment="1">
         <bounds x="1140" y="20" width="340" height="580"/>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-156" fillColor="#f2f2f2" archimateElement="id-f5-ext-018">
-          <bounds x="20" y="44" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-2de35490278c4fa1819bd9561558415a" source="id-f5-o-156" target="id-f5-o-131" archimateRelationship="id-f5-rel-051">
-            <bendpoint startX="-253" startY="64" endX="327" endY="-3"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-156" targetConnections="id-f5-c-sale-0" fillColor="#f2f2f2" archimateElement="id-f5-ext-018">
+          <bounds x="20" y="112" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-2de35490278c4fa1819bd9561558415a" source="id-f5-o-156" target="id-f5-o-131" archimateRelationship="id-f5-rel-051"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-158" fillColor="#f2f2f2" archimateElement="id-f5-ext-020">
-          <bounds x="20" y="108" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-6e085be526134090b1e3b710f0f85df1" source="id-f5-o-158" target="id-f5-o-134" archimateRelationship="id-f5-rel-054">
-            <bendpoint startX="-186" startY="10" endX="394" endY="-49"/>
-            <bendpoint startX="-301" startY="48" endX="279" endY="-11"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-158" targetConnections="id-f5-c-sale-1" fillColor="#f2f2f2" archimateElement="id-f5-ext-020">
+          <bounds x="20" y="168" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6e085be526134090b1e3b710f0f85df1" source="id-f5-o-158" target="id-f5-o-134" archimateRelationship="id-f5-rel-054"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-160" fillColor="#f2f2f2" archimateElement="id-f5-ext-022">
-          <bounds x="20" y="172" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-9bcb93a446e54df189ac40b7f0ad2011" source="id-f5-o-160" target="id-f5-o-137" archimateRelationship="id-f5-rel-057">
-            <bendpoint startX="-282" startY="3" endX="298" endY="-48"/>
-            <bendpoint startX="-321" startY="32" endX="259" endY="-19"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-160" targetConnections="id-f5-c-sale-2" fillColor="#f2f2f2" archimateElement="id-f5-ext-022">
+          <bounds x="20" y="224" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-9bcb93a446e54df189ac40b7f0ad2011" source="id-f5-o-160" target="id-f5-o-137" archimateRelationship="id-f5-rel-057"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-162" fillColor="#f2f2f2" archimateElement="id-f5-ext-024">
-          <bounds x="20" y="236" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-b350a3425323477ba32c6a2c91906f4e" source="id-f5-o-162" target="id-f5-o-140" archimateRelationship="id-f5-rel-060">
-            <bendpoint startX="-215" startY="-3" endX="365" endY="-46"/>
-            <bendpoint startX="-292" startY="45" endX="288" endY="2"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-162" targetConnections="id-f5-c-sale-3" fillColor="#f2f2f2" archimateElement="id-f5-ext-024">
+          <bounds x="20" y="280" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-b350a3425323477ba32c6a2c91906f4e" source="id-f5-o-162" target="id-f5-o-140" archimateRelationship="id-f5-rel-060"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-164" fillColor="#f2f2f2" archimateElement="id-f5-ext-026">
-          <bounds x="20" y="300" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-9a7d3d1c5c5145a281686a5daaf6f995" source="id-f5-o-164" target="id-f5-o-143" archimateRelationship="id-f5-rel-063">
-            <bendpoint startX="-205" endX="375" endY="-35"/>
-            <bendpoint startX="-282" startY="29" endX="298" endY="-6"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-164" targetConnections="id-f5-c-sale-4" fillColor="#f2f2f2" archimateElement="id-f5-ext-026">
+          <bounds x="20" y="336" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-9a7d3d1c5c5145a281686a5daaf6f995" source="id-f5-o-164" target="id-f5-o-143" archimateRelationship="id-f5-rel-063"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-166" fillColor="#f2f2f2" archimateElement="id-f5-ext-028">
-          <bounds x="20" y="364" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-8a6418ac0e924a2390ad37670dffb5b0" source="id-f5-o-166" target="id-f5-o-146" archimateRelationship="id-f5-rel-066">
-            <bendpoint startX="-215" startY="3" endX="365" endY="-24"/>
-            <bendpoint startX="-282" startY="32" endX="298" endY="5"/>
-          </sourceConnection>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-166" targetConnections="id-f5-c-sale-5" fillColor="#f2f2f2" archimateElement="id-f5-ext-028">
+          <bounds x="20" y="392" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-8a6418ac0e924a2390ad37670dffb5b0" source="id-f5-o-166" target="id-f5-o-146" archimateRelationship="id-f5-rel-066"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-168" fillColor="#f2f2f2" archimateElement="id-f5-ext-030">
-          <bounds x="20" y="428" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-ab84440f277f4b4dbf1aeae64e96a7f6" source="id-f5-o-168" target="id-f5-o-149" archimateRelationship="id-f5-rel-069"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-168" targetConnections="id-f5-c-sale-6" fillColor="#f2f2f2" archimateElement="id-f5-ext-030">
+          <bounds x="20" y="448" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-ab84440f277f4b4dbf1aeae64e96a7f6" source="id-f5-o-168" target="id-f5-o-149" archimateRelationship="id-f5-rel-069"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f5-o-170" fillColor="#f2f2f2" archimateElement="id-f5-ext-032">
-          <bounds x="20" y="492" width="300" height="52"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f75225e9967747d5b85158e3ef6269e4" source="id-f5-o-170" target="id-f5-o-152" archimateRelationship="id-f5-rel-072"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f5-o-170" targetConnections="id-f5-c-sale-7" fillColor="#f2f2f2" archimateElement="id-f5-ext-032">
+          <bounds x="20" y="504" width="300" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f75225e9967747d5b85158e3ef6269e4" source="id-f5-o-170" target="id-f5-o-152" archimateRelationship="id-f5-rel-081"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
         </child>
       </child>
-      <documentation>V8b - Interoperabilidad de aplicación y capa anticorrupción. Cada contexto del arrendamiento se conecta con los sistemas y procesos externos a través de una interfaz de la capa anticorrupción, que traduce los modelos. Corresponde a la capa anticorrupción de la fase 2 llevada al nivel de aplicación.</documentation>
+      <documentation>V9 - Interoperabilidad y capa anticorrupción en la capa de Aplicación. Cada contexto del arrendamiento se conecta con los sistemas y procesos externos a través de una interfaz de la capa anticorrupción, que traduce los modelos. Corresponde a la V9b de negocio (fase 2) llevada al nivel de aplicación: cada flujo de entrada y de salida es el mismo intercambio de V9b.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V10. Trazabilidad Vertical" id="id-bdd8a124d99343dd8e0f379710bd2ae8">
       <child xsi:type="archimate:DiagramObject" id="id-d466eb9bdac04d629c7f50db246119e8" targetConnections="id-0e627a4ba0b344d9ab2674224e85dd4b id-97031a5397f041c096f60c0ed384869c" archimateElement="id-G1">

@@ -3,7 +3,7 @@
 La fase 4 dejó cada dominio con sus piezas internas: agregados, comandos y eventos. Esta fase decide cómo se relacionan esos dominios entre sí y con el mundo exterior. Los cinco dominios de la fase 3 se vuelven aquí **contextos delimitados**, cada uno con su propio modelo, y a cada relación se le asigna un **patrón de integración** según quién necesita qué cosa.
 
 - [V8. Mapa de contextos delimitados y patrones](V08-mapa-de-contextos.md)
-- [V8b. Interoperabilidad de aplicación y anticorrupción](V08b-interoperabilidad-acl.md)
+- [V9. Interoperabilidad y anticorrupción en Aplicación](V09-interoperabilidad-acl.md)
 - [Glosario de patrones](#glosario-de-patrones)
 
 Las vistas salen del mismo [modelo ArchiMate](../modelo/arrendamiento_yates.archimate), esta vez en la capa de Aplicaciones. Se crearon componentes, servicios e interfaces de aplicación; las relaciones quedaron en la carpeta de Relaciones y cada una lleva en su nombre el patrón que representa, para encontrarlas de un vistazo.

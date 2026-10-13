@@ -15,7 +15,7 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [7. Funciones y roles: V4c (fase 2)](#7-funciones-y-roles-v4c-fase-2)
 - [8. Contratos de servicio: V4d (fase 2)](#8-contratos-de-servicio-v4d-fase-2)
 - [9. Inclusión y exclusión de servicios](#9-inclusion-y-exclusion-de-servicios)
-- [10. Interoperabilidad de negocio: V9 (fase 2)](#10-interoperabilidad-de-negocio-v9-fase-2)
+- [10. Interoperabilidad de negocio: V9b (fase 2)](#10-interoperabilidad-de-negocio-v9b-fase-2)
 - [11. Análisis del ecosistema (fase 3)](#11-analisis-del-ecosistema-fase-3)
 - [12. DDD estratégico: dominios y clasificación](#12-ddd-estrategico-dominios-y-clasificacion)
 - [13. Dominios: V5 (fase 3)](#13-dominios-v5-fase-3)
@@ -173,9 +173,9 @@ La decisión se refiere a los servicios que la aplicación apoyaría o conectar�
 | Interoperabilidad | SA-13 Capitanes y tripulación | Excluido | La contratación de tripulación no forma parte de los servicios seleccionados; el acuerdo registra al capitán cuando aplica. |
 | Interoperabilidad | SA-14 Migración de reservas actuales | Excluido | Una migración, si existe un registro anterior, sería puntual y no un servicio permanente de intercambio. |
 
-## 10. Interoperabilidad de negocio: V9 (fase 2)
+## 10. Interoperabilidad de negocio: V9b (fase 2)
 
-![V9. Participantes e intercambios de información del arriendo](vistas/V09-interoperabilidad.png)
+![V9b. Participantes e intercambios de información del arriendo](vistas/V09b-interoperabilidad-negocio.png)
 
 La vista reúne los intercambios de la sexta capa. A la izquierda están los servicios del arriendo que necesitan información; en el centro, los servicios que median el intercambio; a la derecha, los servicios y participantes con los que se relaciona la empresa. Las flechas de ida y vuelta indican qué sale y qué entra, en vez de llamar «integración» a cualquier contacto con un tercero.
 
@@ -183,13 +183,13 @@ Por ejemplo, al CRM se le comunican estados de la reserva y se reciben datos com
 
 También se muestran intercambios con contratos, evaluación de riesgo, aseguradora y contabilidad. Algunos ocurren solo bajo una condición: la evaluación externa, por ejemplo, no interviene en todos los arriendos. En gris aparecen enlaces identificados que no se implementarían como servicio de la aplicación, entre ellos autoridad marítima, mantenimiento, emergencias, asesoría jurídica y tripulación. El intercambio puede seguir existiendo mediante otros canales. Esta vista está construida con elementos de **Negocio ArchiMate**, de acuerdo con la descomposición de la fase 2; sus flujos permiten leer el sentido de la información y las decisiones de inclusión.
 
-La interoperabilidad se muestra en dos niveles. V9 la describe en la capa de Negocio: qué información se intercambia con cada participante y en qué dirección. Su correspondencia en la capa de Aplicación es [V8b](#162-v8b-interoperabilidad-de-aplicación-y-anticorrupción-fase-5), donde los ocho intercambios incluidos aquí aparecen como sistemas externos que se conectan con la aplicación a través de un adaptador de la capa anticorrupción. Las dos vistas se leen juntas: V9 responde qué se intercambia y V8b, por dónde entra a la aplicación y qué contexto lo consume.
+La interoperabilidad se muestra en dos niveles. V9b la describe en la capa de Negocio: qué información se intercambia con cada participante y en qué dirección. Su correspondencia en la capa de Aplicación es [V9](#162-v9-interoperabilidad-y-anticorrupción-en-aplicación-fase-5), donde los ocho intercambios incluidos aquí aparecen como sistemas externos conectados a la aplicación a través de un adaptador de la capa anticorrupción, con un flujo de entrada y otro de salida por cada uno. Las dos vistas se leen juntas: V9b responde qué intercambia el negocio y V9, por qué adaptador pasa y qué contexto lo consume.
 
 ## 11. Análisis del ecosistema (fase 3)
 
 La aplicación apoya el arriendo de yates que pertenecen a terceros. Su ámbito va desde la disponibilidad y la reserva hasta la devolución y el cierre económico. No se ocupa por sí sola de todos los procesos de la empresa: el cliente solicita el servicio, el propietario controla la disponibilidad de su yate, la marina participa en la entrega y recepción, y la empresa coordina el arriendo.
 
-El proceso también necesita información que se produce fuera de él. El CRM lleva la relación comercial con los clientes, la gestión de contratos aporta las condiciones acordadas y contabilidad recibe los valores que debe registrar o conciliar. Según el arriendo, intervienen además proveedores de evaluación de riesgo, aseguradoras, pasarelas de pago y fuentes de datos de ubicación y combustible. Los intercambios identificados en la [vista de interoperabilidad de negocio](#10-interoperabilidad-de-negocio-v9-fase-2) ayudan a ubicar esas responsabilidades sin convertir a cada participante externo en parte de la aplicación.
+El proceso también necesita información que se produce fuera de él. El CRM lleva la relación comercial con los clientes, la gestión de contratos aporta las condiciones acordadas y contabilidad recibe los valores que debe registrar o conciliar. Según el arriendo, intervienen además proveedores de evaluación de riesgo, aseguradoras, pasarelas de pago y fuentes de datos de ubicación y combustible. Los intercambios identificados en la [vista de interoperabilidad de negocio](#10-interoperabilidad-de-negocio-v9b-fase-2) ayudan a ubicar esas responsabilidades sin convertir a cada participante externo en parte de la aplicación.
 
 Para comenzar el análisis DDD comparamos las reglas de reserva, disponibilidad, riesgo, entrega, seguimiento, devolución, dinero y calificaciones. No convertimos cada servicio de la fase 2 en un dominio: agrupamos lo que comparte decisiones y lenguaje. De esa comparación salen los cinco dominios descritos a continuación.
 
@@ -357,17 +357,17 @@ La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se r
 
 La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido, limitado a arriendo, yate y participante, se conecta a Gestión y a Operación con asociación para que no lleguen a acoplarse.
 
-Cada contexto realiza su propio servicio de aplicación, así que esta vista también explica de dónde salen los servicios que la fase 2 listaba. Los eventos de dominio de la fase 4 no aparecen a propósito: se disparan dentro del contexto y no cruzan la frontera; los contratos detallados siguen en V9.
+Cada contexto realiza su propio servicio de aplicación, así que esta vista también explica de dónde salen los servicios que la fase 2 listaba. Los eventos de dominio de la fase 4 no aparecen a propósito: se disparan dentro del contexto y no cruzan la frontera; los contratos detallados siguen en V9b.
 
-### 16.2 V8b. Interoperabilidad de aplicación y anticorrupción (fase 5)
+### 16.2 V9. Interoperabilidad y anticorrupción en Aplicación (fase 5)
 
-![V8b. Interoperabilidad de aplicación y anticorrupción](vistas/V08b-interoperabilidad-de-aplicacion-y-anticorrupcion.png)
+![V9. Interoperabilidad y anticorrupción en la capa de Aplicación](vistas/V09-interoperabilidad-anticorrupcion.png)
 
-La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9 entran por una interfaz de la ACL con un flujo, la interfaz sirve a su contexto y el contexto se agrega a la ACL. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
+La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9b se conectan con una interfaz de la ACL mediante dos flujos, uno de entrada y otro de salida; la interfaz sirve a su contexto y la capa anticorrupción agrega sus ocho interfaces. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
 
-Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicación, y corresponde a la [V9 de Negocio](#10-interoperabilidad-de-negocio-v9-fase-2). Cada servicio de interoperabilidad incluido en la fase 2 tiene aquí su adaptador:
+Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicación, y corresponde a la [V9b de Negocio](#10-interoperabilidad-de-negocio-v9b-fase-2). Cada servicio de interoperabilidad incluido en la fase 2 tiene aquí su adaptador:
 
-| Servicio de negocio (V9) | Adaptador de aplicación (V8b) | Contexto que lo consume |
+| Servicio de negocio (V9b) | Adaptador de aplicación (V9) | Contexto que lo consume |
 | --- | --- | --- |
 | SA-01 CRM comercial | ACL - CRM comercial | Gestión del arriendo |
 | SA-02 Gestión de contratos | ACL - Gestión de contratos | Gestión del arriendo |
@@ -378,7 +378,7 @@ Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicació
 | SA-07 Ubicación y combustible | ACL - Fuente de ubicación y combustible | Operación y seguimiento del yate |
 | SA-09 Contabilidad | ACL - Contabilidad | Liquidación |
 
-Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a SA-14) no tienen adaptador. V8b dibuja la conexión de cada sistema con su adaptador; el detalle de lo que entra y lo que sale en cada intercambio está en V9.
+Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a SA-14) no tienen adaptador. Cada adaptador tiene dos flujos, lo que entra y lo que sale, con el mismo contenido que su intercambio en V9b. En Contabilidad el flujo principal es de salida: la aplicación le entrega los valores calculados y recibe de vuelta las conciliaciones.
 
 ## 17. Modelo y evidencias
 

@@ -22,7 +22,7 @@ ArchiMate no trae un estereotipo de agregado ni de comando, así que se eligió 
 | Evento de dominio | `ApplicationEvent` | Hecho interno que ocurre dentro del dominio al ejecutarse un comando. |
 | Evento de negocio | `BusinessEvent` | Hito que le interesa al negocio entero y no solo a un dominio. |
 
-Las relaciones dibujadas son: acceso de escritura (`Access`) del comando al agregado que modifica, disparo (`Triggering`) del comando al evento que produce, y composición (`Aggregation`) del agregado hacia sus entidades y objetos de valor. Además, cada raíz de agregado realiza (`Realization`) el término de negocio equivalente de V7, aunque ese enlace no se dibuja para no saturar la vista.
+Las relaciones dibujadas son: acceso de escritura (`Access`) del comando al agregado que modifica, disparo (`Triggering`) del comando al evento que produce, y composición (`Composition`) del agregado hacia sus entidades y objetos de valor. Además, cada raíz de agregado realiza (`Realization`) el término de negocio equivalente de V7, aunque ese enlace no se dibuja para no saturar la vista.
 
 Se reutilizaron los `DataObject` que ya existían desde la fase 3 como raíces de agregado o como entidades (Arriendo, Reserva, Disponibilidad del yate, Evaluación de riesgo, Garantía, entre otros). A esos elementos solo se les añadieron las propiedades «Tipo DDD» e «Invariante»; no se duplicaron. Los términos que faltaban se crearon como nuevos `DataObject`.
 
