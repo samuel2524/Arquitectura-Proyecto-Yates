@@ -183,6 +183,8 @@ Por ejemplo, al CRM se le comunican estados de la reserva y se reciben datos com
 
 También se muestran intercambios con contratos, evaluación de riesgo, aseguradora y contabilidad. Algunos ocurren solo bajo una condición: la evaluación externa, por ejemplo, no interviene en todos los arriendos. En gris aparecen enlaces identificados que no se implementarían como servicio de la aplicación, entre ellos autoridad marítima, mantenimiento, emergencias, asesoría jurídica y tripulación. El intercambio puede seguir existiendo mediante otros canales. Esta vista está construida con elementos de **Negocio ArchiMate**, de acuerdo con la descomposición de la fase 2; sus flujos permiten leer el sentido de la información y las decisiones de inclusión.
 
+La interoperabilidad se muestra en dos niveles. V9 la describe en la capa de Negocio: qué información se intercambia con cada participante y en qué dirección. Su correspondencia en la capa de Aplicación es [V8b](#162-v8b-interoperabilidad-de-aplicación-y-anticorrupción-fase-5), donde los ocho intercambios incluidos aquí aparecen como sistemas externos que se conectan con la aplicación a través de un adaptador de la capa anticorrupción. Las dos vistas se leen juntas: V9 responde qué se intercambia y V8b, por dónde entra a la aplicación y qué contexto lo consume.
+
 ## 11. Análisis del ecosistema (fase 3)
 
 La aplicación apoya el arriendo de yates que pertenecen a terceros. Su ámbito va desde la disponibilidad y la reserva hasta la devolución y el cierre económico. No se ocupa por sí sola de todos los procesos de la empresa: el cliente solicita el servicio, el propietario controla la disponibilidad de su yate, la marina participa en la entrega y recepción, y la empresa coordina el arriendo.
@@ -362,6 +364,21 @@ Cada contexto realiza su propio servicio de aplicación, así que esta vista tam
 ![V8b. Interoperabilidad de aplicación y anticorrupción](vistas/V08b-interoperabilidad-de-aplicacion-y-anticorrupcion.png)
 
 La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9 entran por una interfaz de la ACL con un flujo, la interfaz sirve a su contexto y el contexto se agrega a la ACL. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
+
+Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicación, y corresponde a la [V9 de Negocio](#10-interoperabilidad-de-negocio-v9-fase-2). Cada servicio de interoperabilidad incluido en la fase 2 tiene aquí su adaptador:
+
+| Servicio de negocio (V9) | Adaptador de aplicación (V8b) | Contexto que lo consume |
+| --- | --- | --- |
+| SA-01 CRM comercial | ACL - CRM comercial | Gestión del arriendo |
+| SA-02 Gestión de contratos | ACL - Gestión de contratos | Gestión del arriendo |
+| SA-03 Evaluador de riesgo | ACL - Evaluación de riesgo externa | Evaluación de riesgo |
+| SA-04 Aseguradora | ACL - Aseguradora | Operación y seguimiento del yate |
+| SA-05 Marinas | ACL - Marinas | Operación y seguimiento del yate |
+| SA-06 Pasarela de pagos | ACL - Pasarela de pagos | Liquidación |
+| SA-07 Ubicación y combustible | ACL - Fuente de ubicación y combustible | Operación y seguimiento del yate |
+| SA-09 Contabilidad | ACL - Contabilidad | Liquidación |
+
+Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a SA-14) no tienen adaptador. V8b dibuja la conexión de cada sistema con su adaptador; el detalle de lo que entra y lo que sale en cada intercambio está en V9.
 
 ## 17. Modelo y evidencias
 
