@@ -6096,13 +6096,13 @@ Momento: Una sola vez, al arrancar.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V6a. Agregados, comandos y eventos - Gestión del arriendo" id="id-f4-v6a">
       <child xsi:type="archimate:Group" id="id-f4-hdr-053" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1">
-        <bounds x="20" y="20" width="420" height="40"/>
+        <bounds x="10" y="20" width="428" height="761"/>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-054" name="COMANDOS (Application Process)" textAlignment="1">
-        <bounds x="480" y="20" width="380" height="40"/>
+        <bounds x="480" y="20" width="380" height="761"/>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-055" name="EVENTOS (Application Event / Business Event)" textAlignment="1">
-        <bounds x="920" y="20" width="400" height="40"/>
+        <bounds x="920" y="20" width="400" height="761"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-056" targetConnections="id-27956a5b65df40a5af6a0106b44be53b id-6986833a0441411fa9adcd48489bc0e8 id-032ec55176a846af971fbacef3fd4a83 id-2320b78c836f4cf8ae64444ce39137c5 id-996f1b49ada84f998f261de18105ce07" fillColor="#b7d7f0" archimateElement="id-cacdaf92e3c2487d8ab97101376d7ee5">
         <bounds x="20" y="90" width="420" height="54"/>
@@ -6253,40 +6253,46 @@ Momento: Una sola vez, al arrancar.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V6b. Agregados, comandos y eventos - Evaluación de riesgo" id="id-f4-v6b">
       <child xsi:type="archimate:Group" id="id-f4-hdr-163" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1">
-        <bounds x="20" y="20" width="420" height="40"/>
+        <bounds x="36" y="24" width="420" height="689"/>
+        <child xsi:type="archimate:Group" id="id-f4-v6b-grp-evaluacion" name="Agregado: Evaluación de riesgo" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="31" width="420" height="270"/>
+        </child>
+        <child xsi:type="archimate:Group" id="id-f4-v6b-grp-expediente" name="Agregado: Expediente del cliente" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="310" width="420" height="280"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-190" fillColor="#dae8fc" archimateElement="id-f4-er-eval-c-116">
+          <bounds y="137" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-191" fillColor="#e1d5e7" archimateElement="id-f4-er-eval-c-118">
+          <bounds y="192" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-192" fillColor="#e1d5e7" archimateElement="id-f4-er-eval-c-120">
+          <bounds y="248" width="380" height="46"/>
+        </child>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-164" name="COMANDOS (Application Process)" textAlignment="1">
-        <bounds x="480" y="20" width="380" height="40"/>
+        <bounds x="516" y="24" width="380" height="689"/>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-165" name="EVENTOS (Application Event / Business Event)" textAlignment="1">
-        <bounds x="920" y="20" width="400" height="40"/>
+        <bounds x="956" y="24" width="400" height="689"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-166" targetConnections="id-d3ecc08f232c4fa98fcd772a8e86c5e6 id-4112ccc429ca41baa7fbea1d1091bf60 id-dcf47d9bce5a441fa0e312f22076252c id-ffaaacfd401c47fd9ab0e5e4849f5a85 id-c415c2465385485195a6e16d396325c7 id-cc687fbce42c4e5cbf54c9685e82a049 id-afbf845706dc4202b1608c160ead5a2c" fillColor="#b7d7f0" archimateElement="id-95185947936f48139e74d1473a639362">
-        <bounds x="20" y="90" width="420" height="54"/>
+        <bounds x="36" y="94" width="396" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-170" targetConnections="id-a5a03483dff040f29887c1a7fd9ece35" fillColor="#b7d7f0" archimateElement="id-f4-er-expediente-122">
-        <bounds y="333" width="396" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-190" fillColor="#dae8fc" archimateElement="id-f4-er-eval-c-116">
-        <bounds x="12" y="156" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-191" fillColor="#e1d5e7" archimateElement="id-f4-er-eval-c-118">
-        <bounds x="12" y="211" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-192" fillColor="#e1d5e7" archimateElement="id-f4-er-eval-c-120">
-        <bounds x="12" y="267" width="380" height="46"/>
+        <bounds x="36" y="357" width="396" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-193" fillColor="#dae8fc" archimateElement="id-42956fdf5f9b4885ba1e1bc551cf7504">
-        <bounds y="408" width="380" height="46"/>
+        <bounds x="36" y="412" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-194" fillColor="#e1d5e7" archimateElement="id-f4-er-expediente-c-125">
-        <bounds y="460" width="380" height="46"/>
+        <bounds x="36" y="464" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-195" fillColor="#e1d5e7" archimateElement="id-f4-er-expediente-c-127">
-        <bounds y="528" width="380" height="46"/>
+        <bounds x="36" y="532" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-174" fillColor="#ffe6cc" archimateElement="id-f4-cmd-129">
-        <bounds x="480" y="90" width="380" height="54"/>
+        <bounds x="516" y="94" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-d3ecc08f232c4fa98fcd772a8e86c5e6" source="id-f4-o-174" target="id-f4-o-166" archimateRelationship="id-f4-rel-130">
           <bendpoint startX="-209" startY="-40" endX="231" endY="-40"/>
           <bendpoint startX="-266" startY="-40" endX="174" endY="-40"/>
@@ -6294,10 +6300,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-0a69f3913c6b4b96802521adf4e21d33" source="id-f4-o-174" target="id-f4-o-175" archimateRelationship="id-f4-rel-132"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-175" targetConnections="id-0a69f3913c6b4b96802521adf4e21d33" fillColor="#d5e8d4" archimateElement="id-f4-ev-131">
-        <bounds x="920" y="90" width="400" height="54"/>
+        <bounds x="956" y="94" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-176" fillColor="#ffe6cc" archimateElement="id-f4-cmd-133">
-        <bounds x="480" y="164" width="380" height="54"/>
+        <bounds x="516" y="168" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4112ccc429ca41baa7fbea1d1091bf60" source="id-f4-o-176" target="id-f4-o-166" archimateRelationship="id-f4-rel-134">
           <bendpoint startX="-209" startY="-85" endX="231" endY="-11"/>
           <bendpoint startX="-218" startY="-94" endX="222" endY="-20"/>
@@ -6305,111 +6311,117 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-caeaf2176257407a9b56b21e13e204f3" source="id-f4-o-176" target="id-f4-o-177" archimateRelationship="id-f4-rel-136"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-177" targetConnections="id-caeaf2176257407a9b56b21e13e204f3" fillColor="#d5e8d4" archimateElement="id-f4-ev-135">
-        <bounds x="920" y="164" width="400" height="54"/>
+        <bounds x="956" y="168" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-178" fillColor="#ffe6cc" archimateElement="id-f4-cmd-137">
-        <bounds x="480" y="238" width="380" height="54"/>
+        <bounds x="516" y="242" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-dcf47d9bce5a441fa0e312f22076252c" source="id-f4-o-178" target="id-f4-o-166" archimateRelationship="id-f4-rel-138">
           <bendpoint startX="-218" startY="-149" endX="222" endY="-1"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-5496e630c5984463b1e77200bfe47ed1" source="id-f4-o-178" target="id-f4-o-179" archimateRelationship="id-f4-rel-140"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-179" targetConnections="id-5496e630c5984463b1e77200bfe47ed1" fillColor="#d5e8d4" archimateElement="id-f4-ev-139">
-        <bounds x="920" y="238" width="400" height="54"/>
+        <bounds x="956" y="242" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-180" fillColor="#ffe6cc" archimateElement="id-f4-cmd-141">
-        <bounds x="480" y="312" width="380" height="54"/>
+        <bounds x="516" y="316" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-ffaaacfd401c47fd9ab0e5e4849f5a85" source="id-f4-o-180" target="id-f4-o-166" archimateRelationship="id-f4-rel-142">
           <bendpoint startX="-218" startY="-204" endX="222" endY="18"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-bfcc3205ec0146eb9182e65020602c84" source="id-f4-o-180" target="id-f4-o-181" archimateRelationship="id-f4-rel-144"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-181" targetConnections="id-bfcc3205ec0146eb9182e65020602c84" fillColor="#d5e8d4" archimateElement="id-f4-ev-143">
-        <bounds x="920" y="312" width="400" height="54"/>
+        <bounds x="956" y="316" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-182" fillColor="#ffe6cc" archimateElement="id-f4-cmd-145">
-        <bounds x="480" y="386" width="380" height="54"/>
+        <bounds x="516" y="390" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c415c2465385485195a6e16d396325c7" source="id-f4-o-182" target="id-f4-o-166" archimateRelationship="id-f4-rel-146"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-50dd2cda51e24bfc8b1488d0e10b009d" source="id-f4-o-182" target="id-f4-o-183" archimateRelationship="id-f4-rel-148"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-183" targetConnections="id-50dd2cda51e24bfc8b1488d0e10b009d" fillColor="#cdeb8b" archimateElement="id-f4-ev-147">
-        <bounds x="920" y="386" width="400" height="54"/>
+        <bounds x="956" y="390" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-184" fillColor="#ffe6cc" archimateElement="id-f4-cmd-149">
-        <bounds x="480" y="460" width="380" height="54"/>
+        <bounds x="516" y="464" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-cc687fbce42c4e5cbf54c9685e82a049" source="id-f4-o-184" target="id-f4-o-166" archimateRelationship="id-f4-rel-150">
           <bendpoint startX="-237" startY="-208" endX="203" endY="162"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-dcc6c4039a454beeb4a4a6b3e4f07c8a" source="id-f4-o-184" target="id-f4-o-185" archimateRelationship="id-f4-rel-152"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-185" targetConnections="id-dcc6c4039a454beeb4a4a6b3e4f07c8a" fillColor="#d5e8d4" archimateElement="id-f4-ev-151">
-        <bounds x="920" y="460" width="400" height="54"/>
+        <bounds x="956" y="464" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-186" fillColor="#ffe6cc" archimateElement="id-f4-cmd-153">
-        <bounds x="480" y="534" width="380" height="54"/>
+        <bounds x="516" y="538" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-afbf845706dc4202b1608c160ead5a2c" source="id-f4-o-186" target="id-f4-o-166" archimateRelationship="id-f4-rel-154">
           <bendpoint startX="-247" startY="-224" endX="193" endY="220"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-72403805eb864a28b5a3a1a09542bcc1" source="id-f4-o-186" target="id-f4-o-187" archimateRelationship="id-f4-rel-156"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-187" targetConnections="id-72403805eb864a28b5a3a1a09542bcc1" fillColor="#d5e8d4" archimateElement="id-f4-ev-155">
-        <bounds x="920" y="534" width="400" height="54"/>
+        <bounds x="956" y="538" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-188" fillColor="#ffe6cc" archimateElement="id-f4-cmd-157">
-        <bounds x="480" y="608" width="380" height="54"/>
+        <bounds x="516" y="612" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-a5a03483dff040f29887c1a7fd9ece35" source="id-f4-o-188" target="id-f4-o-170" archimateRelationship="id-f4-rel-158"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-9a6754b4570d482185e6496296b12dea" source="id-f4-o-188" target="id-f4-o-189" archimateRelationship="id-f4-rel-160"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-189" targetConnections="id-9a6754b4570d482185e6496296b12dea" fillColor="#d5e8d4" archimateElement="id-f4-ev-159">
-        <bounds x="920" y="608" width="400" height="54"/>
+        <bounds x="956" y="612" width="400" height="54"/>
       </child>
       <documentation>V6b - DDD táctico del dominio Evaluación de riesgo (Supporting). El resultado no es apto si falta un requisito obligatorio, y la recomendación externa informa pero no decide por sí sola.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V6c. Agregados, comandos y eventos - Operación y seguimiento del yate" id="id-f4-v6c">
       <child xsi:type="archimate:Group" id="id-f4-hdr-279" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1">
-        <bounds x="20" y="20" width="420" height="40"/>
+        <bounds x="64" y="24" width="420" height="797"/>
+        <child xsi:type="archimate:Group" id="id-f4-v6c-grp-operacion" name="Agregado: Operación del arriendo" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="31" width="420" height="371"/>
+        </child>
+        <child xsi:type="archimate:Group" id="id-f4-v6c-grp-seguimiento" name="Agregado: Seguimiento del yate" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="408" width="420" height="326"/>
+        </child>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-280" name="COMANDOS (Application Process)" textAlignment="1">
-        <bounds x="480" y="20" width="380" height="40"/>
+        <bounds x="544" y="24" width="380" height="797"/>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-281" name="EVENTOS (Application Event / Business Event)" textAlignment="1">
-        <bounds x="920" y="20" width="400" height="40"/>
+        <bounds x="984" y="24" width="400" height="797"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-282" targetConnections="id-e5d808231b0243ccbb21e11ef103fad3 id-f5052d9eb84d432e9cbb7729aa0fa37d id-538200ce6bf44fdebb79b3911b546b6f id-1d74ed9dd28b4860affba29076ca9fe9 id-673d2aa8092f432e9d929dcc27978350 id-bc70376d37914e0d91a0e1d4a3d73491 id-00d0a902f1b14ff9ae5a1e15c43aeb1b" fillColor="#b7d7f0" archimateElement="id-f4-os-operacion-218">
-        <bounds x="20" y="90" width="420" height="54"/>
+        <bounds x="64" y="94" width="420" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-288" targetConnections="id-5ee17d1be7204e1d837b68b1e104daee id-a6bcef97983f42d8b7a9f39021c35b00 id-0af1b7d4ee434f02a3cf9163f85eb675" fillColor="#b7d7f0" archimateElement="id-f4-os-seguimiento-229">
-        <bounds y="439" width="420" height="54"/>
+        <bounds x="64" y="456" width="420" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-313" fillColor="#dae8fc" archimateElement="id-7ae85d4387244a728a5e430392330786">
-        <bounds x="12" y="156" width="380" height="46"/>
+        <bounds x="64" y="160" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-314" fillColor="#dae8fc" archimateElement="id-f4-os-operacion-c-221">
-        <bounds x="12" y="211" width="380" height="46"/>
+        <bounds x="64" y="215" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-315" fillColor="#dae8fc" archimateElement="id-f4-os-operacion-c-223">
-        <bounds x="12" y="267" width="380" height="46"/>
+        <bounds x="64" y="271" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-316" fillColor="#e1d5e7" archimateElement="id-f4-os-operacion-c-225">
-        <bounds x="12" y="316" width="380" height="46"/>
+        <bounds x="64" y="320" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-317" fillColor="#e1d5e7" archimateElement="id-f4-os-operacion-c-227">
-        <bounds x="12" y="372" width="380" height="46"/>
+        <bounds x="64" y="376" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-318" fillColor="#dae8fc" archimateElement="id-bd26c4ae38b3445b85344f84c46f8ec9">
-        <bounds x="-12" y="504" width="380" height="46"/>
+        <bounds x="64" y="520" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-319" fillColor="#dae8fc" archimateElement="id-d250af364fda4892997f5175468dc211">
-        <bounds y="563" width="380" height="46"/>
+        <bounds x="64" y="567" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-320" fillColor="#e1d5e7" archimateElement="id-f4-os-seguimiento-c-234">
-        <bounds y="624" width="380" height="46"/>
+        <bounds x="64" y="628" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-321" fillColor="#e1d5e7" archimateElement="id-f4-os-seguimiento-c-236">
-        <bounds y="686" width="380" height="46"/>
+        <bounds x="64" y="690" width="380" height="46"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-293" fillColor="#ffe6cc" archimateElement="id-f4-cmd-238">
-        <bounds x="480" y="90" width="380" height="54"/>
+        <bounds x="544" y="94" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-e5d808231b0243ccbb21e11ef103fad3" source="id-f4-o-293" target="id-f4-o-282" archimateRelationship="id-f4-rel-239">
           <bendpoint startX="-189" startY="-40" endX="251" endY="-40"/>
           <bendpoint startX="-237" startY="-40" endX="203" endY="-40"/>
@@ -6417,10 +6429,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-3124e8a5d85143efbec13cfbffef7d1e" source="id-f4-o-293" target="id-f4-o-294" archimateRelationship="id-f4-rel-241"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-294" targetConnections="id-3124e8a5d85143efbec13cfbffef7d1e" fillColor="#d5e8d4" archimateElement="id-f4-ev-240">
-        <bounds x="920" y="90" width="400" height="54"/>
+        <bounds x="984" y="94" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-295" fillColor="#ffe6cc" archimateElement="id-f4-cmd-242">
-        <bounds x="480" y="164" width="380" height="54"/>
+        <bounds x="544" y="168" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-f5052d9eb84d432e9cbb7729aa0fa37d" source="id-f4-o-295" target="id-f4-o-282" archimateRelationship="id-f4-rel-243">
           <bendpoint startX="-199" startY="-75" endX="241" endY="-1"/>
           <bendpoint startX="-209" startY="-94" endX="231" endY="-20"/>
@@ -6428,10 +6440,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-fcbbafa4678d40c99b3bb616f0eb5f67" source="id-f4-o-295" target="id-f4-o-296" archimateRelationship="id-f4-rel-245"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-296" targetConnections="id-fcbbafa4678d40c99b3bb616f0eb5f67" fillColor="#d5e8d4" archimateElement="id-f4-ev-244">
-        <bounds x="920" y="164" width="400" height="54"/>
+        <bounds x="984" y="168" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-297" fillColor="#ffe6cc" archimateElement="id-f4-cmd-246">
-        <bounds x="480" y="238" width="380" height="54"/>
+        <bounds x="544" y="242" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-538200ce6bf44fdebb79b3911b546b6f" source="id-f4-o-297" target="id-f4-o-282" archimateRelationship="id-f4-rel-247">
           <bendpoint startX="-199" startY="-92" endX="241" endY="56"/>
           <bendpoint startX="-218" startY="-149" endX="222" endY="-1"/>
@@ -6439,10 +6451,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-6f9b436af8a64253be1d3ae907b84376" source="id-f4-o-297" target="id-f4-o-298" archimateRelationship="id-f4-rel-249"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-298" targetConnections="id-6f9b436af8a64253be1d3ae907b84376" fillColor="#d5e8d4" archimateElement="id-f4-ev-248">
-        <bounds x="920" y="238" width="400" height="54"/>
+        <bounds x="984" y="242" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-299" fillColor="#ffe6cc" archimateElement="id-f4-cmd-250">
-        <bounds x="480" y="312" width="380" height="54"/>
+        <bounds x="544" y="316" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-1d74ed9dd28b4860affba29076ca9fe9" source="id-f4-o-299" target="id-f4-o-282" archimateRelationship="id-f4-rel-251">
           <bendpoint startX="-209" startY="-108" endX="231" endY="114"/>
           <bendpoint startX="-218" startY="-204" endX="222" endY="18"/>
@@ -6450,60 +6462,60 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-232945bcb1ae4afb9164a75bce53cdcf" source="id-f4-o-299" target="id-f4-o-300" archimateRelationship="id-f4-rel-253"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-300" targetConnections="id-232945bcb1ae4afb9164a75bce53cdcf" fillColor="#d5e8d4" archimateElement="id-f4-ev-252">
-        <bounds x="920" y="312" width="400" height="54"/>
+        <bounds x="984" y="316" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-301" fillColor="#ffe6cc" archimateElement="id-f4-cmd-254">
-        <bounds x="480" y="386" width="380" height="54"/>
+        <bounds x="544" y="390" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-673d2aa8092f432e9d929dcc27978350" source="id-f4-o-301" target="id-f4-o-282" archimateRelationship="id-f4-rel-255">
           <bendpoint startX="-218" startY="-144" endX="222" endY="152"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-7ec6582f5325430cba102e656218c657" source="id-f4-o-301" target="id-f4-o-302" archimateRelationship="id-f4-rel-257"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-302" targetConnections="id-7ec6582f5325430cba102e656218c657" fillColor="#d5e8d4" archimateElement="id-f4-ev-256">
-        <bounds x="920" y="386" width="400" height="54"/>
+        <bounds x="984" y="390" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-303" fillColor="#ffe6cc" archimateElement="id-f4-cmd-258">
-        <bounds x="480" y="460" width="380" height="54"/>
+        <bounds x="544" y="464" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-bc70376d37914e0d91a0e1d4a3d73491" source="id-f4-o-303" target="id-f4-o-282" archimateRelationship="id-f4-rel-259">
           <bendpoint startX="-237" startY="-179" endX="203" endY="191"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-579a1fb67c8242c398d44ab9ff62d3cf" source="id-f4-o-303" target="id-f4-o-304" archimateRelationship="id-f4-rel-261"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-304" targetConnections="id-579a1fb67c8242c398d44ab9ff62d3cf" fillColor="#d5e8d4" archimateElement="id-f4-ev-260">
-        <bounds x="920" y="460" width="400" height="54"/>
+        <bounds x="984" y="464" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-305" fillColor="#ffe6cc" archimateElement="id-f4-cmd-262">
-        <bounds x="480" y="534" width="380" height="54"/>
+        <bounds x="544" y="538" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-00d0a902f1b14ff9ae5a1e15c43aeb1b" source="id-f4-o-305" target="id-f4-o-282" archimateRelationship="id-f4-rel-263">
           <bendpoint startX="-257" startY="-215" endX="183" endY="229"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-e67d345560e64c3b9b8de22930f76bc9" source="id-f4-o-305" target="id-f4-o-306" archimateRelationship="id-f4-rel-264"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-306" targetConnections="id-e67d345560e64c3b9b8de22930f76bc9" fillColor="#d5e8d4" archimateElement="id-EV4">
-        <bounds x="920" y="534" width="400" height="54"/>
+        <bounds x="984" y="538" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-307" fillColor="#ffe6cc" archimateElement="id-f4-cmd-265">
-        <bounds x="480" y="608" width="380" height="54"/>
+        <bounds x="544" y="612" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-5ee17d1be7204e1d837b68b1e104daee" source="id-f4-o-307" target="id-f4-o-288" archimateRelationship="id-f4-rel-266">
           <bendpoint startX="-228" startY="-164" endX="232" endY="5"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-2476ec0c4fb54a6ca27e15d79da0ba7a" source="id-f4-o-307" target="id-f4-o-308" archimateRelationship="id-f4-rel-268"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-308" targetConnections="id-2476ec0c4fb54a6ca27e15d79da0ba7a" fillColor="#d5e8d4" archimateElement="id-f4-ev-267">
-        <bounds x="920" y="608" width="400" height="54"/>
+        <bounds x="984" y="612" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-309" fillColor="#ffe6cc" archimateElement="id-f4-cmd-269">
-        <bounds x="480" y="682" width="380" height="54"/>
+        <bounds x="544" y="686" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-a6bcef97983f42d8b7a9f39021c35b00" source="id-f4-o-309" target="id-f4-o-288" archimateRelationship="id-f4-rel-270">
           <bendpoint startX="-228" startY="2" endX="232" endY="245"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-56d5c80f0bb746e480b361163b074132" source="id-f4-o-309" target="id-f4-o-310" archimateRelationship="id-f4-rel-272"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-310" targetConnections="id-56d5c80f0bb746e480b361163b074132" fillColor="#d5e8d4" archimateElement="id-f4-ev-271">
-        <bounds x="920" y="682" width="400" height="54"/>
+        <bounds x="984" y="686" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-311" fillColor="#ffe6cc" archimateElement="id-f4-cmd-273">
-        <bounds x="480" y="756" width="380" height="54"/>
+        <bounds x="544" y="760" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-0af1b7d4ee434f02a3cf9163f85eb675" source="id-f4-o-311" target="id-f4-o-288" archimateRelationship="id-f4-rel-274">
           <bendpoint startX="-228" startY="5" endX="232" endY="322"/>
           <bendpoint startX="-266" startY="-149" endX="194" endY="168"/>
@@ -6511,49 +6523,58 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-0a7aed791fa445738792f5b3f5dc5c2d" source="id-f4-o-311" target="id-f4-o-312" archimateRelationship="id-f4-rel-276"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-312" targetConnections="id-0a7aed791fa445738792f5b3f5dc5c2d" fillColor="#d5e8d4" archimateElement="id-f4-ev-275">
-        <bounds x="920" y="756" width="400" height="54"/>
+        <bounds x="984" y="760" width="400" height="54"/>
       </child>
       <documentation>V6c - DDD táctico del dominio Operación y seguimiento del yate (Core). Entrega, devolución y seguimiento comparten el estado físico del yate; registrar una novedad no atribuye responsabilidad.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V6d. Agregados, comandos y eventos - Liquidación" id="id-f4-v6d">
       <child xsi:type="archimate:Group" id="id-f4-hdr-408" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1">
-        <bounds x="20" y="20" width="420" height="40"/>
+        <bounds x="20" y="32" width="420" height="796"/>
+        <child xsi:type="archimate:Group" id="id-f4-v6d-grp-liquidacion" name="Agregado: Liquidación del arriendo" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="30" width="420" height="286"/>
+        </child>
+        <child xsi:type="archimate:Group" id="id-f4-v6d-grp-garantia" name="Agregado: Garantía" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="320" width="420" height="250"/>
+        </child>
+        <child xsi:type="archimate:Group" id="id-f4-v6d-grp-reclamacion" name="Agregado: Reclamación de cobro" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="584" width="420" height="180"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-415" targetConnections="id-ef6094a9327e44fe9120d146ac210b1a id-6563987fbdd24be793e5c8b1490f35e5 id-6929821663e04b57a37a8e03ff49478c id-187a32b35111415ca42863a6b5d64372" fillColor="#b7d7f0" archimateElement="id-f388d78a240547dcb72acc7ed81ec7aa">
+          <bounds x="24" y="351" width="347" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-445" targetConnections="id-1e57ce90d731431193e39e54552ffd81" fillColor="#e1d5e7" archimateElement="id-f4-li-reclamacion-c-364">
+          <bounds x="25" y="672" width="348" height="49"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-418" targetConnections="id-73faaaf8e9f548eca1175b53f3cc0c2d" fillColor="#b7d7f0" archimateElement="id-2db9c41d2746491d8856dbc5ac2b1326">
+          <bounds x="25" y="618" width="347" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-444" fillColor="#e1d5e7" archimateElement="id-f4-li-garantia-c-361">
+          <bounds x="25" y="504" width="348" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-443" fillColor="#dae8fc" archimateElement="id-f4-li-garantia-c-359">
+          <bounds x="24" y="432" width="348" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-442" fillColor="#e1d5e7" archimateElement="id-f4-li-liquidacion-c-356">
+          <bounds x="25" y="264" width="346" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-441" fillColor="#e1d5e7" archimateElement="id-f98db1a961d44917a05c5336068cc166">
+          <bounds x="26" y="192" width="346" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-440" fillColor="#dae8fc" archimateElement="id-f4-li-liquidacion-c-352">
+          <bounds x="25" y="132" width="346" height="46"/>
+        </child>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-409" name="COMANDOS (Application Process)" textAlignment="1">
-        <bounds x="480" y="20" width="380" height="40"/>
+        <bounds x="588" y="32" width="395" height="796"/>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-410" name="EVENTOS (Application Event / Business Event)" textAlignment="1">
-        <bounds x="920" y="20" width="400" height="40"/>
+        <bounds x="1116" y="20" width="400" height="808"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-411" targetConnections="id-0b32e1d322244070ac32bd2b1540c772 id-82bcb2c832d9478880cc3243d486fb99 id-3928cf176d5b4ea8b327630b884a02ba id-01be321d98594f5c830c204bbe27e7f7" fillColor="#b7d7f0" archimateElement="id-f4-li-liquidacion-351">
-        <bounds x="20" y="90" width="420" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-415" targetConnections="id-ef6094a9327e44fe9120d146ac210b1a id-6563987fbdd24be793e5c8b1490f35e5 id-6929821663e04b57a37a8e03ff49478c id-187a32b35111415ca42863a6b5d64372" fillColor="#b7d7f0" archimateElement="id-f388d78a240547dcb72acc7ed81ec7aa">
-        <bounds x="20" y="332" width="340" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-418" targetConnections="id-73faaaf8e9f548eca1175b53f3cc0c2d" fillColor="#b7d7f0" archimateElement="id-2db9c41d2746491d8856dbc5ac2b1326">
-        <bounds x="20" y="522" width="364" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-440" fillColor="#dae8fc" archimateElement="id-f4-li-liquidacion-c-352">
-        <bounds x="50" y="152" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-441" fillColor="#e1d5e7" archimateElement="id-f98db1a961d44917a05c5336068cc166">
-        <bounds x="50" y="204" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-442" fillColor="#e1d5e7" archimateElement="id-f4-li-liquidacion-c-356">
-        <bounds x="50" y="256" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-443" fillColor="#dae8fc" archimateElement="id-f4-li-garantia-c-359">
-        <bounds x="12" y="394" width="324" height="38"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-444" fillColor="#e1d5e7" archimateElement="id-f4-li-garantia-c-361">
-        <bounds x="12" y="444" width="312" height="49"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-445" targetConnections="id-1e57ce90d731431193e39e54552ffd81" fillColor="#e1d5e7" archimateElement="id-f4-li-reclamacion-c-364">
-        <bounds x="12" y="600" width="348" height="49"/>
+        <bounds x="48" y="90" width="349" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-420" fillColor="#ffe6cc" archimateElement="id-f4-cmd-366">
-        <bounds x="480" y="90" width="380" height="54"/>
+        <bounds x="600" y="102" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-0b32e1d322244070ac32bd2b1540c772" source="id-f4-o-420" target="id-f4-o-411" archimateRelationship="id-f4-rel-367">
           <bendpoint startX="-189" startY="-49" endX="251" endY="-49"/>
           <bendpoint startX="-237" startY="-49" endX="203" endY="-49"/>
@@ -6561,40 +6582,40 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-b212547c8bdc4497825d3741d854f280" source="id-f4-o-420" target="id-f4-o-421" archimateRelationship="id-f4-rel-369"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-421" targetConnections="id-b212547c8bdc4497825d3741d854f280" fillColor="#d5e8d4" archimateElement="id-f4-ev-368">
-        <bounds x="920" y="90" width="400" height="54"/>
+        <bounds x="1116" y="90" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-422" fillColor="#ffe6cc" archimateElement="id-f4-cmd-370">
-        <bounds x="480" y="164" width="380" height="54"/>
+        <bounds x="600" y="176" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-82bcb2c832d9478880cc3243d486fb99" source="id-f4-o-422" target="id-f4-o-411" archimateRelationship="id-f4-rel-371">
           <bendpoint startX="-209" startY="-75" endX="231" endY="-1"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-38c3cdce5acf4eccb1cea25a4d02cf19" source="id-f4-o-422" target="id-f4-o-423" archimateRelationship="id-f4-rel-373"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-423" targetConnections="id-38c3cdce5acf4eccb1cea25a4d02cf19" fillColor="#d5e8d4" archimateElement="id-f4-ev-372">
-        <bounds x="920" y="164" width="400" height="54"/>
+        <bounds x="1116" y="164" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-424" fillColor="#ffe6cc" archimateElement="id-f4-cmd-374">
-        <bounds x="480" y="238" width="380" height="54"/>
+        <bounds x="600" y="250" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-3928cf176d5b4ea8b327630b884a02ba" source="id-f4-o-424" target="id-f4-o-411" archimateRelationship="id-f4-rel-375">
           <bendpoint startX="-209" startY="-130" endX="231" endY="18"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-ab227982eed74c53ac5bb35979f5fca1" source="id-f4-o-424" target="id-f4-o-425" archimateRelationship="id-f4-rel-377"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-425" targetConnections="id-ab227982eed74c53ac5bb35979f5fca1" fillColor="#d5e8d4" archimateElement="id-f4-ev-376">
-        <bounds x="920" y="238" width="400" height="54"/>
+        <bounds x="1116" y="238" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-426" fillColor="#ffe6cc" archimateElement="id-f4-cmd-378">
-        <bounds x="480" y="312" width="380" height="54"/>
+        <bounds x="600" y="324" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-ef6094a9327e44fe9120d146ac210b1a" source="id-f4-o-426" target="id-f4-o-415" archimateRelationship="id-f4-rel-379">
           <bendpoint startX="-247" startY="-22" endX="193" endY="-42"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-ca65ba6bd95040f79755c0c265a8e123" source="id-f4-o-426" target="id-f4-o-427" archimateRelationship="id-f4-rel-381"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-427" targetConnections="id-ca65ba6bd95040f79755c0c265a8e123" fillColor="#d5e8d4" archimateElement="id-f4-ev-380">
-        <bounds x="920" y="312" width="400" height="54"/>
+        <bounds x="1116" y="312" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-428" fillColor="#ffe6cc" archimateElement="id-f4-cmd-382">
-        <bounds x="480" y="386" width="380" height="54"/>
+        <bounds x="600" y="398" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-6563987fbdd24be793e5c8b1490f35e5" source="id-f4-o-428" target="id-f4-o-415" archimateRelationship="id-f4-rel-383">
           <bendpoint startX="-199" startY="-9" endX="241" endY="45"/>
           <bendpoint startX="-199" startY="-38" endX="241" endY="16"/>
@@ -6603,10 +6624,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-05ce265ec70348458f3bb807f4459824" source="id-f4-o-428" target="id-f4-o-429" archimateRelationship="id-f4-rel-385"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-429" targetConnections="id-05ce265ec70348458f3bb807f4459824" fillColor="#d5e8d4" archimateElement="id-f4-ev-384">
-        <bounds x="920" y="386" width="400" height="54"/>
+        <bounds x="1116" y="386" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-430" fillColor="#ffe6cc" archimateElement="id-f4-cmd-386">
-        <bounds x="480" y="460" width="380" height="54"/>
+        <bounds x="600" y="472" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-6929821663e04b57a37a8e03ff49478c" source="id-f4-o-430" target="id-f4-o-415" archimateRelationship="id-f4-rel-387">
           <bendpoint startX="-209" startY="-64" endX="231" endY="64"/>
           <bendpoint startX="-218" startY="-112" endX="222" endY="16"/>
@@ -6614,109 +6635,115 @@ Momento: Una sola vez, al arrancar.</documentation>
         <sourceConnection xsi:type="archimate:Connection" id="id-2c43872bb45a456a829908df3b45442e" source="id-f4-o-430" target="id-f4-o-431" archimateRelationship="id-f4-rel-389"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-431" targetConnections="id-2c43872bb45a456a829908df3b45442e" fillColor="#d5e8d4" archimateElement="id-f4-ev-388">
-        <bounds x="920" y="460" width="400" height="54"/>
+        <bounds x="1116" y="460" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-432" fillColor="#ffe6cc" archimateElement="id-f4-cmd-390">
-        <bounds x="480" y="534" width="380" height="54"/>
+        <bounds x="600" y="546" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-187a32b35111415ca42863a6b5d64372" source="id-f4-o-432" target="id-f4-o-415" archimateRelationship="id-f4-rel-391">
           <bendpoint startX="-228" startY="-90" endX="212" endY="112"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-2494e1be443a4ed9b4ed6345e3fe6f7d" source="id-f4-o-432" target="id-f4-o-433" archimateRelationship="id-f4-rel-393"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-433" targetConnections="id-2494e1be443a4ed9b4ed6345e3fe6f7d" fillColor="#d5e8d4" archimateElement="id-f4-ev-392">
-        <bounds x="920" y="534" width="400" height="54"/>
+        <bounds x="1116" y="534" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-434" fillColor="#ffe6cc" archimateElement="id-f4-cmd-394">
-        <bounds x="480" y="608" width="380" height="54"/>
+        <bounds x="600" y="620" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-73faaaf8e9f548eca1175b53f3cc0c2d" source="id-f4-o-434" target="id-f4-o-418" archimateRelationship="id-f4-rel-395">
           <bendpoint startX="-209" startY="-78" endX="231" endY="8"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-535701d2ce8b46869a656b2004baac20" source="id-f4-o-434" target="id-f4-o-435" archimateRelationship="id-f4-rel-397"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-435" targetConnections="id-535701d2ce8b46869a656b2004baac20" fillColor="#d5e8d4" archimateElement="id-f4-ev-396">
-        <bounds x="920" y="608" width="400" height="54"/>
+        <bounds x="1116" y="608" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-436" fillColor="#ffe6cc" archimateElement="id-f4-cmd-398">
-        <bounds x="480" y="682" width="380" height="54"/>
+        <bounds x="600" y="694" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-1e57ce90d731431193e39e54552ffd81" source="id-f4-o-436" target="id-f4-o-445" archimateRelationship="id-a018753753204779a19a3b70e0ec8ac1">
           <bendpoint startX="-257" startY="-75" endX="227" endY="9"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-245603efdde548b2895da0483b0e5a55" source="id-f4-o-436" target="id-f4-o-437" archimateRelationship="id-f4-rel-401"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-437" targetConnections="id-245603efdde548b2895da0483b0e5a55" fillColor="#d5e8d4" archimateElement="id-f4-ev-400">
-        <bounds x="920" y="682" width="400" height="54"/>
+        <bounds x="1116" y="682" width="400" height="54"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-438" fillColor="#ffe6cc" archimateElement="id-f4-cmd-402">
-        <bounds x="480" y="756" width="380" height="54"/>
+        <bounds x="600" y="768" width="380" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-01be321d98594f5c830c204bbe27e7f7" source="id-f4-o-438" target="id-f4-o-411" archimateRelationship="id-f4-rel-403">
           <bendpoint startX="-199" startY="5" endX="241" endY="671"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-00c19a6e522e4650b64d436452a6713d" source="id-f4-o-438" target="id-f4-o-439" archimateRelationship="id-f4-rel-404"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-439" targetConnections="id-00c19a6e522e4650b64d436452a6713d" fillColor="#d5e8d4" archimateElement="id-EV5">
-        <bounds x="920" y="756" width="400" height="54"/>
+        <bounds x="1116" y="756" width="400" height="54"/>
       </child>
       <documentation>V6d - DDD táctico del dominio Liquidación (Supporting). El depósito es garantía y no ingreso; todo cargo se sustenta en evidencia comparada y en una condición contractual.</documentation>
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="V6e. Agregados, comandos y eventos - Reputación" id="id-f4-v6e">
       <child xsi:type="archimate:Group" id="id-f4-hdr-502" name="AGREGADOS Y ENTIDADES (Application Data Object)" textAlignment="1">
-        <bounds x="20" y="20" width="420" height="40"/>
+        <bounds x="20" y="20" width="420" height="532"/>
+        <child xsi:type="archimate:Group" id="id-f4-v6e-grp-perfil" name="Agregado: Perfil de reputación" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="30" width="420" height="247"/>
+        </child>
+        <child xsi:type="archimate:Group" id="id-f4-v6e-grp-revision" name="Agregado: Revisión de valoración" fillColor="#edf4fb" textAlignment="1">
+          <bounds x="0" y="282" width="420" height="230"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-520" fillColor="#dae8fc" archimateElement="id-d1dc9e548b4d4fdda0a6710f3caede07">
+          <bounds x="12" y="132" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-521" fillColor="#e1d5e7" archimateElement="id-258da4d378224caebf0269f6def39957">
+          <bounds x="12" y="180" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-522" fillColor="#e1d5e7" archimateElement="id-f4-re-perfil-c-477">
+          <bounds x="12" y="228" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-509" targetConnections="id-6ab0b26ab6714552b7efd63cf1fe47ce id-6a725226079c4a6c8d06089f2ebe2b82" fillColor="#b7d7f0" archimateElement="id-f4-re-revision-479">
+          <bounds y="316" width="420" height="54"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-523" fillColor="#dae8fc" archimateElement="id-f4-re-revision-c-480">
+          <bounds x="12" y="380" width="380" height="46"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-524" fillColor="#e1d5e7" archimateElement="id-f4-re-revision-c-482">
+          <bounds x="12" y="434" width="380" height="46"/>
+        </child>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-503" name="COMANDOS (Application Process)" textAlignment="1">
-        <bounds x="480" y="20" width="380" height="40"/>
+        <bounds x="480" y="20" width="380" height="532"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-512" fillColor="#ffe6cc" archimateElement="id-f4-cmd-484">
+          <bounds y="60" width="380" height="54"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-d042861f0efd41cbbfccd75937609e6d" source="id-f4-o-512" target="id-f4-o-505" archimateRelationship="id-f4-rel-485"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-a9f52540c1c34433bbbf6e973927a75b" source="id-f4-o-512" target="id-f4-o-513" archimateRelationship="id-f4-rel-487"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-514" fillColor="#ffe6cc" archimateElement="id-f4-cmd-488">
+          <bounds y="156" width="380" height="54"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-2a5a3934fb99466c84b4312921d88554" source="id-f4-o-514" target="id-f4-o-505" archimateRelationship="id-f4-rel-489"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-144d2c1caed34910a985fc0423439cf3" source="id-f4-o-514" target="id-f4-o-515" archimateRelationship="id-f4-rel-491"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-516" fillColor="#ffe6cc" archimateElement="id-f4-cmd-492">
+          <bounds y="252" width="380" height="54"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6ab0b26ab6714552b7efd63cf1fe47ce" source="id-f4-o-516" target="id-f4-o-509" archimateRelationship="id-f4-rel-493"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-2807dbd95a6b487ab52b9f1bb9d96958" source="id-f4-o-516" target="id-f4-o-517" archimateRelationship="id-f4-rel-495"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f4-o-518" fillColor="#ffe6cc" archimateElement="id-f4-cmd-496">
+          <bounds y="336" width="380" height="54"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6a725226079c4a6c8d06089f2ebe2b82" source="id-f4-o-518" target="id-f4-o-509" archimateRelationship="id-f4-rel-497"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6890b4b3ce354c078edc9c765de92be8" source="id-f4-o-518" target="id-f4-o-519" archimateRelationship="id-f4-rel-499"/>
+        </child>
       </child>
       <child xsi:type="archimate:Group" id="id-f4-hdr-504" name="EVENTOS (Application Event / Business Event)" textAlignment="1">
-        <bounds x="920" y="20" width="400" height="40"/>
+        <bounds x="920" y="20" width="400" height="532"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-505" targetConnections="id-d042861f0efd41cbbfccd75937609e6d id-2a5a3934fb99466c84b4312921d88554" fillColor="#b7d7f0" archimateElement="id-f4-re-perfil-472">
         <bounds x="20" y="90" width="420" height="54"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-509" targetConnections="id-6ab0b26ab6714552b7efd63cf1fe47ce id-6a725226079c4a6c8d06089f2ebe2b82" fillColor="#b7d7f0" archimateElement="id-f4-re-revision-479">
-        <bounds x="20" y="332" width="420" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-520" fillColor="#dae8fc" archimateElement="id-d1dc9e548b4d4fdda0a6710f3caede07">
-        <bounds x="50" y="152" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-521" fillColor="#e1d5e7" archimateElement="id-258da4d378224caebf0269f6def39957">
-        <bounds x="50" y="204" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-522" fillColor="#e1d5e7" archimateElement="id-f4-re-perfil-c-477">
-        <bounds x="50" y="256" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-523" fillColor="#dae8fc" archimateElement="id-f4-re-revision-c-480">
-        <bounds x="50" y="394" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-524" fillColor="#e1d5e7" archimateElement="id-f4-re-revision-c-482">
-        <bounds x="50" y="446" width="380" height="46"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-512" fillColor="#ffe6cc" archimateElement="id-f4-cmd-484">
-        <bounds x="480" y="90" width="380" height="54"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-d042861f0efd41cbbfccd75937609e6d" source="id-f4-o-512" target="id-f4-o-505" archimateRelationship="id-f4-rel-485"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-a9f52540c1c34433bbbf6e973927a75b" source="id-f4-o-512" target="id-f4-o-513" archimateRelationship="id-f4-rel-487"/>
-      </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-513" targetConnections="id-a9f52540c1c34433bbbf6e973927a75b" fillColor="#d5e8d4" archimateElement="id-f4-ev-486">
         <bounds x="920" y="90" width="400" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-514" fillColor="#ffe6cc" archimateElement="id-f4-cmd-488">
-        <bounds x="480" y="164" width="380" height="54"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-2a5a3934fb99466c84b4312921d88554" source="id-f4-o-514" target="id-f4-o-505" archimateRelationship="id-f4-rel-489"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-144d2c1caed34910a985fc0423439cf3" source="id-f4-o-514" target="id-f4-o-515" archimateRelationship="id-f4-rel-491"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-515" targetConnections="id-144d2c1caed34910a985fc0423439cf3" fillColor="#d5e8d4" archimateElement="id-f4-ev-490">
         <bounds x="920" y="164" width="400" height="54"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-516" fillColor="#ffe6cc" archimateElement="id-f4-cmd-492">
-        <bounds x="480" y="238" width="380" height="54"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-6ab0b26ab6714552b7efd63cf1fe47ce" source="id-f4-o-516" target="id-f4-o-509" archimateRelationship="id-f4-rel-493"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-2807dbd95a6b487ab52b9f1bb9d96958" source="id-f4-o-516" target="id-f4-o-517" archimateRelationship="id-f4-rel-495"/>
-      </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-517" targetConnections="id-2807dbd95a6b487ab52b9f1bb9d96958" fillColor="#d5e8d4" archimateElement="id-f4-ev-494">
         <bounds x="920" y="238" width="400" height="54"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f4-o-518" fillColor="#ffe6cc" archimateElement="id-f4-cmd-496">
-        <bounds x="480" y="312" width="380" height="54"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-6a725226079c4a6c8d06089f2ebe2b82" source="id-f4-o-518" target="id-f4-o-509" archimateRelationship="id-f4-rel-497"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-6890b4b3ce354c078edc9c765de92be8" source="id-f4-o-518" target="id-f4-o-519" archimateRelationship="id-f4-rel-499"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f4-o-519" targetConnections="id-6890b4b3ce354c078edc9c765de92be8" fillColor="#d5e8d4" archimateElement="id-f4-ev-498">
         <bounds x="920" y="312" width="400" height="54"/>
@@ -6935,7 +6962,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-131" targetConnections="id-d75d440c361b4ac7ad4e4da758aa21d9 id-2de35490278c4fa1819bd9561558415a" fillColor="#e1d5e7" archimateElement="id-f5-aclif-019">
           <bounds x="48" y="112" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-0" source="id-f5-o-131" target="id-f5-o-156" archimateRelationship="id-f5-rel-074"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-0" source="id-f5-o-131" target="id-f5-o-156" archimateRelationship="id-f5-rel-074">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-8a0bc524896747daa2a679e62773ab84" source="id-f5-o-131" target="id-f5-o-124" archimateRelationship="id-f5-rel-052">
             <bendpoint startX="-297" startY="7" endX="263" endY="63"/>
             <bendpoint startX="-365" startY="-60" endX="195" endY="-4"/>
@@ -6943,7 +6973,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-134" targetConnections="id-8fe091c3f3774a09922151097a0ab154 id-6e085be526134090b1e3b710f0f85df1" fillColor="#e1d5e7" archimateElement="id-f5-aclif-021">
           <bounds x="48" y="168" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-1" source="id-f5-o-134" target="id-f5-o-158" archimateRelationship="id-f5-rel-075"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-1" source="id-f5-o-134" target="id-f5-o-158" archimateRelationship="id-f5-rel-075">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-5abff4457b5f4fd3b9e82a5c576bb2fc" source="id-f5-o-134" target="id-f5-o-124" archimateRelationship="id-f5-rel-055">
             <bendpoint startX="-336" startY="-1" endX="224" endY="111"/>
             <bendpoint startX="-336" startY="-20" endX="224" endY="92"/>
@@ -6951,7 +6984,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-137" targetConnections="id-23b7aed96f1646edaac882e4dcd0a7fa id-9bcb93a446e54df189ac40b7f0ad2011" fillColor="#e1d5e7" archimateElement="id-f5-aclif-023">
           <bounds x="48" y="224" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-2" source="id-f5-o-137" target="id-f5-o-160" archimateRelationship="id-f5-rel-076"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-2" source="id-f5-o-137" target="id-f5-o-160" archimateRelationship="id-f5-rel-076">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-b9ef496db4ac4de2955c1dced608f80c" source="id-f5-o-137" target="id-f5-o-125" archimateRelationship="id-f5-rel-058">
             <bendpoint startX="-336" startY="-9" endX="224" endY="59"/>
             <bendpoint startX="-384" startY="-67" endX="176" endY="1"/>
@@ -6959,7 +6995,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-140" targetConnections="id-1c6475b2f8b2472ba28f334aabdd4299 id-b350a3425323477ba32c6a2c91906f4e" fillColor="#e1d5e7" archimateElement="id-f5-aclif-025">
           <bounds x="48" y="280" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-3" source="id-f5-o-140" target="id-f5-o-162" archimateRelationship="id-f5-rel-077"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-3" source="id-f5-o-140" target="id-f5-o-162" archimateRelationship="id-f5-rel-077">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-20768ba3c5e5415580960e9fb0bc5834" source="id-f5-o-140" target="id-f5-o-126" archimateRelationship="id-f5-rel-061">
             <bendpoint startX="-230" startY="-8" endX="330" endY="16"/>
             <bendpoint startX="-297" startY="-46" endX="263" endY="-22"/>
@@ -6967,7 +7006,10 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-143" targetConnections="id-f9e02decfcb947af9f28f34d4c57e988 id-9a7d3d1c5c5145a281686a5daaf6f995" fillColor="#e1d5e7" archimateElement="id-f5-aclif-027">
           <bounds x="48" y="336" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-4" source="id-f5-o-143" target="id-f5-o-164" archimateRelationship="id-f5-rel-078"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-4" source="id-f5-o-143" target="id-f5-o-164" archimateRelationship="id-f5-rel-078">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-77b0480e5fc6434f81b9413abff071fe" source="id-f5-o-143" target="id-f5-o-126" archimateRelationship="id-f5-rel-064">
             <bendpoint startX="-259" startY="-6" endX="301" endY="74"/>
             <bendpoint startX="-345" startY="-73" endX="215" endY="7"/>
@@ -6975,19 +7017,28 @@ Momento: Una sola vez, al arrancar.</documentation>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-146" targetConnections="id-fcc799d4fbb740f98ac8eaeb60e527c5 id-8a6418ac0e924a2390ad37670dffb5b0" fillColor="#e1d5e7" archimateElement="id-f5-aclif-029">
           <bounds x="48" y="392" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-5" source="id-f5-o-146" target="id-f5-o-166" archimateRelationship="id-f5-rel-079"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-5" source="id-f5-o-146" target="id-f5-o-166" archimateRelationship="id-f5-rel-079">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-6f3de187cfb0415e82536779221dc51f" source="id-f5-o-146" target="id-f5-o-127" archimateRelationship="id-f5-rel-067">
             <bendpoint startX="-307" startY="5" endX="253" endY="41"/>
           </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-149" targetConnections="id-6f967b9b3c2a4165a3870feb2b1a9c53 id-ab84440f277f4b4dbf1aeae64e96a7f6" fillColor="#e1d5e7" archimateElement="id-f5-aclif-031">
           <bounds x="48" y="448" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-6" source="id-f5-o-149" target="id-f5-o-168" archimateRelationship="id-f5-rel-080"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-6" source="id-f5-o-149" target="id-f5-o-168" archimateRelationship="id-f5-rel-080">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-839d5bad7ecc40b4bc07484bdf9dc88f" source="id-f5-o-149" target="id-f5-o-126" archimateRelationship="id-f5-rel-070"/>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-152" targetConnections="id-7f50f773121049c8a8cda22edac10098 id-f75225e9967747d5b85158e3ef6269e4" fillColor="#e1d5e7" archimateElement="id-f5-aclif-033">
           <bounds x="48" y="504" width="321" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-7" source="id-f5-o-152" target="id-f5-o-170" archimateRelationship="id-f5-rel-072"><bendpoint startX="171" startY="11" endX="-411" endY="11"/><bendpoint startX="422" startY="11" endX="-160" endY="11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f5-c-sale-7" source="id-f5-o-152" target="id-f5-o-170" archimateRelationship="id-f5-rel-072">
+            <bendpoint startX="171" startY="11" endX="-411" endY="11"/>
+            <bendpoint startX="422" startY="11" endX="-160" endY="11"/>
+          </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-9fd908618312480c918a8d1b49a932b2" source="id-f5-o-152" target="id-f5-o-127" archimateRelationship="id-f5-rel-073">
             <bendpoint startX="-374" startY="-1" endX="186" endY="147"/>
             <bendpoint startX="-374" startY="-145" endX="186" endY="3"/>
@@ -6998,35 +7049,59 @@ Momento: Una sola vez, al arrancar.</documentation>
         <bounds x="1140" y="20" width="340" height="580"/>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-156" targetConnections="id-f5-c-sale-0" fillColor="#f2f2f2" archimateElement="id-f5-ext-018">
           <bounds x="20" y="112" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-2de35490278c4fa1819bd9561558415a" source="id-f5-o-156" target="id-f5-o-131" archimateRelationship="id-f5-rel-051"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-2de35490278c4fa1819bd9561558415a" source="id-f5-o-156" target="id-f5-o-131" archimateRelationship="id-f5-rel-051">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-158" targetConnections="id-f5-c-sale-1" fillColor="#f2f2f2" archimateElement="id-f5-ext-020">
           <bounds x="20" y="168" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-6e085be526134090b1e3b710f0f85df1" source="id-f5-o-158" target="id-f5-o-134" archimateRelationship="id-f5-rel-054"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-6e085be526134090b1e3b710f0f85df1" source="id-f5-o-158" target="id-f5-o-134" archimateRelationship="id-f5-rel-054">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-160" targetConnections="id-f5-c-sale-2" fillColor="#f2f2f2" archimateElement="id-f5-ext-022">
           <bounds x="20" y="224" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-9bcb93a446e54df189ac40b7f0ad2011" source="id-f5-o-160" target="id-f5-o-137" archimateRelationship="id-f5-rel-057"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-9bcb93a446e54df189ac40b7f0ad2011" source="id-f5-o-160" target="id-f5-o-137" archimateRelationship="id-f5-rel-057">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-162" targetConnections="id-f5-c-sale-3" fillColor="#f2f2f2" archimateElement="id-f5-ext-024">
           <bounds x="20" y="280" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-b350a3425323477ba32c6a2c91906f4e" source="id-f5-o-162" target="id-f5-o-140" archimateRelationship="id-f5-rel-060"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-b350a3425323477ba32c6a2c91906f4e" source="id-f5-o-162" target="id-f5-o-140" archimateRelationship="id-f5-rel-060">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-164" targetConnections="id-f5-c-sale-4" fillColor="#f2f2f2" archimateElement="id-f5-ext-026">
           <bounds x="20" y="336" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-9a7d3d1c5c5145a281686a5daaf6f995" source="id-f5-o-164" target="id-f5-o-143" archimateRelationship="id-f5-rel-063"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-9a7d3d1c5c5145a281686a5daaf6f995" source="id-f5-o-164" target="id-f5-o-143" archimateRelationship="id-f5-rel-063">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-166" targetConnections="id-f5-c-sale-5" fillColor="#f2f2f2" archimateElement="id-f5-ext-028">
           <bounds x="20" y="392" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-8a6418ac0e924a2390ad37670dffb5b0" source="id-f5-o-166" target="id-f5-o-146" archimateRelationship="id-f5-rel-066"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-8a6418ac0e924a2390ad37670dffb5b0" source="id-f5-o-166" target="id-f5-o-146" archimateRelationship="id-f5-rel-066">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-168" targetConnections="id-f5-c-sale-6" fillColor="#f2f2f2" archimateElement="id-f5-ext-030">
           <bounds x="20" y="448" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-ab84440f277f4b4dbf1aeae64e96a7f6" source="id-f5-o-168" target="id-f5-o-149" archimateRelationship="id-f5-rel-069"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-ab84440f277f4b4dbf1aeae64e96a7f6" source="id-f5-o-168" target="id-f5-o-149" archimateRelationship="id-f5-rel-069">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-f5-o-170" targetConnections="id-f5-c-sale-7" fillColor="#f2f2f2" archimateElement="id-f5-ext-032">
           <bounds x="20" y="504" width="300" height="48"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-f75225e9967747d5b85158e3ef6269e4" source="id-f5-o-170" target="id-f5-o-152" archimateRelationship="id-f5-rel-081"><bendpoint startX="-160" startY="-11" endX="422" endY="-11"/><bendpoint startX="-411" startY="-11" endX="171" endY="-11"/></sourceConnection>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f75225e9967747d5b85158e3ef6269e4" source="id-f5-o-170" target="id-f5-o-152" archimateRelationship="id-f5-rel-081">
+            <bendpoint startX="-160" startY="-11" endX="422" endY="-11"/>
+            <bendpoint startX="-411" startY="-11" endX="171" endY="-11"/>
+          </sourceConnection>
         </child>
       </child>
       <documentation>V9 - Interoperabilidad y capa anticorrupción en la capa de Aplicación. Cada contexto del arrendamiento se conecta con los sistemas y procesos externos a través de una interfaz de la capa anticorrupción, que traduce los modelos. Corresponde a la V9b de negocio (fase 2) llevada al nivel de aplicación: cada flujo de entrada y de salida es el mismo intercambio de V9b.</documentation>

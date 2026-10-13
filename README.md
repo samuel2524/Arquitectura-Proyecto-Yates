@@ -301,7 +301,7 @@ Los nombres parecidos no siempre hablan de la misma decisión. **Devolución** e
 
 La fase 3 respondió *qué partes tiene el negocio*; esta responde *cómo se guardan y cómo cambian*. Cada uno de los cinco dominios tiene su propia vista V6. En todas, el agregado queda a la izquierda con sus entidades y objetos de valor, los comandos que lo modifican en el centro y los eventos que producen a la derecha. Así se lee de un vistazo quién cambia qué y qué queda registrado.
 
-ArchiMate no trae estereotipos de agregado ni de comando, así que se fijó una correspondencia y se documentó en el [índice de la fase 4](Fase4/00_Indice_Fase4.md): los agregados, entidades y objetos de valor son `ApplicationDataObject`; los comandos, `ApplicationProcess`; los eventos de dominio, `ApplicationEvent`; y los hitos de negocio, `BusinessEvent`. Las relaciones dibujadas son acceso de escritura del comando al agregado, disparo del comando al evento y composición del agregado hacia sus partes. Como las raíces y varios conceptos ya existían desde V5, se reutilizaron y solo se les añadieron las propiedades de tipo DDD e invariante; no se duplicó información. El detalle por dominio está en la carpeta [Fase4](Fase4/).
+ArchiMate no trae estereotipos de agregado ni de comando. Representamos agregados, entidades y objetos de valor con `DataObject`; comandos con `ApplicationProcess`; eventos de dominio con `ApplicationEvent`; e hitos de negocio con `BusinessEvent`. Las V6 muestran el acceso del comando al agregado y el evento que dispara. V6a dibuja las relaciones de composición entre raíces y partes; V6b–V6e delimitan sus agregados mediante recuadros titulados. Así se pueden distinguir las raíces y sus partes sin trazar todas las relaciones sobre los comandos. Las raíces y varios conceptos ya existían desde V5: se reutilizaron y se les añadieron sus propiedades de tipo DDD e invariante.
 
 ### 15.1 Gestión del arriendo: V6a (fase 4)
 
@@ -315,7 +315,7 @@ Se separaron el apartado temporal y el bloqueo porque no son lo mismo: el primer
 
 ![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/V06b-agregados-comandos-eventos-evaluacion-de-riesgo.png)
 
-Aquí las raíces son **Evaluación de riesgo**, con la verificación, el resultado y la condición especial, y **Expediente del cliente**, con el requisito, la habilitación y los antecedentes. La evaluación exige que ningún resultado sea «apto» si falta un requisito obligatorio, y aclara que la recomendación externa informa pero no decide. El expediente mantiene la regla de que una habilitación vencida no permite aprobar y que los datos comerciales no viven aquí sino en el CRM.
+Los dos recuadros de la izquierda delimitan los agregados. **Evaluación de riesgo** es la raíz del primero, con la verificación, el resultado y la condición especial; **Expediente del cliente** es la raíz del segundo, con el requisito, la habilitación y los antecedentes. La evaluación exige que ningún resultado sea «apto» si falta un requisito obligatorio, y aclara que la recomendación externa informa pero no decide. El expediente mantiene la regla de que una habilitación vencida no permite aprobar y que los datos comerciales no viven aquí sino en el CRM.
 
 La recomendación externa se guardó como insumo y no como decisión final, tal como se argumentó en la fase 3. Por eso registrarla es un evento de dominio, mientras que aprobar la elegibilidad sí es un evento de negocio: es la señal que habilita la confirmación de la reserva. Imponer una condición especial no la convierte en un requisito general, así que quedó como objeto de valor de esa evaluación y no del expediente.
 
@@ -323,7 +323,7 @@ La recomendación externa se guardó como insumo y no como decisión final, tal 
 
 ![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/V06c-agregados-comandos-eventos-operacion-y-seguimiento-del-yate.png)
 
-**Operación del arriendo** reúne la inspección, la autorización de entrega, la novedad, el estado del yate y la evidencia. Su invariante impide entregar sin inspección completa y yate apto, exige el mismo checklist en la entrega y la devolución, y recuerda que registrar una novedad no atribuye responsabilidad. **Seguimiento del yate** agrupa la lectura, el incidente, la ubicación y la marca de tiempo, y fija que cada lectura lleva su hora de medición y que una lectura ausente no equivale a cero.
+Los dos recuadros de la izquierda separan los agregados. **Operación del arriendo** reúne la inspección, la autorización de entrega, la novedad, el estado del yate y la evidencia. Su invariante impide entregar sin inspección completa y yate apto, exige el mismo checklist en la entrega y la devolución, y recuerda que registrar una novedad no atribuye responsabilidad. **Seguimiento del yate** agrupa la lectura, el incidente, la ubicación y la marca de tiempo, y fija que cada lectura lleva su hora de medición y que una lectura ausente no equivale a cero.
 
 Autorizar entrega y registrar entrega quedaron como comandos distintos porque no son la misma decisión: uno es una autorización operativa y el otro deja constancia de que el yate salió. El estado del yate y la evidencia son objetos de valor porque se comparan por su contenido y no tienen identidad propia. Registrar una novedad no dispara evento de negocio a propósito: el cobro se decide en Liquidación a partir de las actas, y el único hito de negocio aquí es la devolución del yate.
 
@@ -331,7 +331,7 @@ Autorizar entrega y registrar entrega quedaron como comandos distintos porque no
 
 ![V6d. Agregados, comandos y eventos - Liquidación](vistas/V06d-agregados-comandos-eventos-liquidacion.png)
 
-Las raíces son **Liquidación del arriendo**, con el cargo, el ajuste y el saldo; **Garantía**, con la retención y su saldo; y **Reclamación de cobro**, con su estado. La liquidación exige que todo cargo se sustente en evidencia comparada y en una condición contractual, y que el saldo no quede negativo sin un reembolso explícito. La garantía deja claro que no es ingreso: solo se retiene lo sustentado y el resto se libera o se reembolsa. La reclamación no permite cerrar el arriendo mientras siga abierta.
+Los tres recuadros de la izquierda tienen como raíces **Liquidación del arriendo**, con el cargo, el ajuste y el saldo; **Garantía**, con la retención y su saldo; y **Reclamación de cobro**, con su estado. La liquidación exige que todo cargo se sustente en evidencia comparada y en una condición contractual, y que el saldo no quede negativo sin un reembolso explícito. La garantía deja claro que no es ingreso: solo se retiene lo sustentado y el resto se libera o se reembolsa. La reclamación no permite cerrar el arriendo mientras siga abierta.
 
 Se separó la garantía de la liquidación aunque las dos tocan dinero, porque constituir, retener o liberar un depósito no es lo mismo que calcular el saldo final. Cerrar arriendo es el único comando de este dominio que produce un evento de negocio, ya que es el hito que deja el arriendo sin pagos, garantías ni reclamaciones pendientes. La retención de dinero en la pasarela se dejó como evento de dominio, porque el procesamiento real ocurre fuera del dominio.
 
@@ -339,7 +339,7 @@ Se separó la garantía de la liquidación aunque las dos tocan dinero, porque c
 
 ![V6e. Agregados, comandos y eventos - Reputación](vistas/V06e-agregados-comandos-eventos-reputacion.png)
 
-**Perfil de reputación** contiene la calificación, el historial y el promedio, con la regla de una única calificación por participante y por arriendo y con la aclaración de que la reputación informa pero no aprueba ni rechaza una reserva. **Revisión de valoración** agrupa la valoración cuestionada y su estado, y mantiene que una valoración cuestionada no se publica hasta resolverse.
+Los dos recuadros de la izquierda delimitan **Perfil de reputación** y **Revisión de valoración**. El primero contiene la calificación, el historial y el promedio, con la regla de una única calificación por participante y por arriendo y con la aclaración de que la reputación informa pero no aprueba ni rechaza una reserva. El segundo agrupa la valoración cuestionada y su estado, y mantiene que una valoración cuestionada no se publica hasta resolverse.
 
 Ningún comando de este dominio produce evento de negocio: el arriendo puede existir sin depender de la reputación, como se concluyó al clasificarla como Supporting. La revisión se modeló como agregado aparte del perfil para no mezclar el historial publicado con lo que está en discusión.
 
@@ -349,15 +349,15 @@ Las raíces de agregado realizan los términos de negocio de V7 mediante relacio
 
 ## 16. Mapa de contextos delimitados (fase 5)
 
-La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se relacionan los dominios entre sí y con el exterior. Los cinco dominios de la fase 3 se vuelven contextos delimitados de aplicación, cada uno con su servicio y su interfaz, y cada relación lleva el patrón que usa. El detalle por vista está en el [índice de la fase 5](Fase5/00_Indice_Fase5.md); las dos vistas salen del mismo modelo, ahora en la capa de Aplicaciones.
+La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se relacionan los dominios entre sí y con el exterior. Los cinco dominios de la fase 3 se representan como contextos delimitados de aplicación, cada uno con su servicio y su interfaz. La relación entre ellos indica el patrón utilizado. V8 y V9 salen del mismo modelo ArchiMate, ahora en la capa de Aplicación.
 
 ### 16.1 V8. Mapa de contextos delimitados y patrones (fase 5)
 
 ![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones-v2.png)
 
-La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido, limitado a arriendo, yate y participante, se conecta a Gestión y a Operación con asociación para que no lleguen a acoplarse.
+La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido se identifica con arriendo, yate y participante y se vincula con Gestión y Operación. Compartir esos conceptos introduce acoplamiento: los cambios en lo común requieren coordinación entre ambos contextos; cada uno mantiene sus propias reglas de reserva u operación.
 
-Cada contexto realiza su propio servicio de aplicación, así que esta vista también explica de dónde salen los servicios que la fase 2 listaba. Los eventos de dominio de la fase 4 no aparecen a propósito: se disparan dentro del contexto y no cruzan la frontera; los contratos detallados siguen en V9b.
+Cada contexto realiza su servicio de aplicación, que apoya los servicios de negocio identificados en la fase 2; estos no eran `ApplicationService`. Los eventos de dominio de la fase 4 no aparecen porque aquí se muestran las relaciones entre contextos. Los contratos de servicio de negocio se documentan en V4d; V9b muestra la información intercambiada con participantes externos.
 
 ### 16.2 V9. Interoperabilidad y anticorrupción en Aplicación (fase 5)
 
@@ -383,8 +383,6 @@ Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a 
 ## 17. Modelo y evidencias
 
 - [Modelo ArchiMate fuente](modelo/arrendamiento_yates.archimate), que contiene las vistas anteriores en un solo archivo.
-- [Diseño táctico por dominio](Fase4/00_Indice_Fase4.md): agregados, comandos, eventos e invariantes de la fase 4.
-- [Mapa de contextos delimitados](Fase5/00_Indice_Fase5.md): contextos, patrones de relación y capa anticorrupción de la fase 5.
 - [Guion de entrevista](Entrevista/01_guion_entrevista.md).
 - [Instrucción de rol enviada a la IA](Entrevista/02_instruccion_rol_ia.md).
 - [Conversación con el experto simulado](Entrevista/03_conversacion_experto.md).
