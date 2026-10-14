@@ -22,7 +22,8 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [14. Lenguaje ubicuo: V7 (fase 3)](#14-lenguaje-ubicuo-v7-fase-3)
 - [15. Diseño táctico: agregados, comandos y eventos (fase 4)](#15-diseno-tactico-agregados-comandos-y-eventos-fase-4)
 - [16. Mapa de contextos delimitados (fase 5)](#16-mapa-de-contextos-delimitados-fase-5)
-- [17. Modelo y evidencias](#17-modelo-y-evidencias)
+- [17. Bounded Context Canvas: V11 (fase 6)](#17-bounded-context-canvas-v11-fase-6)
+- [18. Modelo y evidencias](#18-modelo-y-evidencias)
 
 ## 1. Contexto y entrevista (fase 0)
 
@@ -380,7 +381,21 @@ Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicació
 
 Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a SA-14) no tienen adaptador. Cada adaptador tiene dos flujos, lo que entra y lo que sale, con el mismo contenido que su intercambio en V9b. En Contabilidad el flujo principal es de salida: la aplicación le entrega los valores calculados y recibe de vuelta las conciliaciones.
 
-## 17. Modelo y evidencias
+## 17. Bounded Context Canvas: V11 (fase 6)
+
+![V11. Bounded Context Canvas del contexto Gestión del arriendo](vistas/V11-canvas-gestion-del-arriendo.png)
+
+El canvas resume en una sola página el contexto principal, Gestión del arriendo, siguiendo las secciones del Bounded Context Canvas de ddd-crew: nombre y propósito, clasificación estratégica, rol del dominio, comunicación entrante y saliente, lenguaje ubicuo, decisiones de negocio, supuestos, preguntas abiertas y métricas de verificación.
+
+Escogimos Gestión del arriendo porque es el contexto Core que coordina el compromiso sobre el yate: Evaluación de riesgo le entrega la elegibilidad, Operación ejecuta lo que él confirma y Reputación consume su servicio de reserva. En la clasificación estratégica lo leemos en tres ejes: es Core en el dominio, genera ingresos en el modelo de negocio porque cada reserva confirmada es un alquiler, y es un desarrollo a medida en su evolución. Su rol es de ejecución y de aprobación: lleva la solicitud hasta su estado final y decide la confirmación, pero no evalúa el riesgo del cliente, no entrega el yate ni calcula importes.
+
+Lo construimos como vista ArchiMate y no como Canvas de Archi para que cada sección use elementos del mismo modelo y no texto suelto. El centro es el componente «Contexto de Gestión del arriendo» con su servicio de reserva. A la izquierda están quienes le envían mensajes: el cliente, el propietario, Evaluación de riesgo y los adaptadores de la capa anticorrupción para el CRM y la gestión de contratos. A la derecha están quienes los reciben: Operación, Reputación, el núcleo compartido y los tres eventos de negocio que produce. Las relaciones dibujadas son las mismas de V8 y V9: cliente-proveedor con Riesgo y con Operación, servicio abierto hacia Reputación, núcleo compartido con Operación y servicio traducido desde la capa anticorrupción.
+
+Cada mensaje lleva su tipo, porque no es lo mismo una orden que un hecho. «Solicitar reserva» y «Bloquear disponibilidad» son comandos; «Elegibilidad aprobada» y «Reserva confirmada» son eventos; los datos del CRM y las condiciones del contrato son consultas. El lenguaje ubicuo usa los ocho términos de V7 para este dominio, incluidas «Solicitud de reserva» y «Reserva confirmada» por separado. Las decisiones de negocio muestran las tres raíces de agregado de V6a con sus invariantes, y las métricas son los tres resultados de V1 que este contexto ayuda a cumplir.
+
+Quedan tres preguntas abiertas que la entrevista no respondió: cuánto dura un apartado temporal, cuánto tiempo de preparación queda entre dos arriendos del mismo yate y qué tasa de ocupación fija la dirección como meta.
+
+## 18. Modelo y evidencias
 
 - [Modelo ArchiMate fuente](modelo/arrendamiento_yates.archimate), que contiene las vistas anteriores en un solo archivo.
 - [Guion de entrevista](Entrevista/01_guion_entrevista.md).
