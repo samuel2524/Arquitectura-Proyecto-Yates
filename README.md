@@ -22,14 +22,20 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [14. Lenguaje ubicuo: V7 (fase 3)](#14-lenguaje-ubicuo-v7-fase-3)
 - [15. Diseño táctico: agregados, comandos y eventos (fase 4)](#15-diseno-tactico-agregados-comandos-y-eventos-fase-4)
 - [16. Mapa de contextos delimitados (fase 5)](#16-mapa-de-contextos-delimitados-fase-5)
-- [17. Bounded Context Canvas: V11 (fase 6)](#17-bounded-context-canvas-v11-fase-6)
-  - [V11a. Gestión del arriendo](#171-v11a-gestion-del-arriendo-el-contexto-principal)
-  - [V11b. Evaluación de riesgo](#172-v11b-evaluacion-de-riesgo)
-  - [V11c. Operación y seguimiento](#173-v11c-operacion-y-seguimiento-del-yate)
-  - [V11d. Liquidación](#174-v11d-liquidacion)
-  - [V11e. Reputación](#175-v11e-reputacion)
-- [18. Modelo y evidencias](#18-modelo-y-evidencias)
-- [19. Aportes del equipo](#19-aportes-del-equipo)
+- [17. Trazabilidad vertical: V10](#17-trazabilidad-vertical-v10)
+  - [V10a. Gestión del arriendo](#171-v10a-gestion-del-arriendo)
+  - [V10b. Evaluación de riesgo](#172-v10b-evaluacion-de-riesgo)
+  - [V10c. Operación y seguimiento](#173-v10c-operacion-y-seguimiento-del-yate)
+  - [V10d. Liquidación](#174-v10d-liquidacion)
+  - [V10e. Reputación](#175-v10e-reputacion)
+- [18. Bounded Context Canvas: V11 (fase 6)](#18-bounded-context-canvas-v11-fase-6)
+  - [V11a. Gestión del arriendo](#181-v11a-gestion-del-arriendo-el-contexto-principal)
+  - [V11b. Evaluación de riesgo](#182-v11b-evaluacion-de-riesgo)
+  - [V11c. Operación y seguimiento](#183-v11c-operacion-y-seguimiento-del-yate)
+  - [V11d. Liquidación](#184-v11d-liquidacion)
+  - [V11e. Reputación](#185-v11e-reputacion)
+- [19. Modelo y evidencias](#19-modelo-y-evidencias)
+- [20. Aportes del equipo](#20-aportes-del-equipo)
 
 ## 1. Contexto y entrevista (fase 0)
 
@@ -45,7 +51,7 @@ No usamos como reglas los precios y porcentajes de los ejemplos, la escala ilust
 
 ## 2. Motivación: V1 (fase 1)
 
-![V1. Motivación del arrendamiento de yates](vistas/V01-motivacion.png)
+![V1. Motivación del arrendamiento de yates](vistas/Fase%201/V01-motivacion.png)
 
 ### Análisis y decisiones
 
@@ -61,7 +67,7 @@ Usamos los elementos de Motivación ArchiMate para que se pueda seguir el razona
 
 ## 3. Mapa de capacidades: V2 (fase 1)
 
-![V2. Mapa de capacidades del negocio](vistas/V02-capacidades.png)
+![V2. Mapa de capacidades del negocio](vistas/Fase%201/V02-capacidades.png)
 
 ### Análisis y decisiones
 
@@ -75,7 +81,7 @@ Elegimos capacidades porque describen qué hace la empresa sin decidir todavía 
 
 ## 4. Cadena de valor y proceso E2E: V3 (fase 1)
 
-![V3. Cadena de valor y proceso de arriendo de extremo a extremo](vistas/V03-cadena-valor-e2e.png)
+![V3. Cadena de valor y proceso de arriendo de extremo a extremo](vistas/Fase%201/V03-cadena-valor-e2e.png)
 
 ### Análisis y decisiones
 
@@ -89,7 +95,7 @@ Usamos flujos de valor de Estrategia para situar el arriendo en la actividad de 
 
 ## 5. Descomposición de servicios: V4 (fase 2)
 
-![V4. Descomposición de servicios de negocio](vistas/V04-descomposicion-servicios.png)
+![V4. Descomposición de servicios de negocio](vistas/Fase%202/V04-descomposicion-servicios.png)
 
 El servicio **SP-00 Gestión del arriendo de yates de terceros** representa el recorrido completo descrito en V3. Debajo hay cuatro servicios de etapa: reserva y garantía, preparación y entrega, acompañamiento de la navegación, y devolución y cierre. Esta división conserva dos diferencias del negocio: reservar no es entregar, y recibir el yate no es cerrar el arriendo.
 
@@ -99,7 +105,7 @@ Los servicios en gris se identificaron para entender el proceso, pero quedaron f
 
 ## 6. Servicios y proceso E2E: V4b (fase 2)
 
-![V4b. Relación entre servicios de tarea y proceso E2E](vistas/V04b-servicios-proceso.png)
+![V4b. Relación entre servicios de tarea y proceso E2E](vistas/Fase%202/V04b-servicios-proceso.png)
 
 Aquí se ve qué servicio apoya cada paso del recorrido. **ST-01** sirve a la consulta de yates; **ST-02** atiende la solicitud y el apartado temporal; **ST-03** reúne la evaluación del cliente y del riesgo. Más adelante, **ST-08** conserva la evidencia de la inspección, **ST-09** apoya la decisión de entrega y **ST-12** permite consultar ubicación y combustible. Al regreso, **ST-14** calcula los ajustes y **ST-16** recoge las calificaciones.
 
@@ -109,7 +115,7 @@ El proceso de negocio conserva el paso de liquidar al propietario y calcular la 
 
 ## 7. Funciones y roles: V4c (fase 2)
 
-![V4c. Funciones de negocio y roles](vistas/V04c-funciones-roles.png)
+![V4c. Funciones de negocio y roles](vistas/Fase%202/V04c-funciones-roles.png)
 
 Esta vista agrupa las tareas por el trabajo que realizan. Gestión de reservas reúne consulta, solicitudes, autorización del propietario, formalización, confirmación y cancelaciones. Evaluación de riesgo, operación de entrega y devolución, monitoreo, finanzas y reputación se muestran como funciones separadas. También figuran la información maestra, los servicios transversales y la interoperabilidad, porque varias tareas dependen de ellos.
 
@@ -117,7 +123,7 @@ Los roles se vinculan con las funciones que ejercen: el coordinador de reservas 
 
 ## 8. Contratos de servicio: V4d (fase 2)
 
-![V4d. Contratos y objetos de negocio asociados a los servicios](vistas/V04d-contratos.png)
+![V4d. Contratos y objetos de negocio asociados a los servicios](vistas/Fase%202/V04d-contratos.png)
 
 Cada uno de los **39 servicios incluidos** tiene un elemento *Contract* en el modelo ArchiMate. La vista lo coloca junto al servicio y los objetos de negocio que intervienen: la consulta usa la ficha del yate, el calendario y la marina; la evaluación considera la solicitud y la ficha del cliente; la inspección trabaja con actas y evidencias; la liquidación, con las actas y la garantía.
 
@@ -182,7 +188,7 @@ La decisión se refiere a los servicios que la aplicación apoyaría o conectar�
 
 ## 10. Interoperabilidad de negocio: V9b (fase 2)
 
-![V9b. Participantes e intercambios de información del arriendo](vistas/V09b-interoperabilidad-negocio.png)
+![V9b. Participantes e intercambios de información del arriendo](vistas/Fase%202/V09b-interoperabilidad-negocio.png)
 
 La vista reúne los intercambios de la sexta capa. A la izquierda están los servicios del arriendo que necesitan información; en el centro, los servicios que median el intercambio; a la derecha, los servicios y participantes con los que se relaciona la empresa. Las flechas de ida y vuelta indican qué sale y qué entra, en vez de llamar «integración» a cualquier contacto con un tercero.
 
@@ -248,7 +254,7 @@ No clasificamos ninguno de estos cinco como **Generic**. Identidad y acceso, not
 
 ## 13. Dominios: V5 (fase 3)
 
-![V5. Dominios DDD y conceptos representativos](vistas/V05.Dominios%20DDD.png)
+![V5. Dominios DDD y conceptos representativos](vistas/Fase%203/V05.Dominios%20DDD.png)
 
 La vista muestra los cinco dominios de la sección anterior. Gestión del arriendo y Operación y seguimiento del yate están en **Core**; Evaluación de riesgo, Liquidación y Reputación están en **Supporting**. Bajo cada nombre aparecen unos pocos conceptos representativos, no un inventario exhaustivo. Por ejemplo, Arriendo, Reserva y Disponibilidad del yate se agrupan porque comprometer fechas de un yate forma parte de las reglas de reserva. Inspección, Lectura operativa e Incidente quedan con el seguimiento del mismo yate desde la entrega hasta la recepción.
 
@@ -258,7 +264,7 @@ La separación entre Operación y Liquidación tiene una consecuencia práctica:
 
 ## 14. Lenguaje ubicuo: V7 (fase 3)
 
-![V7. Lenguaje ubicuo por dominio](vistas/V07.%20Lenguaje%20ubicuo.png)
+![V7. Lenguaje ubicuo por dominio](vistas/Fase%203/V07.%20Lenguaje%20ubicuo.png)
 
 V7 agrupa los términos según el dominio donde se usan. Cada término está representado como `BusinessObject` y se conecta con un elemento `Meaning` que muestra su definición. En el modelo ArchiMate también se conserva una `Representation` de glosario por dominio; en esta vista se prefirió mostrar directamente cada término y su significado para poder leerlos uno junto al otro. Los ejemplos están guardados como propiedades de los términos y se transcriben aquí para que también sean visibles desde GitHub. Son ejemplos del caso simulado, no registros de arriendos reales.
 
@@ -302,8 +308,6 @@ V7 agrupa los términos según el dominio donde se usan. Cada término está rep
 | Reputación | Valoración cuestionada | Calificación cuya validez o contenido es objeto de una reclamación. | El cliente afirma que una valoración contiene información incorrecta. |
 | Reputación | Participante evaluado | Persona sobre la cual se registra una calificación. | Cliente o propietario evaluado después de un arriendo. |
 
-Los nombres parecidos no siempre hablan de la misma decisión. **Devolución** es el regreso físico del yate; **reembolso** es dinero que vuelve al cliente y puede ocurrir después. Un **resultado de riesgo** ayuda a decidir sobre la solicitud, mientras que la **autorización de entrega** se refiere al estado del yate y a las condiciones de salida en ese momento. El **estado del arriendo** describe el avance administrativo; el **estado del yate**, su condición física u operativa. De forma similar, el riesgo del arriendo se evalúa antes de comprometerlo y el riesgo operativo se observa en la entrega o durante el uso. Mantener esas diferencias en el lenguaje evita atribuir a un dominio decisiones que le corresponden a otro.
-
 ## 15. Diseño táctico: agregados, comandos y eventos (fase 4)
 
 La fase 3 respondió *qué partes tiene el negocio*; esta responde *cómo se guardan y cómo cambian*. Cada uno de los cinco dominios tiene su propia vista V6. En todas, el agregado queda a la izquierda con sus entidades y objetos de valor, los comandos que lo modifican en el centro y los eventos que producen a la derecha. Así se lee de un vistazo quién cambia qué y qué queda registrado.
@@ -312,7 +316,7 @@ ArchiMate no trae estereotipos de agregado ni de comando. Representamos agregado
 
 ### 15.1 Gestión del arriendo: V6a (fase 4)
 
-![V6a. Agregados, comandos y eventos - Gestión del arriendo](vistas/V06a-agregados-comandos-eventos-gestion-del-arriendo.png)
+![V6a. Agregados, comandos y eventos - Gestión del arriendo](vistas/Fase%204/V06a-agregados-comandos-eventos-gestion-del-arriendo.png)
 
 El agregado **Arriendo** contiene la reserva, el estado y la cancelación. Su invariante central es que solo se confirma con la elegibilidad aprobada y, cuando el acuerdo lo exija, con la autorización del propietario; una reserva confirmada no autoriza la entrega. **Disponibilidad del yate** conserva el periodo, el bloqueo y el apartado temporal, y garantiza que dos periodos confirmados sobre el mismo yate no se solapen. **Yate** agrupa la ficha y la habilitación que decide el propietario.
 
@@ -320,7 +324,7 @@ Se separaron el apartado temporal y el bloqueo porque no son lo mismo: el primer
 
 ### 15.2 Evaluación de riesgo: V6b (fase 4)
 
-![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/V06b-agregados-comandos-eventos-evaluacion-de-riesgo.png)
+![V6b. Agregados, comandos y eventos - Evaluación de riesgo](vistas/Fase%204/V06b-agregados-comandos-eventos-evaluacion-de-riesgo.png)
 
 Los dos recuadros de la izquierda delimitan los agregados. **Evaluación de riesgo** es la raíz del primero, con la verificación, el resultado y la condición especial; **Expediente del cliente** es la raíz del segundo, con el requisito, la habilitación y los antecedentes. La evaluación exige que ningún resultado sea «apto» si falta un requisito obligatorio, y aclara que la recomendación externa informa pero no decide. El expediente mantiene la regla de que una habilitación vencida no permite aprobar y que los datos comerciales no viven aquí sino en el CRM.
 
@@ -328,7 +332,7 @@ La recomendación externa se guardó como insumo y no como decisión final, tal 
 
 ### 15.3 Operación y seguimiento del yate: V6c (fase 4)
 
-![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/V06c-agregados-comandos-eventos-operacion-y-seguimiento-del-yate.png)
+![V6c. Agregados, comandos y eventos - Operación y seguimiento del yate](vistas/Fase%204/V06c-agregados-comandos-eventos-operacion-y-seguimiento-del-yate.png)
 
 Los dos recuadros de la izquierda separan los agregados. **Operación del arriendo** reúne la inspección, la autorización de entrega, la novedad, el estado del yate y la evidencia. Su invariante impide entregar sin inspección completa y yate apto, exige el mismo checklist en la entrega y la devolución, y recuerda que registrar una novedad no atribuye responsabilidad. **Seguimiento del yate** agrupa la lectura, el incidente, la ubicación y la marca de tiempo, y fija que cada lectura lleva su hora de medición y que una lectura ausente no equivale a cero.
 
@@ -336,7 +340,7 @@ Autorizar entrega y registrar entrega quedaron como comandos distintos porque no
 
 ### 15.4 Liquidación: V6d (fase 4)
 
-![V6d. Agregados, comandos y eventos - Liquidación](vistas/V06d-agregados-comandos-eventos-liquidacion.png)
+![V6d. Agregados, comandos y eventos - Liquidación](vistas/Fase%204/V06d-agregados-comandos-eventos-liquidacion.png)
 
 Los tres recuadros de la izquierda tienen como raíces **Liquidación del arriendo**, con el cargo, el ajuste y el saldo; **Garantía**, con la retención y su saldo; y **Reclamación de cobro**, con su estado. La liquidación exige que todo cargo se sustente en evidencia comparada y en una condición contractual, y que el saldo no quede negativo sin un reembolso explícito. La garantía deja claro que no es ingreso: solo se retiene lo sustentado y el resto se libera o se reembolsa. La reclamación no permite cerrar el arriendo mientras siga abierta.
 
@@ -344,7 +348,7 @@ Se separó la garantía de la liquidación aunque las dos tocan dinero, porque c
 
 ### 15.5 Reputación: V6e (fase 4)
 
-![V6e. Agregados, comandos y eventos - Reputación](vistas/V06e-agregados-comandos-eventos-reputacion.png)
+![V6e. Agregados, comandos y eventos - Reputación](vistas/Fase%204/V06e-agregados-comandos-eventos-reputacion.png)
 
 Los dos recuadros de la izquierda delimitan **Perfil de reputación** y **Revisión de valoración**. El primero contiene la calificación, el historial y el promedio, con la regla de una única calificación por participante y por arriendo y con la aclaración de que la reputación informa pero no aprueba ni rechaza una reserva. El segundo agrupa la valoración cuestionada y su estado, y mantiene que una valoración cuestionada no se publica hasta resolverse.
 
@@ -360,7 +364,7 @@ La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se r
 
 ### 16.1 V8. Mapa de contextos delimitados y patrones (fase 5)
 
-![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones-v2.png)
+![V8. Mapa de contextos delimitados y patrones](vistas/Fase%205/V08-mapa-de-contextos-delimitados-y-patrones-v2.png)
 
 La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado).
 
@@ -370,7 +374,7 @@ Cada contexto realiza su servicio de aplicación, que apoya los servicios de neg
 
 ### 16.2 V9. Interoperabilidad y anticorrupción en Aplicación (fase 5)
 
-![V9. Interoperabilidad y anticorrupción en la capa de Aplicación](vistas/V09-interoperabilidad-anticorrupcion.png)
+![V9. Interoperabilidad y anticorrupción en la capa de Aplicación](vistas/Fase%205/V09-interoperabilidad-anticorrupcion.png)
 
 La vista tiene tres columnas: los contextos a la izquierda, la capa anticorrupción (ACL) al centro y los sistemas externos a la derecha. Los ocho sistemas de V9b se conectan con una interfaz de la ACL mediante dos flujos, uno de entrada y otro de salida; la interfaz sirve a su contexto y la capa anticorrupción agrega sus ocho interfaces. La ACL traduce formato y terminología, nunca reglas de negocio, y se mantiene el criterio de exclusión de la fase 2: no entró ningún sistema nuevo ni se agregó ninguna decisión dentro de la frontera.
 
@@ -389,11 +393,45 @@ Esta es la vista de interoperabilidad y anticorrupción en la capa de Aplicació
 
 Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a SA-14) no tienen adaptador. Cada adaptador tiene dos flujos, lo que entra y lo que sale, con el mismo contenido que su intercambio en V9b. En Contabilidad el flujo principal es de salida: la aplicación le entrega los valores calculados y recibe de vuelta las conciliaciones.
 
-## 17. Bounded Context Canvas: V11 (fase 6)
+## 17. Trazabilidad vertical: V10
 
-### 17.1 V11a. Gestión del arriendo, el contexto principal
+V10 conecta las razones del negocio con lo que se construye en la aplicación. Las cinco vistas recorren Motivación, Estrategia, Negocio y Aplicación para mostrar por qué existe cada contexto. Son vistas transversales: cada una escoge un hilo legible, mientras el modelo fuente conserva las relaciones entre las capas.
 
-![V11a. Bounded Context Canvas del contexto Gestión del arriendo](vistas/V11a-canvas-gestion-del-arriendo.png)
+### 17.1 V10a. Gestión del arriendo
+
+![V10a. Trazabilidad vertical de Gestión del arriendo](vistas/Trazabilidad%20Vertical%20V10/V10a.%20Trazabilidad%20vertical%20del%20contexto%20Gestion%20del%20arriendo.png)
+
+La vista sigue dos preocupaciones de la reserva: evitar compromisos incompatibles sobre un mismo yate y coordinar su confirmación con propietario y marina. Relaciona esas metas y resultados con la capacidad de Gestión de reservas, el tramo «Reservar y garantizar», los servicios de solicitud y confirmación y los procesos que atienden al cliente. En Aplicación, el servicio de reserva, la función Gestión del arriendo y su componente muestran qué parte de la solución respalda ese trabajo. La capacidad estratégica y la función de negocio comparten nombre, pero no significado: una expresa lo que la empresa puede hacer; la otra organiza el comportamiento que presta el servicio.
+
+### 17.2 V10b. Evaluación de riesgo
+
+![V10b. Trazabilidad vertical de Evaluación de riesgo](vistas/Trazabilidad%20Vertical%20V10/V10b.%20Trazabilidad%20vertical%20del%20contexto%20Evaluacion%20de%20riesgo.png)
+
+El hilo empieza en el riesgo de entregar un bien ajeno a un cliente que quizá no cumpla los requisitos. La meta de entrega segura se vincula con verificar elegibilidad antes de confirmar la reserva. La capacidad de Evaluación del riesgo del arriendo y el servicio de negocio ST-03 sitúan esa verificación en el proceso; el servicio y componente de aplicación de Evaluación de riesgo proporcionan su soporte. Mantener separados el resultado de riesgo y la autorización de entrega evita atribuir al evaluador una decisión operativa que corresponde a otro contexto.
+
+### 17.3 V10c. Operación y seguimiento del yate
+
+![V10c. Trazabilidad vertical de Operación y seguimiento del yate](vistas/Trazabilidad%20Vertical%20V10/V10c.%20Trazabilidad%20vertical%20del%20contexto%20Operacion%20del%20yate.png)
+
+Esta vista toma como hilo la evidencia del estado del yate. La preocupación por daños y cobros sin sustento lleva al resultado de registrar la entrega y la devolución con actas comparables. La capacidad de Coordinación de entrega y devolución se relaciona con los procesos de preparación, entrega e inspección y con ST-08, que conserva las actas. En Aplicación, el servicio de operación y su componente respaldan esas actividades. Así se puede rastrear una inspección hasta la meta de cerrar el arriendo con responsabilidades resueltas, sin afirmar que la inspección decida por sí misma quién paga un daño.
+
+### 17.4 V10d. Liquidación
+
+![V10d. Trazabilidad vertical de Liquidación](vistas/Trazabilidad%20Vertical%20V10/V10d.%20Trazabilidad%20vertical%20del%20contexto%20Liquidacion.png)
+
+La devolución física no resuelve automáticamente combustible, garantías, daños ni reclamaciones. La vista conecta la meta de cerrar el arriendo con pagos y responsabilidades resueltos con la capacidad de Liquidación del arriendo, el servicio ST-14 y el proceso que calcula ajustes con el cliente. El servicio de aplicación, la función y el contexto de Liquidación completan el hilo hasta el componente que soporta el cálculo. La pasarela y contabilidad ejecutan o registran operaciones económicas, pero las reglas para determinar el saldo pertenecen a Liquidación.
+
+### 17.5 V10e. Reputación
+
+![V10e. Trazabilidad vertical de Reputación](vistas/Trazabilidad%20Vertical%20V10/V10e.%20Trazabilidad%20vertical%20del%20contexto%20Reputacion.png)
+
+Las calificaciones mutuas después de la devolución se relacionan con la satisfacción de clientes y propietarios. V10e sitúa ese resultado junto a la capacidad de Gestión de la reputación, el tramo «Devolver y cerrar» y el servicio ST-16, que atiende las calificaciones del cliente y del propietario. En Aplicación, el servicio y el contexto de Reputación dan continuidad a esa información. La trazabilidad explica por qué existe este contexto de soporte sin convertir una calificación, por sí sola, en una autorización o rechazo de reserva.
+
+## 18. Bounded Context Canvas: V11 (fase 6)
+
+### 18.1 V11a. Gestión del arriendo, el contexto principal
+
+![V11a. Bounded Context Canvas del contexto Gestión del arriendo](vistas/Fase%206/V11a-canvas-gestion-del-arriendo.png)
 
 El canvas resume en una sola página el contexto principal, Gestión del arriendo, siguiendo las secciones del Bounded Context Canvas de ddd-crew: nombre y propósito, clasificación estratégica, rol del dominio, comunicación entrante y saliente, lenguaje ubicuo, decisiones de negocio, supuestos, preguntas abiertas y métricas de verificación.
 
@@ -407,31 +445,31 @@ Quedan tres preguntas abiertas que la entrevista no respondió: cuánto dura un 
 
 Los otros cuatro Canvas usan la misma estructura para comparar los límites y las comunicaciones de los contextos. Al cruzarlos aparecieron tres huecos en el mapa de contextos que dejamos como preguntas abiertas en vez de inventar relaciones: Gestión no tiene un canal para enterarse de una entrega no autorizada ni del pago del anticipo antes de confirmar, y a Reputación nada le avisa que el arriendo terminó. También queda abierto si Evaluación de riesgo debe consultar el historial de Reputación.
 
-### 17.2 V11b. Evaluación de riesgo
+### 18.2 V11b. Evaluación de riesgo
 
-![V11b. Bounded Context Canvas del contexto Evaluación de riesgo](vistas/V11b-canvas-evaluacion-de-riesgo.png)
+![V11b. Bounded Context Canvas del contexto Evaluación de riesgo](vistas/Fase%206/V11b-canvas-evaluacion-de-riesgo.png)
 
 Evaluación de riesgo es Supporting: comprueba requisitos y habilitaciones del cliente, registra verificaciones y puede solicitar una recomendación externa. Esa recomendación llega por la ACL, pero el contexto conserva la decisión sobre elegibilidad y condiciones especiales. Entrega a Gestión del arriendo el resultado que esta necesita para decidir sobre la reserva; no confirma reservas ni autoriza la salida del yate. La invariante mostrada en el Canvas impide declarar apta una evaluación con requisitos obligatorios pendientes. La consulta del historial de Reputación aparece como pregunta, no como relación existente en V8.
 
-### 17.3 V11c. Operación y seguimiento del yate
+### 18.3 V11c. Operación y seguimiento del yate
 
-![V11c. Bounded Context Canvas del contexto Operación y seguimiento del yate](vistas/V11c-canvas-operacion-y-seguimiento-del-yate.png)
+![V11c. Bounded Context Canvas del contexto Operación y seguimiento del yate](vistas/Fase%206/V11c-canvas-operacion-y-seguimiento-del-yate.png)
 
 Este contexto Core recibe la reserva confirmada de Gestión y coordina preparación, entrega, seguimiento y recepción. Los datos de marinas, telemetría y aseguradora cruzan la capa anticorrupción; dentro del contexto se registran actas, lecturas e incidentes y se decide si el yate está en condiciones de salir. Envía a Liquidación la devolución y sus evidencias para que allí se determine cualquier ajuste económico. Separar esos roles impide convertir una novedad observada en un cobro automático. El Canvas deja abierta la manera de avisar a Gestión cuando la entrega no se autoriza, porque V8 aún no define ese flujo.
 
-### 17.4 V11d. Liquidación
+### 18.4 V11d. Liquidación
 
-![V11d. Bounded Context Canvas del contexto Liquidación](vistas/V11d-canvas-liquidacion.png)
+![V11d. Bounded Context Canvas del contexto Liquidación](vistas/Fase%206/V11d-canvas-liquidacion.png)
 
 Liquidación es Supporting y toma las actas y novedades que entrega Operación para calcular combustible, cargos sustentados y saldo de la garantía. Distingue ese cálculo de ejecutar un cobro: la pasarela procesa pagos y reembolsos, mientras contabilidad recibe los valores para registro y conciliación mediante sus adaptadores. Sus reglas exigen evidencia y una condición contractual para cada cargo; tampoco permiten cerrar el arriendo con una reclamación abierta. La confirmación del anticipo es una entrada necesaria para la reserva, pero el Canvas señala que V8 no muestra aún cómo se comunica ese resultado a Gestión.
 
-### 17.5 V11e. Reputación
+### 18.5 V11e. Reputación
 
-![V11e. Bounded Context Canvas del contexto Reputación](vistas/V11e-canvas-reputacion.png)
+![V11e. Bounded Context Canvas del contexto Reputación](vistas/Fase%206/V11e-canvas-reputacion.png)
 
 Reputación, también Supporting, consulta el arriendo y sus participantes mediante el servicio publicado por Gestión; por eso se presenta como consumidor conformista. Guarda una calificación por participante y arriendo, conserva el historial y separa la revisión de valoraciones cuestionadas de las ya publicadas. Sus calificaciones pueden informar una decisión futura, pero no aprueban una reserva ni sustituyen la evaluación formal del riesgo. Para habilitar las calificaciones después del uso necesita saber que el arriendo terminó: el Canvas identifica ese aviso como una comunicación aún no definida en V8.
 
-## 18. Modelo y evidencias
+## 19. Modelo y evidencias
 
 - [Modelo ArchiMate fuente](modelo/arrendamiento_yates.archimate), que contiene las vistas anteriores en un solo archivo.
 - [Guion de entrevista](Entrevista/01_guion_entrevista.md).
@@ -439,7 +477,7 @@ Reputación, también Supporting, consulta el arriendo y sus participantes media
 - [Conversación con el experto simulado](Entrevista/03_conversacion_experto.md).
 - [Análisis de hallazgos](Entrevista/04_analisis_hallazgos.md).
 
-## 19. Aportes del equipo
+## 20. Aportes del equipo
 
 Los aportes se describen según los archivos y commits que aparecen en el historial del repositorio. Los enlaces permiten comprobar el trabajo registrado de cada integrante.
 
