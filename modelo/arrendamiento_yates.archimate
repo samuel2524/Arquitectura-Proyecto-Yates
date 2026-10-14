@@ -7631,22 +7631,22 @@ Momento: Una sola vez, al arrancar.</documentation>
       </child>
       <documentation>V9 - Interoperabilidad y capa anticorrupción en la capa de Aplicación. Cada contexto del arrendamiento se conecta con los sistemas y procesos externos a través de una interfaz de la capa anticorrupción, que traduce los modelos. Corresponde a la V9b de negocio (fase 2) llevada al nivel de aplicación: cada flujo de entrada y de salida es el mismo intercambio de V9b.</documentation>
     </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="V11. Bounded Context Canvas - Gestión del arriendo" id="id-89bc9540c8d2487e9ca3f9ad32f19c2e">
-      <child xsi:type="archimate:Group" id="id-77c8de636338490e943514fcdb11a0a7" fillColor="#f4f1ea" name="V11 · Bounded Context Canvas · Gestión del arriendo" textAlignment="1">
-        <bounds x="20" y="20" width="2460" height="1270"/>
-        <child xsi:type="archimate:Group" id="id-7e52e503f0894563af50d4c93d62611d" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
-          <bounds x="20" y="40" width="1180" height="210"/>
-          <child xsi:type="archimate:Note" id="id-6e9c52f4da6641ceb46c62edea177ef1" fillColor="#ffffff" textAlignment="1">
-            <bounds x="15" y="35" width="1150" height="160"/>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V11a. Bounded Context Canvas - Gestión del arriendo" id="id-89bc9540c8d2487e9ca3f9ad32f19c2e">
+      <child xsi:type="archimate:Group" id="id-e9cebf864ffa4995aff3979e2493a629" fillColor="#f4f1ea" name="V11a · Bounded Context Canvas · Gestión del arriendo" textAlignment="1">
+        <bounds x="20" y="20" width="2460" height="1205"/>
+        <child xsi:type="archimate:Group" id="id-82b41914813d4692810118991fc57afc" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
+          <bounds x="20" y="40" width="1180" height="184"/>
+          <child xsi:type="archimate:Note" id="id-7ae7bba3fb4b491f98bdeadd751b3d96" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="1150" height="134"/>
             <content>Gestión del arriendo
 
 Que un yate de un tercero pueda comprometerse con un cliente para unas fechas y una marina, sin dos compromisos incompatibles sobre el mismo yate. El contexto lleva el ciclo administrativo del arriendo: desde la solicitud hasta la confirmación, el rechazo o la cancelación, y el estado del arriendo mientras dura.</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-8f403e0e016145f184fb4ebda3a759a1" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
-          <bounds x="1220" y="40" width="600" height="210"/>
-          <child xsi:type="archimate:Note" id="id-5da858f9a02b4572b36f48fee10f6dee" fillColor="#ffffff" textAlignment="1">
-            <bounds x="15" y="35" width="570" height="160"/>
+        <child xsi:type="archimate:Group" id="id-cf4c801bc5a84b6b8fb59a25537a7db0" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
+          <bounds x="1220" y="40" width="600" height="184"/>
+          <child xsi:type="archimate:Note" id="id-994cdc2b08d3484f9cfa933309d547a3" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="134"/>
             <content>Dominio: Core. Coordinar el arriendo de un bien ajeno es la actividad alrededor de la cual funciona la aplicación.
 
 Modelo de negocio: genera ingresos. Cada reserva confirmada es un alquiler; la dirección busca aprovechar las fechas disponibles de la flota.
@@ -7654,10 +7654,10 @@ Modelo de negocio: genera ingresos. Cada reserva confirmada es un alquiler; la d
 Evolución: hecho a medida. Por ser Core no se compra como producto.</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-6bb8ba73589442e2ab20fa920a45135d" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
-          <bounds x="1840" y="40" width="600" height="210"/>
-          <child xsi:type="archimate:Note" id="id-e1ea1397b81f400e95e985bf6979453b" fillColor="#ffffff" textAlignment="1">
-            <bounds x="15" y="35" width="570" height="160"/>
+        <child xsi:type="archimate:Group" id="id-a8b17f7f1c724e27b9da46bfa823d86f" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
+          <bounds x="1840" y="40" width="600" height="184"/>
+          <child xsi:type="archimate:Note" id="id-257bebddb30643af8851a37c925b47ae" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="134"/>
             <content>Ejecución: recibe la solicitud y lleva el ciclo de la reserva hasta su estado final.
 
 Aprobación: decide la confirmación con el resultado de Evaluación de riesgo y, cuando el acuerdo lo exige, con la autorización del propietario.
@@ -7665,31 +7665,91 @@ Aprobación: decide la confirmación con el resultado de Evaluación de riesgo y
 No decide el riesgo del cliente, la entrega física ni los importes.</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-dedfad8a126f4af2b5905302f27f4761" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
-          <bounds x="20" y="270" width="760" height="560"/>
-          <child xsi:type="archimate:DiagramObject" id="id-46f663df7a104a2ab3d19bc04708a0ab" archimateElement="id-AC1">
+        <child xsi:type="archimate:Group" id="id-80bba5b4a50040f6863b079c4059af23" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
+          <bounds x="800" y="244" width="840" height="340"/>
+          <child xsi:type="archimate:DiagramObject" id="id-6258460f271f446e95968cbbc3911687" targetConnections="id-6d9dc2cfb67c45c29dab6dda2950148e id-4c79083b2d9f4a0bb36025f763b29981 id-76e8e9b8dc0b4d1f971a9060fbe9a547 id-49ea08f7c3004a4cb51321aba7042bee" archimateElement="id-f5-bc-001">
+            <bounds x="40" y="45" width="760" height="185"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-dc70c2da4d344788860a6b011627d7cc" source="id-6258460f271f446e95968cbbc3911687" target="id-fd267815801e405c8f9b3fc6e4f84bbb" archimateRelationship="id-f5-rel-034"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-5b9ae7023b1c4acebb1c7edf9e2bbfb0" source="id-6258460f271f446e95968cbbc3911687" target="id-cefe7a20e32747d495ee9b2895c4b74c" archimateRelationship="id-f5-rel-045"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-fd267815801e405c8f9b3fc6e4f84bbb" targetConnections="id-dc70c2da4d344788860a6b011627d7cc" archimateElement="id-f5-bs-002">
+            <bounds x="40" y="260" width="760" height="60"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-daa8134d3c6b4f89b7f05b7da9e75bf5" source="id-fd267815801e405c8f9b3fc6e4f84bbb" target="id-e9d068c85ce4431bb16dcbf12dc3289d" archimateRelationship="id-f5-rel-047"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-5ad2fc8a175c4e889382d7ac12036b41" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
+          <bounds x="800" y="604" width="840" height="303"/>
+          <child xsi:type="archimate:DiagramObject" id="id-608bd26568584fc391b1f11d2eb9b89c" archimateElement="term01">
+            <bounds x="20" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-af8198c62d4243b0b8a157bff3223e13" archimateElement="term02">
+            <bounds x="430" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-5a186a59515f4ab8ac6adc8f5f6ae528" archimateElement="term03">
+            <bounds x="20" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-51f6e56d670a4544bfdc839e0c95a4bb" archimateElement="term04">
+            <bounds x="430" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-44b332a0ecbb43acab706db4c8d9d2d3" archimateElement="term05">
+            <bounds x="20" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-11deb887f7cf4cf4bf3fc618e7259996" archimateElement="term06">
+            <bounds x="430" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-a5593484a6624c5c9476f24b9e950675" archimateElement="term07">
+            <bounds x="20" y="231" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-64f5aa19347445c38105442fb1e56d12" archimateElement="term08">
+            <bounds x="430" y="231" width="390" height="52"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-07c1adffdfbe4cc1bc654a5568064a3e" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
+          <bounds x="800" y="927" width="840" height="258"/>
+          <child xsi:type="archimate:DiagramObject" id="id-b9e541713e044970bcf2f28f347fdb3f" archimateElement="id-cacdaf92e3c2487d8ab97101376d7ee5">
+            <bounds x="20" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-025d0d52724b4726825db6982c8f3cf6" archimateElement="id-26040ce9c0f94c378700942bc84ae939">
+            <bounds x="293" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-8592a1312d384c90baff31b5854d3d4d" archimateElement="id-f4-ga-yate-015">
+            <bounds x="566" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-3f74aa00c0cb4c5f87d891e1942e2332" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="120" width="800" height="118"/>
+            <content>Reglas que el contexto nunca rompe (invariantes de V6a)
+
+• Disponibilidad del yate: dos periodos confirmados sobre el mismo yate no se solapan, y un bloqueo impide confirmar.
+• Arriendo: solo se confirma con la elegibilidad aprobada y, si el acuerdo lo exige, con la autorización del propietario.
+• Arriendo: una solicitud no es una reserva confirmada, y una reserva confirmada no autoriza la entrega.
+• Yate: el propietario decide si está habilitado o bloqueado.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-db97dd2571824782b05995f5ec2a73ac" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
+          <bounds x="20" y="244" width="760" height="442"/>
+          <child xsi:type="archimate:DiagramObject" id="id-ef6f65c85ef54ed3949c305fbf5250d0" archimateElement="id-AC1">
             <bounds x="20" y="50" width="340" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-51bd35b63aca4779b6cef0c0c40e6340" archimateElement="id-AC2">
+          <child xsi:type="archimate:DiagramObject" id="id-a084510bacd343de9636069670f8dd89" archimateElement="id-AC2">
             <bounds x="20" y="110" width="340" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-83038095418646a1bed82d8f9bb849a4" archimateElement="id-f5-aclif-019">
+          <child xsi:type="archimate:DiagramObject" id="id-151c20ac33064791a8c6f72a9ed64c9e" archimateElement="id-f4-ev-147">
+            <bounds x="20" y="170" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-58f154ed53374533a8786b7d9111cbc5" archimateElement="id-f5-aclif-019">
             <bounds x="420" y="50" width="320" height="50"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-c2529dc5eca042149634f9c953eb8866" source="id-83038095418646a1bed82d8f9bb849a4" target="id-62841f8f642e412ea3d4c5e9f43ab845" archimateRelationship="id-f5-rel-052"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6d9dc2cfb67c45c29dab6dda2950148e" source="id-58f154ed53374533a8786b7d9111cbc5" target="id-6258460f271f446e95968cbbc3911687" archimateRelationship="id-f5-rel-052"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-6d92908e4a1542f98aae18007db22db3" archimateElement="id-f5-aclif-021">
+          <child xsi:type="archimate:DiagramObject" id="id-7509fd4e3b6b452ba3bdab3bce0186ea" archimateElement="id-f5-aclif-021">
             <bounds x="420" y="110" width="320" height="50"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-e047591e15a440bfbbae62692ff19f4a" source="id-6d92908e4a1542f98aae18007db22db3" target="id-62841f8f642e412ea3d4c5e9f43ab845" archimateRelationship="id-f5-rel-055"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-4c79083b2d9f4a0bb36025f763b29981" source="id-7509fd4e3b6b452ba3bdab3bce0186ea" target="id-6258460f271f446e95968cbbc3911687" archimateRelationship="id-f5-rel-055"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-10297f3d501148f787224bd5dc86825e" archimateElement="id-f5-bc-004">
-            <bounds x="420" y="170" width="320" height="55"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-9097e363097c42cba200a83f8163a2a1" source="id-10297f3d501148f787224bd5dc86825e" target="id-62841f8f642e412ea3d4c5e9f43ab845" archimateRelationship="id-f5-rel-044"/>
+          <child xsi:type="archimate:DiagramObject" id="id-9cf8b36062514378abba8a88a99c754b" archimateElement="id-f5-bc-004">
+            <bounds x="420" y="170" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-76e8e9b8dc0b4d1f971a9060fbe9a547" source="id-9cf8b36062514378abba8a88a99c754b" target="id-6258460f271f446e95968cbbc3911687" archimateRelationship="id-f5-rel-044"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-ba2d7df1bdac40af9ebe939f3b280e91" archimateElement="id-f4-ev-147">
-            <bounds x="20" y="170" width="340" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="id-6aab74676129447c8e643979a42602d4" fillColor="#ffffff" textAlignment="1">
-            <bounds x="20" y="245" width="720" height="295"/>
+          <child xsi:type="archimate:Note" id="id-13f6ed082df44baa80e0a5366885684a" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="720" height="182"/>
             <content>Mensajes que recibe (tipo · quién lo envía)
 
 • Consultar yates disponibles por marina (consulta) · Cliente
@@ -7701,89 +7761,43 @@ No decide el riesgo del cliente, la entrega física ni los importes.</content>
 • Condiciones vigentes y documentos aceptados (consulta) · Gestión de contratos, a través de la capa anticorrupción</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-06386305d57c4cca86b208f5b0051d35" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
-          <bounds x="800" y="270" width="840" height="330"/>
-          <child xsi:type="archimate:DiagramObject" id="id-62841f8f642e412ea3d4c5e9f43ab845" targetConnections="id-9097e363097c42cba200a83f8163a2a1 id-c2529dc5eca042149634f9c953eb8866 id-e047591e15a440bfbbae62692ff19f4a id-44c0bb89a48f403697847a32562ef571" archimateElement="id-f5-bc-001">
-            <bounds x="40" y="45" width="760" height="175"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-0fbaf69c6a7447249ecaf3f7a061d0b8" source="id-62841f8f642e412ea3d4c5e9f43ab845" target="id-018ab496b0a247b2a47acb24375c1dd0" archimateRelationship="id-f5-rel-045"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-91d5f75730114711a1326cfdae308b6d" source="id-62841f8f642e412ea3d4c5e9f43ab845" target="id-2a6c1fe0840e4ed0a8b375db4aa5fc58" archimateRelationship="id-f5-rel-034"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-2a6c1fe0840e4ed0a8b375db4aa5fc58" targetConnections="id-91d5f75730114711a1326cfdae308b6d" archimateElement="id-f5-bs-002">
-            <bounds x="40" y="250" width="760" height="60"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-92250e190f6140cfbb14dbfbad749a84" source="id-2a6c1fe0840e4ed0a8b375db4aa5fc58" target="id-42f8d85a596f41c59178fd85d92140bb" archimateRelationship="id-f5-rel-047"/>
-          </child>
-        </child>
-        <child xsi:type="archimate:Group" id="id-abca257a053047ab9a74a93fe53a274a" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
-          <bounds x="800" y="620" width="840" height="300"/>
-          <child xsi:type="archimate:DiagramObject" id="id-1c6a2284bf2a46069acd7c8752b1c699" archimateElement="term01">
-            <bounds x="20" y="45" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-a5844cdac43f47ae8a571d4d505c8bfd" archimateElement="term02">
-            <bounds x="430" y="45" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-1412e8addf3645979c8b9e80977e83ab" archimateElement="term03">
-            <bounds x="20" y="107" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-d18797c4de5943dab34bdee9d02623f5" archimateElement="term04">
-            <bounds x="430" y="107" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-e81a41f9dac94fb98b6beabbc9274fcb" archimateElement="term05">
-            <bounds x="20" y="169" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-0089e75c29cd4f0d879ae77a3f8bef84" archimateElement="term06">
-            <bounds x="430" y="169" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-97b98d9e68634c74a71d476687b924b5" archimateElement="term07">
-            <bounds x="20" y="231" width="390" height="52"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-aff13c298d684a70a39edfdbe26d6302" archimateElement="term08">
-            <bounds x="430" y="231" width="390" height="52"/>
-          </child>
-        </child>
-        <child xsi:type="archimate:Group" id="id-53aa8d17b1e14a09a5778a63c906d9d0" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
-          <bounds x="800" y="940" width="840" height="310"/>
-          <child xsi:type="archimate:DiagramObject" id="id-f35ed66feae2426cb4cf151836cc7890" archimateElement="id-cacdaf92e3c2487d8ab97101376d7ee5">
-            <bounds x="20" y="45" width="255" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-9e84cb0309654b62ab39d71a647f10b0" archimateElement="id-26040ce9c0f94c378700942bc84ae939">
-            <bounds x="295" y="45" width="255" height="55"/>
-          </child>
-          <child xsi:type="archimate:DiagramObject" id="id-7690a29266f9444eb6150d7dca4b2572" archimateElement="id-f4-ga-yate-015">
-            <bounds x="570" y="45" width="255" height="55"/>
-          </child>
-          <child xsi:type="archimate:Note" id="id-69abc223d28a4d8b9f19f53034af4a23" fillColor="#ffffff" textAlignment="1">
-            <bounds x="20" y="115" width="800" height="175"/>
-            <content>Reglas que el contexto nunca rompe (invariantes de V6a)
+        <child xsi:type="archimate:Group" id="id-7ff0d2785e6f4ea5ab9568a5ab6b963d" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
+          <bounds x="20" y="706" width="760" height="479"/>
+          <child xsi:type="archimate:Note" id="id-f8620b4674fc41efba6bb6d7ec0d2358" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="40" width="720" height="419"/>
+            <content>Supuestos
+• La autorización individual del propietario solo aplica cuando así se pactó con él.
+• Los datos comerciales del cliente viven en el CRM; este contexto los consulta, no los administra.
 
-• Disponibilidad del yate: dos periodos confirmados sobre el mismo yate no se solapan, y un bloqueo impide confirmar.
-• Arriendo: solo se confirma con la elegibilidad aprobada y, si el acuerdo lo exige, con la autorización del propietario.
-• Arriendo: una solicitud no es una reserva confirmada, y una reserva confirmada no autoriza la entrega.
-• Yate: el propietario decide si está habilitado o bloqueado.</content>
+Preguntas abiertas
+• ¿Cuánto dura un apartado temporal antes de liberarse?
+• ¿Cuánto tiempo de preparación queda entre dos arriendos del mismo yate?
+• ¿Qué tasa de ocupación fija la dirección como meta?</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-13e0964b9e424b66a04ff4037d92b15f" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
-          <bounds x="1660" y="270" width="780" height="660"/>
-          <child xsi:type="archimate:DiagramObject" id="id-018ab496b0a247b2a47acb24375c1dd0" targetConnections="id-0fbaf69c6a7447249ecaf3f7a061d0b8" archimateElement="id-f5-bc-007">
-            <bounds x="20" y="50" width="360" height="55"/>
+        <child xsi:type="archimate:Group" id="id-41fe2dccb2a446b0a729c419121c9213" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
+          <bounds x="1660" y="244" width="780" height="610"/>
+          <child xsi:type="archimate:DiagramObject" id="id-cefe7a20e32747d495ee9b2895c4b74c" targetConnections="id-5b9ae7023b1c4acebb1c7edf9e2bbfb0" archimateElement="id-f5-bc-007">
+            <bounds x="20" y="50" width="360" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-802384c63d324e5b841d71cf4daf9a6c" archimateElement="id-f5-grp-016">
-            <bounds x="20" y="120" width="360" height="55"/>
-            <sourceConnection xsi:type="archimate:Connection" id="id-44c0bb89a48f403697847a32562ef571" source="id-802384c63d324e5b841d71cf4daf9a6c" target="id-62841f8f642e412ea3d4c5e9f43ab845" archimateRelationship="id-f5-rel-048"/>
+          <child xsi:type="archimate:DiagramObject" id="id-df3294c899b44671b620bd473e9a829c" archimateElement="id-f5-grp-016">
+            <bounds x="20" y="110" width="360" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-49ea08f7c3004a4cb51321aba7042bee" source="id-df3294c899b44671b620bd473e9a829c" target="id-6258460f271f446e95968cbbc3911687" archimateRelationship="id-f5-rel-048"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-42f8d85a596f41c59178fd85d92140bb" targetConnections="id-92250e190f6140cfbb14dbfbad749a84" archimateElement="id-f5-bc-013">
-            <bounds x="20" y="255" width="360" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="id-e9d068c85ce4431bb16dcbf12dc3289d" targetConnections="id-daa8134d3c6b4f89b7f05b7da9e75bf5" archimateElement="id-f5-bc-013">
+            <bounds x="20" y="265" width="360" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-b5faf41c22d74117b82aaeedfb2189e4" archimateElement="id-f4-ev-034">
-            <bounds x="400" y="50" width="360" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="id-60015abd1d0242e18ed8656d5fafb60c" archimateElement="id-f4-ev-034">
+            <bounds x="400" y="50" width="360" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-1de47e8c4f6f4d26afc7748c2da084f4" archimateElement="id-EV2">
-            <bounds x="400" y="120" width="360" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="id-60610c3bbb0e4b8eb8092b569359ae61" archimateElement="id-EV2">
+            <bounds x="400" y="110" width="360" height="50"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-7e5aab4a40ed4128ab8a0812b1fe0592" archimateElement="id-EV3">
-            <bounds x="400" y="190" width="360" height="55"/>
+          <child xsi:type="archimate:DiagramObject" id="id-f640bf9b7912411eba25601a38b2daf2" archimateElement="id-EV3">
+            <bounds x="400" y="170" width="360" height="50"/>
           </child>
-          <child xsi:type="archimate:Note" id="id-017d8b4805714b978229c1d2eb92e23d" fillColor="#ffffff" textAlignment="1">
-            <bounds x="20" y="325" width="740" height="315"/>
+          <child xsi:type="archimate:Note" id="id-9a8c509045104a4aa74e00c046340094" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="360" width="740" height="230"/>
             <content>Mensajes que envía (tipo · quién lo recibe)
 
 • Reserva confirmada (evento de negocio) · Operación y seguimiento del yate, en una relación cliente-proveedor. Operación coordina la entrega con la marina.
@@ -7796,38 +7810,694 @@ No decide el riesgo del cliente, la entrega física ni los importes.</content>
 Comparte con Operación un núcleo limitado a arriendo, yate y participante.</content>
           </child>
         </child>
-        <child xsi:type="archimate:Group" id="id-e4565efb60d54a9589332a8637ca7168" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
-          <bounds x="20" y="850" width="760" height="400"/>
-          <child xsi:type="archimate:Note" id="id-73ef0d38c5d24e6e82e3b65e092d3f59" fillColor="#ffffff" textAlignment="1">
-            <bounds x="20" y="40" width="720" height="340"/>
-            <content>Supuestos
-• La autorización individual del propietario solo aplica cuando así se pactó con él.
-• Los datos comerciales del cliente viven en el CRM; este contexto los consulta, no los administra.
-
-Preguntas abiertas
-• ¿Cuánto dura un apartado temporal antes de liberarse?
-• ¿Cuánto tiempo de preparación queda entre dos arriendos del mismo yate?
-• ¿Qué tasa de ocupación fija la dirección como meta?</content>
-          </child>
-        </child>
-        <child xsi:type="archimate:Group" id="id-878095f5cefc4cbf9a11ba752c38c4a7" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
-          <bounds x="1660" y="950" width="780" height="300"/>
-          <child xsi:type="archimate:DiagramObject" id="id-d6ee04dd5fbe40e6b16859412112d40a" archimateElement="id-O2">
+        <child xsi:type="archimate:Group" id="id-854b3775f69840e5ae9b4b40f8e3637f" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
+          <bounds x="1660" y="874" width="780" height="311"/>
+          <child xsi:type="archimate:DiagramObject" id="id-ac717746fdba4868aed5d58f411df578" archimateElement="id-O2">
             <bounds x="20" y="40" width="740" height="52"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-a4c60cc2b3ae48d4a9cbea392c8472b7" archimateElement="id-O1">
+          <child xsi:type="archimate:DiagramObject" id="id-1dd3119d595747bcbba1f7f2e08fefc1" archimateElement="id-O1">
             <bounds x="20" y="102" width="740" height="52"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-3075a095eb53400180e54083c876dfb3" archimateElement="id-O3">
+          <child xsi:type="archimate:DiagramObject" id="id-7c5018817c774e649ce34876674419ac" archimateElement="id-O3">
             <bounds x="20" y="164" width="740" height="52"/>
           </child>
-          <child xsi:type="archimate:Note" id="id-ca4655840a9742389e3501c789c98df6" fillColor="#ffffff" textAlignment="1">
-            <bounds x="20" y="230" width="740" height="55"/>
+          <child xsi:type="archimate:Note" id="id-af43fc11008742d0b5d41cae98f10f33" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="236" width="740" height="55"/>
             <content>Resultados de V1 que este contexto ayuda a cumplir, todos de la meta «Aprovechar la flota y cumplir las reservas comprometidas».</content>
           </child>
         </child>
       </child>
-      <documentation>Bounded Context Canvas del contexto principal, Gestión del arriendo, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6a) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
+      <documentation>Bounded Context Canvas del contexto Gestión del arriendo, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V11b. Bounded Context Canvas - Evaluación de riesgo" id="id-bf63052ab5c6436aaceb6bda5b6ac622">
+      <child xsi:type="archimate:Group" id="id-c4ed4004d78f433ea8bb65c74842bd35" fillColor="#f4f1ea" name="V11b · Bounded Context Canvas · Evaluación de riesgo" textAlignment="1">
+        <bounds x="20" y="20" width="2460" height="1221"/>
+        <child xsi:type="archimate:Group" id="id-08a4b1809c4d4f15a1cafbe54ad7543f" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
+          <bounds x="20" y="40" width="1180" height="184"/>
+          <child xsi:type="archimate:Note" id="id-992e97e20c1e4315b02e54827a19cae9" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="1150" height="134"/>
+            <content>Evaluación de riesgo
+
+Determinar si las condiciones del cliente y del arriendo son aceptables desde la perspectiva del riesgo antes de que la reserva continúe. Revisa requisitos, habilitaciones y antecedentes, y puede pedir una recomendación externa.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-612db1707d0e4383a3f30dcd0dd9f5a4" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
+          <bounds x="1220" y="40" width="600" height="184"/>
+          <child xsi:type="archimate:Note" id="id-a75e1788edf04330872caf04cfbced27" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="134"/>
+            <content>Dominio: Supporting. Protege al propietario y ayuda a decidir si se acepta un arriendo, pero su conocimiento no organiza el ciclo completo.
+
+Modelo de negocio: cumplimiento. Evita entregar un bien ajeno a quien no cumple los requisitos.
+
+Evolución: hecho a medida, apoyado en un evaluador externo cuando aplica.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-2ace0ebf118c4e509bef295c8313b44d" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
+          <bounds x="1840" y="40" width="600" height="184"/>
+          <child xsi:type="archimate:Note" id="id-8f9344c3dc5d432d9f6d66d2aca8c23b" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="134"/>
+            <content>Análisis: reúne requisitos, habilitaciones y la recomendación externa.
+
+Aprobación: aprueba o rechaza la elegibilidad e impone condiciones especiales.
+
+No confirma la reserva ni autoriza la entrega del yate.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-04b8420bb3194074bcd002d60512515c" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
+          <bounds x="800" y="244" width="840" height="340"/>
+          <child xsi:type="archimate:DiagramObject" id="id-46706b60953a470681422cdb8adf01dd" targetConnections="id-a0185815d85c4447b516facabaae5f2c" archimateElement="id-f5-bc-004">
+            <bounds x="40" y="45" width="760" height="185"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-ff21a9123fa7426bbddc78f69ec90db5" source="id-46706b60953a470681422cdb8adf01dd" target="id-c1c0ec20af8642298cd5d5b058f374dd" archimateRelationship="id-f5-rel-036"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-058632a5237542d48f5c684741bceb4f" source="id-46706b60953a470681422cdb8adf01dd" target="id-eafbd78e3a2340e9853317343b54e566" archimateRelationship="id-f5-rel-044"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-c1c0ec20af8642298cd5d5b058f374dd" targetConnections="id-ff21a9123fa7426bbddc78f69ec90db5" archimateElement="id-f5-bs-005">
+            <bounds x="40" y="260" width="760" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-d6af073b869e4680b97f5ea332d99974" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
+          <bounds x="800" y="604" width="840" height="303"/>
+          <child xsi:type="archimate:DiagramObject" id="id-04677aae8faa4f33b9bbafd50820f461" archimateElement="term09">
+            <bounds x="20" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-74dd492a47d9407a8f818b53f44d7eac" archimateElement="term10">
+            <bounds x="430" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-9ff04e0f600a41a5a13e0d2efaf5562a" archimateElement="term11">
+            <bounds x="20" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-832a4b73655a4d0ea281fff9da0784ff" archimateElement="term12">
+            <bounds x="430" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-bd3455244c46465bae4de46afe20dc5e" archimateElement="term13">
+            <bounds x="20" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-6c0b6576f150412ea2d02c3e7ce62e0d" archimateElement="term14">
+            <bounds x="430" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-3fe08563602048bda134bda7977677c3" archimateElement="term15">
+            <bounds x="20" y="231" width="390" height="52"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-ff6523ece9024bf78bebcc64ada3a178" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
+          <bounds x="800" y="927" width="840" height="274"/>
+          <child xsi:type="archimate:DiagramObject" id="id-d226926c6ccd459989eb2c2aca9148e1" archimateElement="id-95185947936f48139e74d1473a639362">
+            <bounds x="20" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-1b8ac53480b546d797b686781aef079f" archimateElement="id-f4-er-expediente-122">
+            <bounds x="430" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-7e859f6fcd844589a764de09a20a2b7f" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="120" width="800" height="134"/>
+            <content>Reglas que el contexto nunca rompe (invariantes de V6b)
+
+• Evaluación de riesgo: ningún resultado es «apto» si falta un requisito obligatorio.
+• Evaluación de riesgo: la recomendación externa informa, pero no decide.
+• Expediente del cliente: una habilitación vencida no permite aprobar.
+• Una condición especial vale para esa evaluación, no se vuelve un requisito general.
+• Aprobar la elegibilidad no autoriza la entrega; el riesgo del arriendo no es el riesgo operativo.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-a18f0a28b4144da9b61e72edd0d729ff" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
+          <bounds x="20" y="244" width="760" height="410"/>
+          <child xsi:type="archimate:DiagramObject" id="id-eb1aaeff1faa4424b719f09b9e544988" archimateElement="id-RO1">
+            <bounds x="20" y="50" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-696ae274800340d7bd9a2e22fd804546" archimateElement="id-f4-ev-143">
+            <bounds x="20" y="110" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-6a4242ae1c594848bb8596f63090093b" archimateElement="id-f5-aclif-023">
+            <bounds x="420" y="50" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-a0185815d85c4447b516facabaae5f2c" source="id-6a4242ae1c594848bb8596f63090093b" target="id-46706b60953a470681422cdb8adf01dd" archimateRelationship="id-f5-rel-058"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-e982cd5c43464b9ba0737495b1ef9d33" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="720" height="150"/>
+            <content>Mensajes que recibe (tipo · quién lo envía)
+
+• Evaluar solicitud (comando) · Gestión del arriendo, que es cliente de este contexto y usa su servicio de evaluación
+• Registrar verificación y Actualizar habilitaciones (comandos) · Analista de riesgo, con los soportes del cliente
+• Resultado, recomendación o solicitud de verificaciones adicionales (evento) · Evaluación de riesgo externa, a través de la capa anticorrupción</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-e1540188df56487dbd362fcb867e00cd" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
+          <bounds x="20" y="674" width="760" height="527"/>
+          <child xsi:type="archimate:Note" id="id-cabe9bffd1a94a208b51582897065a20" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="40" width="720" height="467"/>
+            <content>Supuestos
+• No todos los arriendos requieren evaluación externa.
+• Los datos comerciales del cliente viven en el CRM, no en el expediente.
+• La escala de riesgo de la entrevista era ilustrativa; la real depende de las reglas del negocio.
+
+Preguntas abiertas
+• ¿Qué habilitaciones se exigen según el tipo de arriendo?
+• ¿Debe consultar el historial de Reputación? Hoy V8 no tiene esa relación.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-af461fbf4ae846a5b784a2f6604fba92" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
+          <bounds x="1660" y="244" width="780" height="410"/>
+          <child xsi:type="archimate:DiagramObject" id="id-eafbd78e3a2340e9853317343b54e566" targetConnections="id-058632a5237542d48f5c684741bceb4f" archimateElement="id-f5-bc-001">
+            <bounds x="20" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-57897edec9da4ac89b9828d79d30cf42" archimateElement="id-f4-ev-147">
+            <bounds x="400" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-68835f10e4de4b98af984d63e2b02725" archimateElement="id-f4-ev-151">
+            <bounds x="400" y="110" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-df9b0abf8aa2403d8b0c9059b3302592" archimateElement="id-f4-ev-155">
+            <bounds x="400" y="170" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-f040a8f4a0ae470ab4146d744900e3cd" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="740" height="150"/>
+            <content>Mensajes que envía (tipo · quién lo recibe)
+
+• Elegibilidad aprobada (evento de negocio) · Gestión del arriendo, en una relación cliente-proveedor. Es la señal que permite confirmar.
+• Elegibilidad rechazada (evento) · Gestión del arriendo
+• Condición especial impuesta (evento) · Gestión del arriendo, por ejemplo «solo con capitán»
+• Solicitar evaluación externa (comando) · Evaluación de riesgo externa, a través de la capa anticorrupción, con los datos necesarios del cliente y del arriendo</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-b77bf73ced0b406cb40984c527701d42" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
+          <bounds x="1660" y="674" width="780" height="527"/>
+          <child xsi:type="archimate:DiagramObject" id="id-fbe0f89fe74c42208300e5a8597c81fd" archimateElement="id-O4">
+            <bounds x="20" y="40" width="740" height="52"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-67b0d95a240f4e84891d0665263faed2" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="112" width="740" height="395"/>
+            <content>Resultado de V1 al que llega la trazabilidad de este contexto en su V10. Meta: «Entregar bienes de terceros de forma segura».</content>
+          </child>
+        </child>
+      </child>
+      <documentation>Bounded Context Canvas del contexto Evaluación de riesgo, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V11c. Bounded Context Canvas - Operación y seguimiento del yate" id="id-41989ef9e433406ca75d0137e5a9678a">
+      <child xsi:type="archimate:Group" id="id-70aa7aa0a36046b3abd3d14e049a40d3" fillColor="#f4f1ea" name="V11c · Bounded Context Canvas · Operación y seguimiento del yate" textAlignment="1">
+        <bounds x="20" y="20" width="2460" height="1327"/>
+        <child xsi:type="archimate:Group" id="id-f0ed13e6023c4f2595074dd61fb2720e" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
+          <bounds x="20" y="40" width="1180" height="168"/>
+          <child xsi:type="archimate:Note" id="id-b19f94fca6594b1abc044a8775caf0a2" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="1150" height="118"/>
+            <content>Operación y seguimiento del yate
+
+Controlar la preparación, la entrega, el uso y la devolución del yate, dejando evidencia de su estado y de lo ocurrido durante el arriendo, para poder comparar cómo salió y cómo volvió sin depender de recuerdos ni de una lectura remota aislada.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-0873e2f81532419cb3520a8198eceb0b" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
+          <bounds x="1220" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-8d93609bdd324b7490d54e16600d5650" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Dominio: Core. En un negocio que administra embarcaciones ajenas de alto valor, controlar la entrega y la recepción con evidencia es parte de la confianza que se ofrece.
+
+Modelo de negocio: confianza. Sin este control los propietarios no confían sus yates.
+
+Evolución: hecho a medida.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-1c3424bd5f564856be9e01a548e2883b" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
+          <bounds x="1840" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-012230b479d14b4a96eccdaece3e229d" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Ejecución: prepara, autoriza y registra la entrega, sigue el uso y recibe el yate.
+
+Registro de evidencia: actas, lecturas, novedades e incidentes.
+
+No decide quién paga un daño ni cuánto cuesta.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-a5f0009e102a4e93ad30b7414ee47ce4" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
+          <bounds x="800" y="228" width="840" height="400"/>
+          <child xsi:type="archimate:DiagramObject" id="id-4534d0cea2fb4457b72f64b4de72220e" targetConnections="id-057af3d7151248d98ad215a7ee08fbc6 id-c649419cac1f4d178f639fcca6b57826 id-eab6d71983d749ed9e6366b85064caae id-bff488b7d06940008cc408ea8578be28 id-360add8cb20840e78c7e49957b4fac30" archimateElement="id-f5-bc-007">
+            <bounds x="40" y="45" width="760" height="245"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c0da65a8284447989af64ac0f60cc7e2" source="id-4534d0cea2fb4457b72f64b4de72220e" target="id-f5f6861cba6146ddbdcdceab5e582f6b" archimateRelationship="id-f5-rel-038"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-17f493aee08b4288860158c1db390d83" source="id-4534d0cea2fb4457b72f64b4de72220e" target="id-c7574990dbc24370bbf8f1579c4333b7" archimateRelationship="id-f5-rel-046"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-f5f6861cba6146ddbdcdceab5e582f6b" targetConnections="id-c0da65a8284447989af64ac0f60cc7e2" archimateElement="id-f5-bs-008">
+            <bounds x="40" y="320" width="760" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-b49e62f3167c4433b443293f30c05609" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
+          <bounds x="800" y="648" width="840" height="365"/>
+          <child xsi:type="archimate:DiagramObject" id="id-2b992149f6f740f9a9bee325be546b94" archimateElement="term16">
+            <bounds x="20" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-c65a782e0d4a4eb48e0de75911ff4c29" archimateElement="term17">
+            <bounds x="430" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-ff290e3c41e149bfb060df586589d70f" archimateElement="term18">
+            <bounds x="20" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-030c1aa5a8a44acf9a3bffd85f9a3d6e" archimateElement="term19">
+            <bounds x="430" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-1527d4fada35447a986bf016074a6b77" archimateElement="term20">
+            <bounds x="20" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-b051cdbc9a85491388e387f64f812f28" archimateElement="term21">
+            <bounds x="430" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-1988cf5ff8544ffd9d3e57fa3edd3d14" archimateElement="term22">
+            <bounds x="20" y="231" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-3b012d3d7ff740e8b2450036bb04cca6" archimateElement="term23">
+            <bounds x="430" y="231" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-b29d86ccba484d15878bd76f2173e7aa" archimateElement="term24">
+            <bounds x="20" y="293" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-114860ecd34d4c3fbf1527abdf9495df" archimateElement="term25">
+            <bounds x="430" y="293" width="390" height="52"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-06f9d52077fa4fe19929adbb7fc3bed0" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
+          <bounds x="800" y="1033" width="840" height="274"/>
+          <child xsi:type="archimate:DiagramObject" id="id-ea62376ae26a438db5a2dae0e08f93f3" archimateElement="id-f4-os-operacion-218">
+            <bounds x="20" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-326f47b68cdf4d7d90f0c6121e26fd7c" archimateElement="id-f4-os-seguimiento-229">
+            <bounds x="430" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-ad893d496c27432f997bc0c241a64b21" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="120" width="800" height="134"/>
+            <content>Reglas que el contexto nunca rompe (invariantes de V6c)
+
+• Operación del arriendo: no se entrega sin inspección completa y yate apto.
+• Operación del arriendo: la misma lista de revisión en la entrega y en la devolución.
+• Operación del arriendo: registrar una novedad no atribuye responsabilidad.
+• Seguimiento del yate: cada lectura lleva su hora de medición, y una lectura ausente no es un cero.
+• Autorizar la entrega y registrarla son decisiones distintas; recibir el yate no cierra el arriendo.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-bba0402940984d2f8449f4031d344190" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
+          <bounds x="20" y="228" width="760" height="486"/>
+          <child xsi:type="archimate:DiagramObject" id="id-d1e346e81cd340c0adf73d981b43ff78" archimateElement="id-f4-ev-034">
+            <bounds x="20" y="50" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-1bd722095bcd467f99b8cfd7662a9284" archimateElement="id-RO5">
+            <bounds x="20" y="110" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-f876fe818b94434bb8fe0af26311ddce" archimateElement="id-RO6">
+            <bounds x="20" y="170" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-ccf1fb0903054274ab4925762b1ab12a" archimateElement="id-f5-bc-001">
+            <bounds x="420" y="50" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-057af3d7151248d98ad215a7ee08fbc6" source="id-ccf1fb0903054274ab4925762b1ab12a" target="id-4534d0cea2fb4457b72f64b4de72220e" archimateRelationship="id-f5-rel-045"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-4b7a0ee321184f0b837e82861d677b8a" archimateElement="id-f5-aclif-027">
+            <bounds x="420" y="110" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c649419cac1f4d178f639fcca6b57826" source="id-4b7a0ee321184f0b837e82861d677b8a" target="id-4534d0cea2fb4457b72f64b4de72220e" archimateRelationship="id-f5-rel-064"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-38723671939d4d839289aa3b6f07d50c" archimateElement="id-f5-aclif-031">
+            <bounds x="420" y="170" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-eab6d71983d749ed9e6366b85064caae" source="id-38723671939d4d839289aa3b6f07d50c" target="id-4534d0cea2fb4457b72f64b4de72220e" archimateRelationship="id-f5-rel-070"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-84ad0450ebbd4a658a2ee38fd042e7bf" archimateElement="id-f5-aclif-025">
+            <bounds x="420" y="230" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-bff488b7d06940008cc408ea8578be28" source="id-84ad0450ebbd4a658a2ee38fd042e7bf" target="id-4534d0cea2fb4457b72f64b4de72220e" archimateRelationship="id-f5-rel-061"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-b3b4e33e09f441aeb8b8bae4ec5bff49" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="300" width="720" height="166"/>
+            <content>Mensajes que recibe (tipo · quién lo envía)
+
+• Reserva confirmada (evento de negocio) · Gestión del arriendo, en una relación cliente-proveedor
+• Preparación, entrega, recepción y novedades (evento) · Marinas, a través de la capa anticorrupción
+• Posición, combustible y momento de la medición (evento) · Fuente de ubicación y combustible, a través de la capa anticorrupción
+• Cobertura y decisiones sobre reclamaciones (consulta) · Aseguradora, a través de la capa anticorrupción
+• Registrar inspección, Autorizar entrega, Registrar novedad (comandos) · Inspector y responsable de operaciones</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-faaf690e76cb4720ba1d0169becb4c7c" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
+          <bounds x="20" y="734" width="760" height="573"/>
+          <child xsi:type="archimate:Note" id="id-e9bc9e9fa3ec42b1a9155da344eaeb7e" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="40" width="720" height="513"/>
+            <content>Supuestos
+• La marina o la empresa preparan e inspeccionan el yate según el acuerdo con cada marina.
+• No todos los yates transmiten ubicación y combustible, y las lecturas pueden llegar tarde.
+
+Preguntas abiertas
+• ¿Cómo se entera Gestión de una entrega no autorizada para ofrecer una alternativa? V8 no tiene flujo de Operación a Gestión.
+• ¿Cuánto tiempo sin lecturas debe generar una alerta?</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-ec4a5a7838074b81a412d3af1192d945" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
+          <bounds x="1660" y="228" width="780" height="550"/>
+          <child xsi:type="archimate:DiagramObject" id="id-c7574990dbc24370bbf8f1579c4333b7" targetConnections="id-17f493aee08b4288860158c1db390d83" archimateElement="id-f5-bc-010">
+            <bounds x="20" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-ec451aba84d44af0bbd55edbff93e854" archimateElement="id-f5-grp-016">
+            <bounds x="20" y="110" width="360" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-360add8cb20840e78c7e49957b4fac30" source="id-ec451aba84d44af0bbd55edbff93e854" target="id-4534d0cea2fb4457b72f64b4de72220e" archimateRelationship="id-f5-rel-049"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-f4c70ae9f58d479eb64b48b004051082" archimateElement="id-f4-ev-244">
+            <bounds x="400" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-cee9c4ac3bcd476485078986347832c1" archimateElement="id-f4-ev-248">
+            <bounds x="400" y="110" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-ea0d762563074560afb8e7fad377765a" archimateElement="id-EV4">
+            <bounds x="400" y="170" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-8be5da34913a4de5b30b37f524007311" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="300" width="740" height="230"/>
+            <content>Mensajes que envía (tipo · quién lo recibe)
+
+• Yate devuelto, actas y novedades (eventos) · Liquidación, en una relación cliente-proveedor. Liquidación decide si algo cuesta dinero.
+• Entrega autorizada o no autorizada (eventos) · Marinas, con reserva, horarios y personas autorizadas, a través de la capa anticorrupción
+• Datos del arriendo y, ante siniestro, hechos y evidencias (comando) · Aseguradora, a través de la capa anticorrupción
+• Yate a consultar y reporte de lecturas ausentes (consulta) · Fuente de ubicación y combustible, a través de la capa anticorrupción
+• Última ubicación y combustible con la hora de medición (consulta) · Cliente y marina
+
+Comparte con Gestión un núcleo limitado a arriendo, yate y participante.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-ec266c79101c457295106e1d15bd26e0" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
+          <bounds x="1660" y="798" width="780" height="509"/>
+          <child xsi:type="archimate:DiagramObject" id="id-cea5cf3f23424c6b900e62ed63af1530" archimateElement="id-O6">
+            <bounds x="20" y="40" width="740" height="52"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-5d420ac8f05340c1a153209a0076cd8b" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="112" width="740" height="377"/>
+            <content>Resultado de V1 al que llega la trazabilidad de este contexto en su V10. Meta: «Cerrar cada arriendo con responsabilidades y pagos resueltos».</content>
+          </child>
+        </child>
+      </child>
+      <documentation>Bounded Context Canvas del contexto Operación y seguimiento del yate, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V11d. Bounded Context Canvas - Liquidación" id="id-5842417c4a8e47e783cad00d79f80e4a">
+      <child xsi:type="archimate:Group" id="id-54a14ea7ff7f4f368c96093a080c60ed" fillColor="#f4f1ea" name="V11d · Bounded Context Canvas · Liquidación" textAlignment="1">
+        <bounds x="20" y="20" width="2460" height="1205"/>
+        <child xsi:type="archimate:Group" id="id-485f2c0b8cae47399a79b03c7d7bd72d" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
+          <bounds x="20" y="40" width="1180" height="168"/>
+          <child xsi:type="archimate:Note" id="id-6bfa5ee0d07742d686d20264dbe4f5f7" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="1150" height="118"/>
+            <content>Liquidación
+
+Determinar y resolver los valores económicos del arriendo: alquiler pendiente, depósito, combustible, daños sustentados, devoluciones y reclamaciones, hasta dejar el arriendo con su cierre económico.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-18f9d337883040dfb903857cdcc607ec" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
+          <bounds x="1220" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-c440552f099b45ea9de8485474c4d879" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Dominio: Supporting. Permite completar el arriendo y dar cuentas a las partes, pero no define la disponibilidad ni controla el uso del yate.
+
+Modelo de negocio: genera ingresos. Cobra, retiene y devuelve el dinero del arriendo.
+
+Evolución: hecho a medida sobre una pasarela de pagos que se compra.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-dd6313e7637a42f4b76c825b89b704bf" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
+          <bounds x="1840" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-2380ef7d4d7f439c9e84bae1074e99fb" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Cálculo: aplica las condiciones acordadas a las actas y evidencias que entrega Operación.
+
+Cierre: deja el arriendo sin pagos, garantías ni reclamaciones pendientes.
+
+No inspecciona el yate ni procesa el pago: eso lo hace la pasarela.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-06158e1f79f34deb819cb04dff0ec03d" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
+          <bounds x="800" y="228" width="840" height="340"/>
+          <child xsi:type="archimate:DiagramObject" id="id-ffc5f5f0e0ac425ba231ef96617a5b62" targetConnections="id-86998ce44d104a2aa44dc019494538af id-c1c29bf7a1b84db299050212e3b303c9 id-8f29c754e8af444e875919f8df5e91e7" archimateElement="id-f5-bc-010">
+            <bounds x="40" y="45" width="760" height="185"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-3eb8e01b6037431398f10a4fffe23e89" source="id-ffc5f5f0e0ac425ba231ef96617a5b62" target="id-9ab3aaf034294bbdaa809760993cfc2c" archimateRelationship="id-f5-rel-040"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-9ab3aaf034294bbdaa809760993cfc2c" targetConnections="id-3eb8e01b6037431398f10a4fffe23e89" archimateElement="id-f5-bs-011">
+            <bounds x="40" y="260" width="760" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-ff4eb5b423f94ecb80b48e410a473170" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
+          <bounds x="800" y="588" width="840" height="303"/>
+          <child xsi:type="archimate:DiagramObject" id="id-c19f3830e9604c97ab2f3590b986d795" archimateElement="term26">
+            <bounds x="20" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-e6dad871d1a846aea08ccf7f8af3559a" archimateElement="term27">
+            <bounds x="430" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-fed304a1effb49c9afd86cf031c9a1c3" archimateElement="term28">
+            <bounds x="20" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-be4e0ec160c64ef0a59844d3bd0709d9" archimateElement="term29">
+            <bounds x="430" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-150aaa693dd64733887fbe0ac6c12849" archimateElement="term30">
+            <bounds x="20" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-8d753cbe59114de19bb6733ad40a7f3a" archimateElement="term31">
+            <bounds x="430" y="169" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-c5e3943451c84f68ad24b97fb940714d" archimateElement="term32">
+            <bounds x="20" y="231" width="390" height="52"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-e570f9cf972440e9b0a3b224ea2a49ba" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
+          <bounds x="800" y="911" width="840" height="274"/>
+          <child xsi:type="archimate:DiagramObject" id="id-9d7ac231cd474b0292eb89a1503ed540" archimateElement="id-f4-li-liquidacion-351">
+            <bounds x="20" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-48a32affaf1a4d7db0017b6567a1deeb" archimateElement="id-f388d78a240547dcb72acc7ed81ec7aa">
+            <bounds x="293" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-518268fd43834757a60b195d6ef4df13" archimateElement="id-2db9c41d2746491d8856dbc5ac2b1326">
+            <bounds x="566" y="45" width="253" height="55"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-d7c2bac34e1743879403cc14fc7e20dd" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="120" width="800" height="134"/>
+            <content>Reglas que el contexto nunca rompe (invariantes de V6d)
+
+• Liquidación del arriendo: todo cargo se sustenta en evidencia comparada y en una condición del contrato.
+• Liquidación del arriendo: el saldo no queda negativo sin un reembolso explícito.
+• Garantía: no es ingreso; solo se retiene lo sustentado y el resto se libera o se reembolsa.
+• Reclamación de cobro: el arriendo no se cierra mientras haya una reclamación abierta.
+• Un daño observado no implica por sí solo un cargo.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-df670402e82c4042a705ed072234e304" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
+          <bounds x="20" y="228" width="760" height="426"/>
+          <child xsi:type="archimate:DiagramObject" id="id-700db0bc49584a2f86008c77b1688c9c" archimateElement="id-EV4">
+            <bounds x="20" y="50" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-edfd2720598e408b98aeb3488e94f0fa" archimateElement="id-AC1">
+            <bounds x="20" y="110" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-98d9a311c43846119025367910db4627" archimateElement="id-RO3">
+            <bounds x="20" y="170" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-b26985c3965a47dd875ef4f0e85c9636" archimateElement="id-f5-bc-007">
+            <bounds x="420" y="50" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-86998ce44d104a2aa44dc019494538af" source="id-b26985c3965a47dd875ef4f0e85c9636" target="id-ffc5f5f0e0ac425ba231ef96617a5b62" archimateRelationship="id-f5-rel-046"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-7fd127578ed549efa0117b63ee1f95c1" archimateElement="id-f5-aclif-029">
+            <bounds x="420" y="110" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c1c29bf7a1b84db299050212e3b303c9" source="id-7fd127578ed549efa0117b63ee1f95c1" target="id-ffc5f5f0e0ac425ba231ef96617a5b62" archimateRelationship="id-f5-rel-067"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-07cd2fcd0a8141b6966975520b190c7b" archimateElement="id-f5-aclif-033">
+            <bounds x="420" y="170" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-8f29c754e8af444e875919f8df5e91e7" source="id-07cd2fcd0a8141b6966975520b190c7b" target="id-ffc5f5f0e0ac425ba231ef96617a5b62" archimateRelationship="id-f5-rel-073"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-3a1049c345864be19dcc3c386d7e2333" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="720" height="166"/>
+            <content>Mensajes que recibe (tipo · quién lo envía)
+
+• Yate devuelto, actas, evidencias y novedades (eventos) · Operación y seguimiento del yate, en una relación cliente-proveedor
+• Resultado y estado de cobros, garantías y reembolsos (evento) · Pasarela de pagos, a través de la capa anticorrupción
+• Conciliaciones y confirmación de registros (evento) · Contabilidad, a través de la capa anticorrupción
+• Abrir reclamación (comando) · Cliente
+• Calcular liquidación y Resolver reclamación (comandos) · Analista financiero</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-191b7ec344dc4cea9dafe5149e8d79f4" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
+          <bounds x="20" y="674" width="760" height="511"/>
+          <child xsi:type="archimate:Note" id="id-ffa1a2b41eca49ec86c5cdcd78e7142e" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="40" width="720" height="451"/>
+            <content>Supuestos
+• Las reglas exactas de retención dependen del contrato; el modelo no fija importes.
+• La pasarela procesa el pago, pero no define reglas de negocio.
+• El pago al propietario lo hace contabilidad, no esta aplicación.
+
+Preguntas abiertas
+• ¿Cómo sabe Gestión que se pagó el anticipo antes de confirmar? V8 no tiene flujo de Liquidación a Gestión.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-0f5ca70330e7483eb4f371f1d4c3bbc5" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
+          <bounds x="1660" y="228" width="780" height="410"/>
+          <child xsi:type="archimate:DiagramObject" id="id-d6bffe1fa13a4ca6be45d2efb9c9830b" archimateElement="id-EV5">
+            <bounds x="400" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-7c7218bfdcec4c0bafd6ea26aead3023" archimateElement="id-f4-ev-388">
+            <bounds x="400" y="110" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-ed96de6455184da48c6a47c386b04227" archimateElement="id-f4-ev-392">
+            <bounds x="400" y="170" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-60ada1135e4c4d3da17d7f1367ff149f" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="740" height="150"/>
+            <content>Mensajes que envía (tipo · quién lo recibe)
+
+• Solicitudes de cobro, retención, liberación o reembolso (comando) · Pasarela de pagos, a través de la capa anticorrupción
+• Pagos, comisiones, reembolsos y lo que corresponde a cada propietario (evento) · Contabilidad, a través de la capa anticorrupción
+• Arriendo cerrado (evento de negocio) · Cliente y propietario
+• Garantía liberada y Reembolso emitido (eventos) · Cliente</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-3cdad2785b8b46a39d2aae19841dc07a" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
+          <bounds x="1660" y="658" width="780" height="527"/>
+          <child xsi:type="archimate:DiagramObject" id="id-2fafb50e792d400ba66f6c49cd71a769" archimateElement="id-O7">
+            <bounds x="20" y="40" width="740" height="52"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-a65586f835bc4ebfbe989eac9318798d" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="112" width="740" height="395"/>
+            <content>Resultado de V1 al que llega la trazabilidad de este contexto en su V10. Meta: «Cerrar cada arriendo con responsabilidades y pagos resueltos».</content>
+          </child>
+        </child>
+      </child>
+      <documentation>Bounded Context Canvas del contexto Liquidación, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="V11e. Bounded Context Canvas - Reputación" id="id-3afbd052a3364f76a5eda000d552d652">
+      <child xsi:type="archimate:Group" id="id-a9970b0c4d7c4a6d926c0a9ad2ea9a17" fillColor="#f4f1ea" name="V11e · Bounded Context Canvas · Reputación" textAlignment="1">
+        <bounds x="20" y="20" width="2460" height="1127"/>
+        <child xsi:type="archimate:Group" id="id-63dc3abd988b4f09b5ee35e1b2b25dfe" fillColor="#dbe9f6" name="1. Nombre y propósito" textAlignment="1">
+          <bounds x="20" y="40" width="1180" height="168"/>
+          <child xsi:type="archimate:Note" id="id-98241c1239a7498c9a72c5de19f8f371" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="1150" height="118"/>
+            <content>Reputación
+
+Registrar y conservar las calificaciones y comentarios que se intercambian cliente y propietario después del arriendo, para que esa información pueda consultarse en arriendos futuros.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-d8bd996a546a4366b45f07b3ce356477" fillColor="#e3f1d9" name="2. Clasificación estratégica" textAlignment="1">
+          <bounds x="1220" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-9e79ebbe66214edb80e2395d51d5cd04" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Dominio: Supporting. Ayuda a generar confianza entre participantes, pero un arriendo puede hacerse y cerrarse sin una calificación previa.
+
+Modelo de negocio: confianza y fidelidad entre clientes y propietarios.
+
+Evolución: hecho a medida y sencillo.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-aa4cb4abc7c6443aad33363c8d4f6714" fillColor="#e3f1d9" name="3. Rol del dominio" textAlignment="1">
+          <bounds x="1840" y="40" width="600" height="168"/>
+          <child xsi:type="archimate:Note" id="id-796c05507b3848fca708426480e80c5c" fillColor="#ffffff" textAlignment="1">
+            <bounds x="15" y="35" width="570" height="118"/>
+            <content>Registro: guarda calificaciones e historial.
+
+Revisión: resuelve las valoraciones cuestionadas antes de publicarlas.
+
+No aprueba ni rechaza reservas, ni reemplaza la evaluación de riesgo.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-fda1febca9a348dca2d4beea83c631fd" fillColor="#d6e4f5" name="Contexto delimitado" textAlignment="1">
+          <bounds x="800" y="228" width="840" height="340"/>
+          <child xsi:type="archimate:DiagramObject" id="id-a9a44b33dfde4830b7bb3f8b8d9ea42c" targetConnections="id-6829c960e77c41418212b374ba2127a5" archimateElement="id-f5-bc-013">
+            <bounds x="40" y="45" width="760" height="185"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-cf66731ada2e43fa801357f5d47be210" source="id-a9a44b33dfde4830b7bb3f8b8d9ea42c" target="id-eff2d227012747a1852bdd60d6d516a7" archimateRelationship="id-f5-rel-042"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-eff2d227012747a1852bdd60d6d516a7" targetConnections="id-cf66731ada2e43fa801357f5d47be210" archimateElement="id-f5-bs-014">
+            <bounds x="40" y="260" width="760" height="60"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-627b4d78c8e04a8aaf5158019f77cc08" fillColor="#efe3f4" name="5. Lenguaje ubicuo (términos de V7)" textAlignment="1">
+          <bounds x="800" y="588" width="840" height="241"/>
+          <child xsi:type="archimate:DiagramObject" id="id-884ddf7b25d1406caecc66eacfe98153" archimateElement="term33">
+            <bounds x="20" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-9a229f9897274444aab567d9edff2a43" archimateElement="term34">
+            <bounds x="430" y="45" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-fca6be2c8519414497747bd99c0cef21" archimateElement="term35">
+            <bounds x="20" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-d722c64ed6ac465e8123fe159a9710ce" archimateElement="term36">
+            <bounds x="430" y="107" width="390" height="52"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-37eaa9f49ead4d18b17335717f0fcfdd" archimateElement="term37">
+            <bounds x="20" y="169" width="390" height="52"/>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-79e19b42ab8c4f56bb6b3498ee02acec" fillColor="#fbe4e2" name="6. Decisiones de negocio" textAlignment="1">
+          <bounds x="800" y="849" width="840" height="258"/>
+          <child xsi:type="archimate:DiagramObject" id="id-bc62e7dc709d40eeb72fc066e8e07f5a" archimateElement="id-f4-re-perfil-472">
+            <bounds x="20" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-521bad1b9cce4fbe84c0e94c457f2721" archimateElement="id-f4-re-revision-479">
+            <bounds x="430" y="45" width="390" height="55"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-1225ecc464144806b3cf269727537fc8" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="120" width="800" height="118"/>
+            <content>Reglas que el contexto nunca rompe (invariantes de V6e)
+
+• Perfil de reputación: una sola calificación por participante y por arriendo.
+• Perfil de reputación: la reputación informa, pero no aprueba ni rechaza una reserva.
+• Revisión de valoración: una valoración cuestionada no se publica hasta resolverse.
+• Cliente y propietario pueden ser participantes evaluados.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-390d3d79d41345d0b275b18320a17f99" fillColor="#fdf0de" name="4. Comunicación entrante" textAlignment="1">
+          <bounds x="20" y="228" width="760" height="378"/>
+          <child xsi:type="archimate:DiagramObject" id="id-e74a3c07b0f041d6833bdf2905aba3d3" archimateElement="id-AC1">
+            <bounds x="20" y="50" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-358a43c0b74b4061825bda125b9cd8a2" archimateElement="id-AC2">
+            <bounds x="20" y="110" width="340" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-db711f89e3dd49b69e094db0c7af7e2a" archimateElement="id-f5-bs-002">
+            <bounds x="420" y="50" width="320" height="50"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-6829c960e77c41418212b374ba2127a5" source="id-db711f89e3dd49b69e094db0c7af7e2a" target="id-a9a44b33dfde4830b7bb3f8b8d9ea42c" archimateRelationship="id-f5-rel-047"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-c323928c7d3c42e9856f9e0c306685a1" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="720" height="118"/>
+            <content>Mensajes que recibe (tipo · quién lo envía)
+
+• Arriendo confirmado y sus participantes (consulta) · Gestión del arriendo, por su servicio de reserva. Reputación lo usa tal cual: es conformista ante un servicio abierto con lenguaje publicado.
+• Calificar participante (comando) · Cliente y propietario, después de la devolución
+• Cuestionar valoración (comando) · El participante evaluado</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-ab030cfa9fa74c7abe5e4362a3df75b0" fillColor="#f6f2dc" name="8. Supuestos y preguntas abiertas" textAlignment="1">
+          <bounds x="20" y="626" width="760" height="481"/>
+          <child xsi:type="archimate:Note" id="id-d40c7955d1be4eaab2e847083ae0d89e" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="40" width="720" height="421"/>
+            <content>Supuestos
+• No se fija una escala de calificación.
+• Las reglas de moderación de comentarios dependen de la operación real.
+
+Preguntas abiertas
+• ¿Qué le avisa a Reputación que el arriendo terminó? V8 solo la conecta con el servicio de reserva.
+• ¿Evaluación de riesgo consultará este historial? Hoy no hay relación en V8.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-9f2d5108a4b34ae8aa38b27f24dc9645" fillColor="#e2f1e4" name="7. Comunicación saliente" textAlignment="1">
+          <bounds x="1660" y="228" width="780" height="362"/>
+          <child xsi:type="archimate:DiagramObject" id="id-2cfd4a9f60574e45af5d8b0203d0a2d6" archimateElement="id-f4-ev-486">
+            <bounds x="400" y="50" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-b629fd1ebd334310ac3e42796cad3091" archimateElement="id-f4-ev-490">
+            <bounds x="400" y="110" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:DiagramObject" id="id-326f96f1fa374f54baa02fa9c3b569f3" archimateElement="id-f4-ev-498">
+            <bounds x="400" y="170" width="360" height="50"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-35895400950e466b822ffb19a51d9b2a" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="240" width="740" height="102"/>
+            <content>Mensajes que envía (tipo · quién lo recibe)
+
+• Calificación registrada y Reputación actualizada (eventos) · Cliente y propietario
+• Valoración resuelta (evento) · El participante que la cuestionó
+• Historial de reputación (consulta) · Por el servicio de reputación. Hoy ningún otro contexto lo consume en V8.</content>
+          </child>
+        </child>
+        <child xsi:type="archimate:Group" id="id-c52c58adfd244262b0b91c690b2743c4" fillColor="#f6f2dc" name="9. Métricas de verificación" textAlignment="1">
+          <bounds x="1660" y="610" width="780" height="497"/>
+          <child xsi:type="archimate:DiagramObject" id="id-affac98658a84c53af3a8acce8d86e1d" archimateElement="id-O9">
+            <bounds x="20" y="40" width="740" height="52"/>
+          </child>
+          <child xsi:type="archimate:Note" id="id-7e4c40f3258247069b178c3b360e34c9" fillColor="#ffffff" textAlignment="1">
+            <bounds x="20" y="112" width="740" height="365"/>
+            <content>Resultado de V1 al que llega la trazabilidad de este contexto en su V10. Meta: «Cerrar cada arriendo con responsabilidades y pagos resueltos».</content>
+          </child>
+        </child>
+      </child>
+      <documentation>Bounded Context Canvas del contexto Reputación, en las secciones del canvas de ddd-crew. Se construyó como vista ArchiMate y no como Canvas de Archi para que cada sección use los mismos elementos del modelo: el componente y su servicio (V8), los colaboradores y sus relaciones (V8 y V9), los términos (V7), las raíces de agregado y los eventos (V6) y los resultados de motivación (V1). Las notas explican lo que un elemento no dice por sí solo: el tipo de cada mensaje, las invariantes y los supuestos.</documentation>
     </element>
   </folder>
 </archimate:model>

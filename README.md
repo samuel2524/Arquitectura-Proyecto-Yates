@@ -383,7 +383,9 @@ Los seis servicios de interoperabilidad excluidos en la fase 2 (SA-08 y SA-10 a 
 
 ## 17. Bounded Context Canvas: V11 (fase 6)
 
-![V11. Bounded Context Canvas del contexto Gestión del arriendo](vistas/V11-canvas-gestion-del-arriendo.png)
+### 17.1 V11a. Gestión del arriendo, el contexto principal
+
+![V11a. Bounded Context Canvas del contexto Gestión del arriendo](vistas/V11a-canvas-gestion-del-arriendo.png)
 
 El canvas resume en una sola página el contexto principal, Gestión del arriendo, siguiendo las secciones del Bounded Context Canvas de ddd-crew: nombre y propósito, clasificación estratégica, rol del dominio, comunicación entrante y saliente, lenguaje ubicuo, decisiones de negocio, supuestos, preguntas abiertas y métricas de verificación.
 
@@ -394,6 +396,20 @@ Lo construimos como vista ArchiMate y no como Canvas de Archi para que cada secc
 Cada mensaje lleva su tipo, porque no es lo mismo una orden que un hecho. «Solicitar reserva» y «Bloquear disponibilidad» son comandos; «Elegibilidad aprobada» y «Reserva confirmada» son eventos; los datos del CRM y las condiciones del contrato son consultas. El lenguaje ubicuo usa los ocho términos de V7 para este dominio, incluidas «Solicitud de reserva» y «Reserva confirmada» por separado. Las decisiones de negocio muestran las tres raíces de agregado de V6a con sus invariantes, y las métricas son los tres resultados de V1 que este contexto ayuda a cumplir.
 
 Quedan tres preguntas abiertas que la entrevista no respondió: cuánto dura un apartado temporal, cuánto tiempo de preparación queda entre dos arriendos del mismo yate y qué tasa de ocupación fija la dirección como meta.
+
+### 17.2 Canvas de los otros cuatro contextos: V11b a V11e
+
+El enunciado pide el canvas del contexto principal. Hicimos también los otros cuatro con la misma estructura, porque así se comprueba que cada contexto tiene un propósito propio y que lo que uno dice que envía coincide con lo que el otro dice que recibe. Las relaciones dibujadas son solo las que existen en V8 y V9.
+
+Al cruzar los cinco canvas aparecieron tres huecos del mapa de contextos que dejamos como preguntas abiertas en vez de inventar relaciones: Gestión no tiene un canal para enterarse de una entrega no autorizada (V11c) ni del pago del anticipo antes de confirmar (V11d), y a Reputación nada le avisa que el arriendo terminó (V11e). También queda abierto si Evaluación de riesgo debe consultar el historial de Reputación.
+
+![V11b. Bounded Context Canvas del contexto Evaluación de riesgo](vistas/V11b-canvas-evaluacion-de-riesgo.png)
+
+![V11c. Bounded Context Canvas del contexto Operación y seguimiento del yate](vistas/V11c-canvas-operacion-y-seguimiento-del-yate.png)
+
+![V11d. Bounded Context Canvas del contexto Liquidación](vistas/V11d-canvas-liquidacion.png)
+
+![V11e. Bounded Context Canvas del contexto Reputación](vistas/V11e-canvas-reputacion.png)
 
 ## 18. Modelo y evidencias
 
