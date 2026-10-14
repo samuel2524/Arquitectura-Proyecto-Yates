@@ -2,7 +2,7 @@
 
 La empresa arrienda yates de terceros que están en distintas marinas. Debe saber cuáles se pueden ofrecer, gestionar las reservas y coordinar lo que pasa entre la entrega y la devolución. También se ocupa de los pagos, el seguimiento del yate durante el arriendo y las calificaciones entre clientes y propietarios. Como las embarcaciones no son suyas, necesita dejar constancia de su estado y de lo ocurrido en cada alquiler.
 
-Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2, el análisis de dominios de la fase 3, el diseño táctico de la fase 4 y el mapa de contextos de la fase 5. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
+Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, la descomposición de servicios de la fase 2, el análisis de dominios de la fase 3, el diseño táctico de la fase 4, el mapa de contextos de la fase 5 y los Canvas de la fase 6. Las vistas salen de un mismo [modelo ArchiMate](modelo/arrendamiento_yates.archimate). La IA respondió preguntas sobre el negocio; el equipo decidió cómo representarlo.
 
 ## Índice
 
@@ -23,7 +23,13 @@ Aquí reunimos la entrevista de la fase 0, las vistas del negocio de la fase 1, 
 - [15. Diseño táctico: agregados, comandos y eventos (fase 4)](#15-diseno-tactico-agregados-comandos-y-eventos-fase-4)
 - [16. Mapa de contextos delimitados (fase 5)](#16-mapa-de-contextos-delimitados-fase-5)
 - [17. Bounded Context Canvas: V11 (fase 6)](#17-bounded-context-canvas-v11-fase-6)
+  - [V11a. Gestión del arriendo](#171-v11a-gestion-del-arriendo-el-contexto-principal)
+  - [V11b. Evaluación de riesgo](#172-v11b-evaluacion-de-riesgo)
+  - [V11c. Operación y seguimiento](#173-v11c-operacion-y-seguimiento-del-yate)
+  - [V11d. Liquidación](#174-v11d-liquidacion)
+  - [V11e. Reputación](#175-v11e-reputacion)
 - [18. Modelo y evidencias](#18-modelo-y-evidencias)
+- [19. Aportes del equipo](#19-aportes-del-equipo)
 
 ## 1. Contexto y entrevista (fase 0)
 
@@ -356,7 +362,9 @@ La fase 4 dejó cada dominio con sus agregados y eventos; esta decide cómo se r
 
 ![V8. Mapa de contextos delimitados y patrones](vistas/V08-mapa-de-contextos-delimitados-y-patrones-v2.png)
 
-La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado). El núcleo compartido se identifica con arriendo, yate y participante y se vincula con Gestión y Operación. Compartir esos conceptos introduce acoplamiento: los cambios en lo común requieren coordinación entre ambos contextos; cada uno mantiene sus propias reglas de reserva u operación.
+La vista junta los cinco contextos, el núcleo compartido y la leyenda de patrones. Gestión del arriendo y Operación y seguimiento del yate, los dos Core, forman la columna de la solución: la evaluación de riesgo les entrega resultados y de ellos salen los flujos hacia la liquidación, todos como cliente-proveedor. El servicio de reserva que publica Gestión lo consume Reputación como conformista (servicio abierto y lenguaje publicado).
+
+El recuadro «Arriendo, Yate y Participante» resume la parte común que permite a Gestión y Operación referirse al mismo arriendo, yate y participante. No representa que ambos compartan el agregado completo de Arriendo ni sus estados: Gestión conserva las reglas de disponibilidad y reserva; Operación, las de entrega, inspección y seguimiento. V8 no desglosa esa parte común en elementos individuales. Compartir su identidad y significado introduce un acoplamiento limitado: cualquier cambio en esas definiciones debe acordarse entre ambos contextos antes de aplicarlo.
 
 Cada contexto realiza su servicio de aplicación, que apoya los servicios de negocio identificados en la fase 2; estos no eran `ApplicationService`. Los eventos de dominio de la fase 4 no aparecen porque aquí se muestran las relaciones entre contextos. Los contratos de servicio de negocio se documentan en V4d; V9b muestra la información intercambiada con participantes externos.
 
@@ -397,19 +405,31 @@ Cada mensaje lleva su tipo, porque no es lo mismo una orden que un hecho. «Soli
 
 Quedan tres preguntas abiertas que la entrevista no respondió: cuánto dura un apartado temporal, cuánto tiempo de preparación queda entre dos arriendos del mismo yate y qué tasa de ocupación fija la dirección como meta.
 
-### 17.2 Canvas de los otros cuatro contextos: V11b a V11e
+Los otros cuatro Canvas usan la misma estructura para comparar los límites y las comunicaciones de los contextos. Al cruzarlos aparecieron tres huecos en el mapa de contextos que dejamos como preguntas abiertas en vez de inventar relaciones: Gestión no tiene un canal para enterarse de una entrega no autorizada ni del pago del anticipo antes de confirmar, y a Reputación nada le avisa que el arriendo terminó. También queda abierto si Evaluación de riesgo debe consultar el historial de Reputación.
 
-El enunciado pide el canvas del contexto principal. Hicimos también los otros cuatro con la misma estructura, porque así se comprueba que cada contexto tiene un propósito propio y que lo que uno dice que envía coincide con lo que el otro dice que recibe. Las relaciones dibujadas son solo las que existen en V8 y V9.
-
-Al cruzar los cinco canvas aparecieron tres huecos del mapa de contextos que dejamos como preguntas abiertas en vez de inventar relaciones: Gestión no tiene un canal para enterarse de una entrega no autorizada (V11c) ni del pago del anticipo antes de confirmar (V11d), y a Reputación nada le avisa que el arriendo terminó (V11e). También queda abierto si Evaluación de riesgo debe consultar el historial de Reputación.
+### 17.2 V11b. Evaluación de riesgo
 
 ![V11b. Bounded Context Canvas del contexto Evaluación de riesgo](vistas/V11b-canvas-evaluacion-de-riesgo.png)
 
+Evaluación de riesgo es Supporting: comprueba requisitos y habilitaciones del cliente, registra verificaciones y puede solicitar una recomendación externa. Esa recomendación llega por la ACL, pero el contexto conserva la decisión sobre elegibilidad y condiciones especiales. Entrega a Gestión del arriendo el resultado que esta necesita para decidir sobre la reserva; no confirma reservas ni autoriza la salida del yate. La invariante mostrada en el Canvas impide declarar apta una evaluación con requisitos obligatorios pendientes. La consulta del historial de Reputación aparece como pregunta, no como relación existente en V8.
+
+### 17.3 V11c. Operación y seguimiento del yate
+
 ![V11c. Bounded Context Canvas del contexto Operación y seguimiento del yate](vistas/V11c-canvas-operacion-y-seguimiento-del-yate.png)
+
+Este contexto Core recibe la reserva confirmada de Gestión y coordina preparación, entrega, seguimiento y recepción. Los datos de marinas, telemetría y aseguradora cruzan la capa anticorrupción; dentro del contexto se registran actas, lecturas e incidentes y se decide si el yate está en condiciones de salir. Envía a Liquidación la devolución y sus evidencias para que allí se determine cualquier ajuste económico. Separar esos roles impide convertir una novedad observada en un cobro automático. El Canvas deja abierta la manera de avisar a Gestión cuando la entrega no se autoriza, porque V8 aún no define ese flujo.
+
+### 17.4 V11d. Liquidación
 
 ![V11d. Bounded Context Canvas del contexto Liquidación](vistas/V11d-canvas-liquidacion.png)
 
+Liquidación es Supporting y toma las actas y novedades que entrega Operación para calcular combustible, cargos sustentados y saldo de la garantía. Distingue ese cálculo de ejecutar un cobro: la pasarela procesa pagos y reembolsos, mientras contabilidad recibe los valores para registro y conciliación mediante sus adaptadores. Sus reglas exigen evidencia y una condición contractual para cada cargo; tampoco permiten cerrar el arriendo con una reclamación abierta. La confirmación del anticipo es una entrada necesaria para la reserva, pero el Canvas señala que V8 no muestra aún cómo se comunica ese resultado a Gestión.
+
+### 17.5 V11e. Reputación
+
 ![V11e. Bounded Context Canvas del contexto Reputación](vistas/V11e-canvas-reputacion.png)
+
+Reputación, también Supporting, consulta el arriendo y sus participantes mediante el servicio publicado por Gestión; por eso se presenta como consumidor conformista. Guarda una calificación por participante y arriendo, conserva el historial y separa la revisión de valoraciones cuestionadas de las ya publicadas. Sus calificaciones pueden informar una decisión futura, pero no aprueban una reserva ni sustituyen la evaluación formal del riesgo. Para habilitar las calificaciones después del uso necesita saber que el arriendo terminó: el Canvas identifica ese aviso como una comunicación aún no definida en V8.
 
 ## 18. Modelo y evidencias
 
@@ -418,3 +438,14 @@ Al cruzar los cinco canvas aparecieron tres huecos del mapa de contextos que dej
 - [Instrucción de rol enviada a la IA](Entrevista/02_instruccion_rol_ia.md).
 - [Conversación con el experto simulado](Entrevista/03_conversacion_experto.md).
 - [Análisis de hallazgos](Entrevista/04_analisis_hallazgos.md).
+
+## 19. Aportes del equipo
+
+Los aportes se describen según los archivos y commits que aparecen en el historial del repositorio. Los enlaces permiten comprobar el trabajo registrado de cada integrante.
+
+| Integrante (autor en Git) | Aporte verificable | Commits de evidencia |
+| --- | --- | --- |
+| Samuel (`samuel2524`) | Guion, instrucción de rol, conversación y análisis de la entrevista; documentación de dominios y lenguaje ubicuo; integración del README y mejoras de V6. | [`43f88f3`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/43f88f3), [`92b6c2a`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/92b6c2a), [`20dc5ff`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/20dc5ff) |
+| Andrés (`Andres`) | Mapas de motivación, capacidades y proceso E2E; descomposición de servicios; vistas de interoperabilidad y Canvas V11. | [`ccf81da`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/ccf81da), [`cfa2d25`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/cfa2d25), [`2c2e9a8`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/2c2e9a8), [`8f646f9`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/8f646f9) |
+| Juan García (`Juan Garcia`) | Diseño táctico V6, mapa de contextos, ajustes del modelo e imágenes y correcciones de legibilidad. | [`320e8ff`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/320e8ff), [`9fa3efa`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/9fa3efa), [`78586e7`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/78586e7) |
+| José (`Josemjaram`) | Vistas de trazabilidad vertical V10a–V10e en el modelo y revisión de V6a. | [`06a77ed`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/06a77ed), [`10e425b`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/10e425b), [`39b0225`](https://github.com/samuel2524/Arquitectura-Proyecto-Yates/commit/39b0225) |
