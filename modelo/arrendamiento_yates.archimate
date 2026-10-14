@@ -3647,12 +3647,6 @@ Momento: Una sola vez, al arrancar.</documentation>
           <child xsi:type="archimate:DiagramObject" id="id-e4840f1d77bb468682223adcbc995ef9" targetConnections="id-20c9c45ec5b44575b2c820b8e7fe5d3b id-3c28c912d39149188fce77e43c2c143b id-63b28ef1305145139a89e0f6259fac2f" archimateElement="id-VS3">
             <bounds x="80" y="204" width="120" height="49"/>
           </child>
-          <child xsi:type="archimate:Note" id="id-46f1d468a6734284927ff923c57c5c9c" textAlignment="1">
-            <bounds x="229" y="193" width="132" height="72"/>
-            <content>Realization Gestión reservas (Business Function - Capability)&#xD;
-&#xD;
-</content>
-          </child>
         </child>
         <child xsi:type="archimate:Group" id="id-6d9ba1d76af849de864cd4faa71157a2" name="Aplicación: Ambos" textAlignment="1">
           <bounds x="12" y="924" width="1212" height="276"/>
