@@ -7809,17 +7809,20 @@ Comparte con Operación un núcleo limitado a arriendo, yate y participante.</co
           <child xsi:type="archimate:Group" id="id-854b3775f69840e5ae9b4b40f8e3637f" name="9. Métricas de verificación" textAlignment="1" fillColor="#f6f2dc">
             <bounds x="1660" y="874" width="780" height="311"/>
             <child xsi:type="archimate:DiagramObject" id="id-ac717746fdba4868aed5d58f411df578" archimateElement="id-O2">
-              <bounds x="20" y="40" width="740" height="52"/>
+              <bounds x="20" y="40" width="740" height="44"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="id-a20d2bfd8bdd46399531d521a04f0486" archimateElement="id-O5">
+              <bounds x="20" y="90" width="740" height="44"/>
             </child>
             <child xsi:type="archimate:DiagramObject" id="id-1dd3119d595747bcbba1f7f2e08fefc1" archimateElement="id-O1">
-              <bounds x="20" y="102" width="740" height="52"/>
+              <bounds x="20" y="140" width="740" height="44"/>
             </child>
             <child xsi:type="archimate:DiagramObject" id="id-7c5018817c774e649ce34876674419ac" archimateElement="id-O3">
-              <bounds x="20" y="164" width="740" height="52"/>
+              <bounds x="20" y="190" width="740" height="44"/>
             </child>
             <child xsi:type="archimate:Note" id="id-af43fc11008742d0b5d41cae98f10f33" textAlignment="1" fillColor="#ffffff">
-              <bounds x="20" y="236" width="740" height="55"/>
-              <content>Resultados de V1 que este contexto ayuda a cumplir, todos de la meta «Aprovechar la flota y cumplir las reservas comprometidas».</content>
+              <bounds x="20" y="244" width="740" height="52"/>
+              <content>Resultados de V1 que este contexto ayuda a cumplir. Los dos primeros son los que traza su V10a, uno por meta: «Aprovechar la flota y cumplir las reservas comprometidas» y «Coordinar sin fricción la entrega y la devolución».</content>
             </child>
           </child>
         </child>
